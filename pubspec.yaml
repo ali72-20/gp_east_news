@@ -60,7 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/logo.png
+     - assets/Images/logo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -75,13 +75,13 @@ flutter:
   fonts:
      - family: FasterOne
        fonts:
-         - asset: Fonts/FasterOne-Regular.ttf
+         - asset: assets/Fonts/FasterOne-Regular.ttf
      - family: Alatsi
        fonts:
-         - asset: Fonts/Alatsi-Regular.ttf
+         - asset: assets/Fonts/Alatsi-Regular.ttf
      - family: Poppins
        fonts:
-         - asset: Fonts/Poppins-Bold.ttf
+         - asset: assets/Fonts/Poppins-Bold.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
