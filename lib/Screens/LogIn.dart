@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gp_east_news/Components/LoginBar.dart';
 
@@ -21,7 +22,18 @@ class _LoginState extends State<Login> {
       ),
       body: const Column(
         children: [
-           Loginbar(),
+          Loginbar(),
+          Padding(
+            padding: EdgeInsets.only(top: 32.0),
+            child: Text(
+              'WELCOME TO EAST NEWS!',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontFamily: 'Poppins'
+              ),
+            ),
+          ),
         ],
       ),
     );
