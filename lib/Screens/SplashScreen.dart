@@ -35,7 +35,7 @@ class _SplashscreenState extends State<Splashscreen> {
     return Scaffold(
       backgroundColor: const Color(0xff03416E),
       body: Center(
-        child: Image.asset('assets/logo.png',
+        child: Image.asset('assets/Images/logo.png',
         ),
       ),
     );
