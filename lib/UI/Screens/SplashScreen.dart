@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gp_east_news/Screens/LogIn.dart';
+import 'LogIn.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});

@@ -20,7 +20,7 @@ class Loginbar extends StatelessWidget {
                 color: Colors.white,
                 fontFamily: 'FasterOne',
                 fontWeight: FontWeight.normal,
-                fontSize: 48),
+                fontSize: 40),
           ),
           Text(
             'AST NEWS',
@@ -28,7 +28,7 @@ class Loginbar extends StatelessWidget {
                 color: Colors.white,
                 fontFamily: 'Alatsi',
                 fontWeight: FontWeight.normal,
-                fontSize: 48),
+                fontSize: 40),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 70),

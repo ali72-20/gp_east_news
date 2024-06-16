@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Components/LoginBar.dart';
-import 'package:gp_east_news/Components/LoginForm.dart';
-import 'package:gp_east_news/Components/TextComp.dart';
+
+import '../Components/LoginBar.dart';
+import '../Components/LoginForm.dart';
+import '../Components/TextComp.dart';
+
 
 class Login extends StatefulWidget {
   const Login({super.key});

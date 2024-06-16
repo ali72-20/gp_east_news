@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Screens/SplashScreen.dart';
+
+import 'UI/Screens/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());

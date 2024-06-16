@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Components/inputComp.dart';
+
+import 'inputComp.dart';
 
 class Loginform extends StatefulWidget {
   const Loginform({super.key});
