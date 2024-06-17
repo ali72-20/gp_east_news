@@ -55,7 +55,9 @@ class _LoginformState extends State<Loginform> {
               ),
             ),
           ),
-          Image.asset('assets/Images/google.png')
+          const SizedBox(height: 16),
+          Image.asset('assets/Images/orline.png'),
+
         ],
       ),
     );
