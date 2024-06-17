@@ -21,7 +21,7 @@ class _LoginformState extends State<Loginform> {
         children: [
           inputComp(lableText: "Email", sufIcone: Icons.mail),
           inputComp(lableText: "Password", sufIcone: Icons.password),
-          Container(
+           Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.only(right: 32, top: 4),
             child: Text(
@@ -55,7 +55,7 @@ class _LoginformState extends State<Loginform> {
               ),
             ),
           ),
-
+          Image.asset('assets/Images/google.png')
         ],
       ),
     );
