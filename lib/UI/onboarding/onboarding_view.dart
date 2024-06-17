@@ -36,9 +36,9 @@ class _onboarding_viewState extends State<onboarding_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: primary_color,
-      body: SafeArea(
-        child: Column(
+      body: Column(
           children: [
             Container(
               height: MediaQuery.of(context).size.height * .9,
@@ -115,7 +115,6 @@ class _onboarding_viewState extends State<onboarding_view> {
             ),
           ],
         ),
-      ),
     );
   }
 
