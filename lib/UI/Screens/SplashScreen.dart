@@ -5,7 +5,9 @@ import 'package:gp_east_news/UI/onboarding/onboarding_view.dart';
 import 'LogIn.dart';
 
 class Splashscreen extends StatefulWidget {
-  const Splashscreen({super.key});
+  Splashscreen({super.key, required this.onboaring});
+
+  bool onboaring;
 
   @override
   State<Splashscreen> createState() => _SplashscreenState();
@@ -18,8 +20,8 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const onboarding_view()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => widget.onboaring ?const Login() : const onboarding_view()));
     });
   }
 
@@ -36,7 +38,8 @@ class _SplashscreenState extends State<Splashscreen> {
     return Scaffold(
       backgroundColor: const Color(0xff03416E),
       body: Center(
-        child: Image.asset('assets/Images/logo.png',
+        child: Image.asset(
+          'assets/Images/logo.png',
         ),
       ),
     );
