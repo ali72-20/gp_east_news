@@ -58,7 +58,7 @@ class _onboarding_viewState extends State<onboarding_view> {
                       controller.items[index].title,
                       style: const TextStyle(
                           color: Colors.white,
-                          fontSize: 20,
+                          fontSize: 16,
                           fontFamily: 'Poppins'),
                     ),
                     const SizedBox(height: 48),

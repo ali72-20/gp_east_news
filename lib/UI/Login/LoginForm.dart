@@ -36,7 +36,7 @@ class _LoginformState extends State<Loginform> {
           const SizedBox(height: 15),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 16),
+            margin: const EdgeInsets.symmetric(horizontal: 32),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: primary_color,
@@ -45,10 +45,13 @@ class _LoginformState extends State<Loginform> {
               onPressed: () {
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>home()));
               },
-              child: const Text(
-                'Sign in',
-                style: TextStyle(
-                    color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
+              child: const Padding(
+                padding: EdgeInsets.only(top: 12, bottom: 12),
+                child: Text(
+                  'Sign in',
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
+                ),
               ),
             ),
           ),
