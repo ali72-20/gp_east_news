@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gp_east_news/UI/onboarding/onboarding_view.dart';
 import 'LogIn.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SplashscreenState extends State<Splashscreen> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const Login()));
+          .pushReplacement(MaterialPageRoute(builder: (_) => const onboarding_view()));
     });
   }
 

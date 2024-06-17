@@ -12,7 +12,7 @@ class inputComp extends StatelessWidget {
       padding: const EdgeInsets.only(right: 32.0, left: 32.0,top: 24),
       child: TextFormField(
         decoration: InputDecoration(
-          border:  const OutlineInputBorder(),
+          border: const OutlineInputBorder(),
           labelText: lableText,
           suffixIcon: Icon(
             sufIcone,
