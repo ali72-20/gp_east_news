@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/ConstantKeies/ConstKey.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../Components/LoginBar.dart';
-import '../Components/LoginForm.dart';
-import '../Components/TextComp.dart';
+import 'LoginBar.dart';
+import 'LoginForm.dart';
+import 'TextComp.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
