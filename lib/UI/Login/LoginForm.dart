@@ -21,7 +21,7 @@ class _LoginformState extends State<Loginform> {
         children: [
           inputComp(lableText: "Email", sufIcone: Icons.mail),
           inputComp(lableText: "Password", sufIcone: Icons.password),
-           Container(
+          Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.only(right: 32, top: 4),
             child: Text(
@@ -43,7 +43,8 @@ class _LoginformState extends State<Loginform> {
                 elevation: 12.0,
               ),
               onPressed: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>home()));
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => home()));
               },
               child: const Padding(
                 padding: EdgeInsets.only(top: 12, bottom: 12),
@@ -57,6 +58,32 @@ class _LoginformState extends State<Loginform> {
           ),
           const SizedBox(height: 16),
           Image.asset('assets/Images/orline.png'),
+          const SizedBox(height: 16),
+          Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(horizontal: 32),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                elevation: 12.0,
+              ),
+              onPressed: () {},
+              child: Padding(
+                padding: const EdgeInsets.only(top: 12, bottom: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image.asset('assets/Images/google.png'),
+                    const Text(
+                      'Sing up with google',
+                      style:
+                          TextStyle(color: Colors.black, fontFamily: 'Poppins',fontSize: 16),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
 
         ],
       ),

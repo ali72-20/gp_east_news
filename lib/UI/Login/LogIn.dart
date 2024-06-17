@@ -18,23 +18,26 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: const Color(0xff03416E),
       ),
-      body: Column(
-        children: [
-          const Loginbar(),
-          TextButton(
-            onPressed: () async {
-              final   pref = await SharedPreferences.getInstance();
-              pref.setBool(constKey.onBoaring, false);
-            },
-            child: TextComp(
-              message: "WELCOME TO EAST NEWS!",
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Loginbar(),
+            TextButton(
+              onPressed: () async {
+                final   pref = await SharedPreferences.getInstance();
+                pref.setBool(constKey.onBoaring, false);
+              },
+              child: TextComp(
+                message: "WELCOME TO EAST NEWS!",
+              ),
             ),
-          ),
-          Loginform(),
-        ],
+            Loginform(),
+          ],
+        ),
       ),
     );
   }

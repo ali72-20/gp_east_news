@@ -36,82 +36,84 @@ class _onboarding_viewState extends State<onboarding_view> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primary_color,
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height * .9,
-            child: PageView.builder(
-              itemCount: controller.items.length,
-              onPageChanged: (index) => setState(
-                () {
-                  isFinalPage = index == controller.items.length - 1;
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height * .9,
+              child: PageView.builder(
+                itemCount: controller.items.length,
+                onPageChanged: (index) => setState(
+                  () {
+                    isFinalPage = index == controller.items.length - 1;
+                  },
+                ),
+                controller: pageController,
+                itemBuilder: (context, index) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(controller.items[index].image),
+                      const SizedBox(height: 48),
+                      Text(
+                        controller.items[index].title,
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Poppins'),
+                      ),
+                      const SizedBox(height: 48),
+                    ],
+                  );
                 },
               ),
-              controller: pageController,
-              itemBuilder: (context, index) {
-                return Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(controller.items[index].image),
-                    const SizedBox(height: 48),
-                    Text(
-                      controller.items[index].title,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: 'Poppins'),
-                    ),
-                    const SizedBox(height: 48),
-                  ],
-                );
-              },
             ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: primary_color),
-            margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            child: isFinalPage
-                ? getStartedButtton()
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () => pageController
-                            .jumpToPage(controller.items.length - 1),
-                        child: const Text(
-                          'Skip',
-                          style: TextStyle(
-                              color: Colors.white, fontFamily: 'Poppins'),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(color: primary_color),
+              margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              child: isFinalPage
+                  ? getStartedButtton()
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextButton(
+                          onPressed: () => pageController
+                              .jumpToPage(controller.items.length - 1),
+                          child: const Text(
+                            'Skip',
+                            style: TextStyle(
+                                color: Colors.white, fontFamily: 'Poppins'),
+                          ),
                         ),
-                      ),
-                      SmoothPageIndicator(
-                        controller: pageController,
-                        count: controller.items.length,
-                        onDotClicked: (index) => pageController.animateToPage(
-                            index,
-                            duration: const Duration(milliseconds: 600),
-                            curve: Curves.easeIn),
-                        effect: const WormEffect(
-                          activeDotColor: Colors.white,
+                        SmoothPageIndicator(
+                          controller: pageController,
+                          count: controller.items.length,
+                          onDotClicked: (index) => pageController.animateToPage(
+                              index,
+                              duration: const Duration(milliseconds: 600),
+                              curve: Curves.easeIn),
+                          effect: const WormEffect(
+                            activeDotColor: Colors.white,
+                          ),
                         ),
-                      ),
-                      TextButton(
-                        onPressed: () => pageController.nextPage(
-                            duration: const Duration(
-                              milliseconds: 600,
-                            ),
-                            curve: Curves.easeIn),
-                        child: const Text(
-                          'next',
-                          style: TextStyle(
-                              color: Colors.white, fontFamily: 'Poppins'),
+                        TextButton(
+                          onPressed: () => pageController.nextPage(
+                              duration: const Duration(
+                                milliseconds: 600,
+                              ),
+                              curve: Curves.easeIn),
+                          child: const Text(
+                            'next',
+                            style: TextStyle(
+                                color: Colors.white, fontFamily: 'Poppins'),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-          ),
-        ],
+                      ],
+                    ),
+            ),
+          ],
+        ),
       ),
     );
   }
