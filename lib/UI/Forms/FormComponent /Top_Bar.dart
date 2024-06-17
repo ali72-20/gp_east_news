@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Loginbar extends StatelessWidget {
-  const Loginbar({super.key});
+class Top_Bar extends StatelessWidget {
+  const Top_Bar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class Loginbar extends StatelessWidget {
                 fontSize: 40),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 70),
+            padding: EdgeInsets.only(bottom: 50),
             child: Image(
               image: AssetImage('assets/Images/logo.png'),
               height: 99,

@@ -1,9 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/UI/Forms/FormComponent%20/Button.dart';
+import 'package:gp_east_news/UI/Forms/SighUp/Signup.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
 import 'package:gp_east_news/UI/home.dart';
 
-import 'inputComp.dart';
+import '../FormComponent /inputComp.dart';
 
 class Loginform extends StatefulWidget {
   const Loginform({super.key});
@@ -34,28 +35,7 @@ class _LoginformState extends State<Loginform> {
             ),
           ),
           const SizedBox(height: 15),
-          Container(
-            width: double.infinity,
-            margin: const EdgeInsets.symmetric(horizontal: 32),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: primary_color,
-                elevation: 12.0,
-              ),
-              onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => home()));
-              },
-              child: const Padding(
-                padding: EdgeInsets.only(top: 12, bottom: 12),
-                child: Text(
-                  'Sign in',
-                  style: TextStyle(
-                      color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
-                ),
-              ),
-            ),
-          ),
+         Button(title: 'Sign in', backgroundColor: primary_color),
           const SizedBox(height: 16),
           Image.asset('assets/Images/orline.png'),
           const SizedBox(height: 16),
@@ -76,15 +56,38 @@ class _LoginformState extends State<Loginform> {
                     Image.asset('assets/Images/google.png'),
                     const Text(
                       'Sing up with google',
-                      style:
-                          TextStyle(color: Colors.black, fontFamily: 'Poppins',fontSize: 16),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Poppins',
+                          fontSize: 16),
                     )
                   ],
                 ),
               ),
             ),
           ),
-
+          Padding(
+            padding: const EdgeInsets.only(top: 40.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  "Don’t have an account?",
+                  style: TextStyle(
+                      color: Colors.black, fontSize: 16, fontFamily: "Poppins"),
+                ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> const Signup()));
+                  },
+                    child: Text(
+                  "Signup",
+                  style: TextStyle(
+                      color: primary_color, fontSize: 16, fontFamily: "Poppins"),
+                ))
+              ],
+            ),
+          )
         ],
       ),
     );

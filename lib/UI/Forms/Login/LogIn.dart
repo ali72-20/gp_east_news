@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/ConstantKeies/ConstKey.dart';
+import 'package:gp_east_news/UI/colors/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'LoginBar.dart';
+import '../FormComponent /Top_Bar.dart';
 import 'LoginForm.dart';
-import 'TextComp.dart';
+import '../FormComponent /TextComp.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -20,12 +21,12 @@ class _LoginState extends State<Login> {
     return Scaffold(
         resizeToAvoidBottomInset : false,
       appBar: AppBar(
-        backgroundColor: const Color(0xff03416E),
+        backgroundColor: primary_color,
       ),
       body: SafeArea(
         child: Column(
           children: [
-            const Loginbar(),
+            const Top_Bar(),
             TextButton(
               onPressed: () async {
                 final   pref = await SharedPreferences.getInstance();
@@ -35,6 +36,7 @@ class _LoginState extends State<Login> {
                 message: "WELCOME TO EAST NEWS!",
               ),
             ),
+
             Loginform(),
           ],
         ),
