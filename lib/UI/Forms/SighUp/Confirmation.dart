@@ -20,9 +20,11 @@ class Confirmation extends StatelessWidget {
         child: Column(
           children: [
             Top_Bar(),
+            const SizedBox(height: 48,),
             TextComp(message: "THE CONFIRMATION MAIL HAS BEEN SENT",
               message_color: Colors.black,
               size: 16,),
+            const SizedBox(height: 48,),
             TextComp(message: "Please Enter The 6-digits code",
                 message_color: gray,
                 size: 12),

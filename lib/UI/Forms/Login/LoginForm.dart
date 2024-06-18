@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/Button.dart';
 import 'package:gp_east_news/UI/Forms/SighUp/Signup.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
-import 'package:gp_east_news/UI/home.dart';
+import 'package:gp_east_news/UI/Home/home.dart';
 
 import '../FormComponent /inputComp.dart';
 

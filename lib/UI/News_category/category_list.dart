@@ -4,10 +4,12 @@ import 'package:gp_east_news/UI/Forms/FormComponent%20/TextComp.dart';
 import 'package:gp_east_news/UI/News_category/item_model.dart';
 import 'package:gp_east_news/UI/News_category/items_list.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
-import 'package:gp_east_news/UI/home.dart';
+import 'package:gp_east_news/UI/Home/home.dart';
 
 class CategoryList extends StatelessWidget {
-  const CategoryList({super.key});
+  CategoryList({super.key});
+
+  bool tap = false;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class CategoryList extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-           const SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Image.asset('assets/Images/SeletedCategory.png',),
             const SizedBox(height: 24,),
             TextComp(
@@ -51,14 +53,17 @@ class CategoryList extends StatelessWidget {
             const SizedBox(height: 24,),
             GestureDetector(
                 onTap: () {
+                  tap = true;
                   Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (_) => const home()));
                 },
-                child: const Icon(
-                  Icons.arrow_circle_right,
-                  color: Colors.white,
-                  size: 48,
-                )),
+                child: !tap ? const Icon(
+                    Icons.arrow_circle_right,
+                    color: Colors.white,
+                    size: 48
+                ) : const CircularProgressIndicator()
+
+            ),
           ],
         ));
   }

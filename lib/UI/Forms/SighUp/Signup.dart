@@ -28,6 +28,7 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: [
               const Top_Bar(),
+              const SizedBox(height: 48,),
               TextComp(message: "LET'S CREATE ACCOUNT", message_color: Colors.black,size: 16),
               inputComp(lableText: 'User Name', sufIcone: Icons.text_fields),
               inputComp(lableText: 'Email', sufIcone: Icons.mail),

@@ -32,10 +32,13 @@ class _LoginState extends State<Login> {
                 final   pref = await SharedPreferences.getInstance();
                 pref.setBool(constKey.onBoaring, false);
               },
-              child: TextComp(
-                message: "WELCOME TO EAST NEWS!",
-                message_color: Colors.black,
-                size: 16,
+              child: Container(
+                margin: const EdgeInsets.only(top: 32),
+                child: TextComp(
+                  message: "WELCOME TO EAST NEWS!",
+                  message_color: Colors.black,
+                  size: 16,
+                ),
               ),
             ),
 
