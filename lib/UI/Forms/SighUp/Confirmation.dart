@@ -19,17 +19,18 @@ class Confirmation extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Top_Bar(),
+            const Top_Bar(),
             const SizedBox(height: 48,),
             TextComp(message: "THE CONFIRMATION MAIL HAS BEEN SENT",
               message_color: Colors.black,
-              size: 16,),
+              size: 13,),
             const SizedBox(height: 48,),
             TextComp(message: "Please Enter The 6-digits code",
                 message_color: gray,
                 size: 12),
+            const SizedBox(height: 32,),
             const ConfirmationCodeInput(),
-        
+            const SizedBox(height: 32),
             Button(title: "Confirm", backgroundColor: primary_color, onPress: () {
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => CategoryList()));
