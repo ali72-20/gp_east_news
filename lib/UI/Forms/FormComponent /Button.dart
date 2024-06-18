@@ -5,10 +5,11 @@ import '../../colors/colors.dart';
 import '../../home.dart';
 
 class Button extends StatefulWidget {
-   Button({super.key, required this.title, required this.backgroundColor});
+   Button({super.key, required this.title, required this.backgroundColor, required this.onPress});
 
   String title;
   Color backgroundColor;
+  final void Function() onPress;
   @override
   State<Button> createState() => _ButtonState();
 }
@@ -24,10 +25,7 @@ class _ButtonState extends State<Button> {
           backgroundColor: widget.backgroundColor ,
           elevation: 12.0,
         ),
-        onPressed: () {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (_) => home()));
-        },
+        onPressed: widget.onPress,
         child:  Padding(
           padding: EdgeInsets.only(top: 12, bottom: 12),
           child: Text(

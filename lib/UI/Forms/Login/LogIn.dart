@@ -34,6 +34,8 @@ class _LoginState extends State<Login> {
               },
               child: TextComp(
                 message: "WELCOME TO EAST NEWS!",
+                message_color: Colors.black,
+                size: 16,
               ),
             ),
 

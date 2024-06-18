@@ -35,7 +35,9 @@ class _LoginformState extends State<Loginform> {
             ),
           ),
           const SizedBox(height: 15),
-         Button(title: 'Sign in', backgroundColor: primary_color),
+         Button(title: 'Sign in', backgroundColor: primary_color, onPress: (){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> const home()));
+         },),
           const SizedBox(height: 16),
           Image.asset('assets/Images/orline.png'),
           const SizedBox(height: 16),

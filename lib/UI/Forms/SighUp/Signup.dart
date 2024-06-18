@@ -4,6 +4,7 @@ import 'package:gp_east_news/UI/Forms/FormComponent%20/Button.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/TextComp.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/Top_Bar.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/inputComp.dart';
+import 'package:gp_east_news/UI/Forms/SighUp/Confirmation.dart';
 
 import '../../colors/colors.dart';
 
@@ -27,7 +28,7 @@ class _SignupState extends State<Signup> {
           child: Column(
             children: [
               const Top_Bar(),
-              TextComp(message: "LET'S CREATE ACCOUNT"),
+              TextComp(message: "LET'S CREATE ACCOUNT", message_color: Colors.black,size: 16),
               inputComp(lableText: 'User Name', sufIcone: Icons.text_fields),
               inputComp(lableText: 'Email', sufIcone: Icons.mail),
               inputComp(lableText: 'Password', sufIcone: Icons.password),
@@ -36,7 +37,9 @@ class _SignupState extends State<Signup> {
                   sufIcone: Icons.confirmation_number),
               Container(
                 margin: const EdgeInsets.only(top: 40),
-                  child: Button(title: 'Sign Up', backgroundColor: primary_color))
+                  child: Button(title: 'Sign Up', backgroundColor: primary_color, onPress: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const Confirmation()));
+                  },))
             ],
           ),
         ),

@@ -2,19 +2,20 @@
 import 'package:flutter/material.dart';
 
 class TextComp extends StatelessWidget {
-  TextComp({super.key, required this.message});
+  TextComp({super.key, required this.message, required this.message_color, required this.size});
 
   String message;
-
+  Color message_color;
+  double size = 16;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:const EdgeInsets.only(top: 60),
       child: Text(
         message,
-        style: const TextStyle(
-            color: Colors.black,
-            fontSize: 16,
+        style: TextStyle(
+            color: message_color,
+            fontSize: size,
             fontFamily: 'Poppins'
         ),
       ),
