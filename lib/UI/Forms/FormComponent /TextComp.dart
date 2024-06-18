@@ -9,16 +9,13 @@ class TextComp extends StatelessWidget {
   double size = 16;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:const EdgeInsets.only(top: 60),
-      child: Text(
+    return  Text(
         message,
         style: TextStyle(
             color: message_color,
             fontSize: size,
             fontFamily: 'Poppins'
         ),
-      ),
     );
   }
 }
