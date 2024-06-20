@@ -33,9 +33,7 @@ class Top_Bar extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 50),
             child: Image(
-              image: AssetImage('assets/Images/logo.png'),
-              height: 99,
-              width: 97,
+              image: AssetImage('assets/logo/logo64.png'),
             ),
           ),
         ],
