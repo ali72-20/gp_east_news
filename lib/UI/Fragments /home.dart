@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/UI/Home/app_bar.dart';
-import 'package:gp_east_news/UI/Home/home_top_bar.dart';
+
 import 'package:gp_east_news/UI/colors/colors.dart';
 
-import 'News_Category_lis.dart';
-import 'bottom_navigation_bar.dart';
+import '../Body/News_Category_lis.dart';
+import '../Body/app_bar.dart';
+import '../Body/home_top_bar.dart';
+
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -44,7 +45,6 @@ class _homeState extends State<home> {
           ),
         ],
       ),
-      bottomNavigationBar: bottom_navigation_bar(),
     );
   }
 }

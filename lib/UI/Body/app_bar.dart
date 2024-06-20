@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:gp_east_news/UI/Home/app_bar_text.dart';
+
 
 import '../colors/colors.dart';
+import 'app_bar_text.dart';
 
 class app_bar extends StatelessWidget {
   const app_bar({super.key});

@@ -1,10 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/TextComp.dart';
 import 'package:gp_east_news/UI/News_category/item_model.dart';
 import 'package:gp_east_news/UI/News_category/items_list.dart';
+import 'package:gp_east_news/UI/Screens/mainScreen.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
-import 'package:gp_east_news/UI/Home/home.dart';
+import 'package:gp_east_news/UI/Fragments%20/home.dart';
 
 class CategoryList extends StatelessWidget {
   CategoryList({super.key});
@@ -55,7 +56,7 @@ class CategoryList extends StatelessWidget {
                 onTap: () {
                   tap = true;
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (_) => const home()));
+                      context, MaterialPageRoute(builder: (_) => main_screen(current_fragmnet_index: 0,)));
                 },
                 child: !tap ? const Icon(
                     Icons.arrow_circle_right,

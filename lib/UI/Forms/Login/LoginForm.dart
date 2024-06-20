@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/Forms/FormComponent%20/Button.dart';
 import 'package:gp_east_news/UI/Forms/SighUp/Signup.dart';
+import 'package:gp_east_news/UI/Screens/mainScreen.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
-import 'package:gp_east_news/UI/Home/home.dart';
+import 'package:gp_east_news/UI/Fragments%20/home.dart';
 
 import '../FormComponent /inputComp.dart';
 
@@ -36,7 +37,7 @@ class _LoginformState extends State<Loginform> {
           ),
           const SizedBox(height: 15),
          Button(title: 'Sign in', backgroundColor: primary_color, onPress: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> const home()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>  main_screen(current_fragmnet_index: 0,)));
          },),
           const SizedBox(height: 16),
           Image.asset('assets/Images/orline.png'),

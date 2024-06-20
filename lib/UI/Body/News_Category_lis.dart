@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/UI/Home/category_item.dart';
+
+import 'category_item.dart';
+
 
 class News_Category_List extends StatelessWidget {
   News_Category_List({super.key});
