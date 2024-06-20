@@ -10,10 +10,7 @@ class saved_fragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-      backgroundColor: primary_color,
-      title: const app_bar(),
-    ),
+      body: Text("saved"),
     );
   }
 }

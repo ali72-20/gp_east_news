@@ -19,13 +19,6 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: primary_color,
-        elevation: 20,
-        title: const app_bar(),
-        centerTitle: true,
-      ),
-
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [

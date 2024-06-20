@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 
+import '../Body/app_bar.dart';
 import '../Fragments /chat_fragment.dart';
 import '../Fragments /home.dart';
 import '../Fragments /saved_fragment.dart';
@@ -31,7 +32,13 @@ class _main_screenState extends State<main_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+      backgroundColor: primary_color,
+      title: const app_bar(),
+    ),
+
       body: body.elementAt(_selectedIndex),
+
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(12),
         decoration: BoxDecoration(
