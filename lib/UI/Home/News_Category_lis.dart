@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/UI/Home/category_item.dart';
 
 class News_Category_List extends StatelessWidget {
   News_Category_List({super.key});
@@ -8,30 +9,23 @@ class News_Category_List extends StatelessWidget {
     'All',
     'Sports',
     'Politics',
-    'Business',
-    'Science',
+     'Business',
+     'Science',
     'Technology'
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-      ),
-      child: ListView.builder(
+    return SizedBox(
+      height: 40,
+       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: news_category.length,
         itemBuilder: (context, index) {
-          return Text(
-            news_category[index],
-            style: const TextStyle(
-                fontSize: 12, fontFamily: 'Poppins', color: Colors.black),
-          );
+          return category_item(Category_name: news_category[index]);
         },
-      ),
+       ),
     );
   }
 }

@@ -25,8 +25,12 @@ class _homeState extends State<home> {
       body: Column(
         children: [
           const home_top_bar(),
-          const SizedBox(height: 16,),
-          News_Category_List(),
+          const SizedBox(height: 8,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            child: News_Category_List(),
+          ),
+
         ],
       ),
     );
