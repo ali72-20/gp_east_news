@@ -39,7 +39,7 @@ class _SplashscreenState extends State<Splashscreen> {
       backgroundColor: const Color(0xff03416E),
       body: Center(
         child: Image.asset(
-          'assets/Images/logo.png',
+          'assets/logo/logo128.png',
         ),
       ),
     );
