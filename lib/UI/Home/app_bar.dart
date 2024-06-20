@@ -9,17 +9,24 @@ class app_bar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: primary_color, borderRadius: const BorderRadius.only(bottomRight: Radius.circular(12), bottomLeft: Radius.circular(12))),
+      decoration: BoxDecoration(
+          color: primary_color,
+          borderRadius: const BorderRadius.only(
+              bottomRight: Radius.circular(12),
+              bottomLeft: Radius.circular(12))),
       alignment: Alignment.center,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           app_bar_text(text: 'E', font: 'FasterOne'),
           app_bar_text(text: 'AST NEWS', font: 'Alatsi'),
-          const SizedBox(width: 4,),
+          const SizedBox(
+            width: 4,
+          ),
           Padding(
-              padding: const EdgeInsets.only(bottom: 16),
-              child: Image.asset('assets/logo/logo32.png'),),
+            padding: const EdgeInsets.only(bottom: 16),
+            child: Image.asset('assets/logo/logo32.png'),
+          ),
         ],
       ),
     );

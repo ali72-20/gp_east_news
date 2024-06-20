@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/Home/app_bar.dart';
 import 'package:gp_east_news/UI/Home/home_top_bar.dart';
@@ -21,16 +21,25 @@ class _homeState extends State<home> {
         backgroundColor: primary_color,
         elevation: 20,
         title: const app_bar(),
+        centerTitle: true,
       ),
-      body: Column(
-        children: [
-          const home_top_bar(),
-          const SizedBox(height: 8,),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            child: News_Category_List(),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          const SliverToBoxAdapter(
+            child: home_top_bar(),
           ),
-
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 8,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: News_Category_List(),
+            ),
+          ),
         ],
       ),
     );
