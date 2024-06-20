@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/UI/Home/app_bar.dart';
 import 'package:gp_east_news/UI/Home/home_top_bar.dart';
@@ -22,7 +23,6 @@ class _homeState extends State<home> {
         title: const app_bar(),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const home_top_bar(),
           const SizedBox(height: 16,),
