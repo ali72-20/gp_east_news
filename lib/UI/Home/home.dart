@@ -5,6 +5,7 @@ import 'package:gp_east_news/UI/Home/home_top_bar.dart';
 import 'package:gp_east_news/UI/colors/colors.dart';
 
 import 'News_Category_lis.dart';
+import 'bottom_navigation_bar.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -23,6 +24,7 @@ class _homeState extends State<home> {
         title: const app_bar(),
         centerTitle: true,
       ),
+
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
@@ -42,6 +44,7 @@ class _homeState extends State<home> {
           ),
         ],
       ),
+      bottomNavigationBar: bottom_navigation_bar(),
     );
   }
 }
