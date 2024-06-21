@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/UI/News/news_list.dart';
 
 import 'package:gp_east_news/UI/colors/colors.dart';
 
@@ -36,6 +37,7 @@ class _homeState extends State<home> {
               child: News_Category_List(),
             ),
           ),
+          news_list(),
         ],
       ),
     );
