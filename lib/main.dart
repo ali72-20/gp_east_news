@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/UI/ConstantKeies/ConstKey.dart';
+import 'package:gp_east_news/presentation_layer/UI/ConstantKeies/ConstKey.dart';
+import 'package:gp_east_news/presentation_layer/UI/Screens/SplashScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'UI/Screens/SplashScreen.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
