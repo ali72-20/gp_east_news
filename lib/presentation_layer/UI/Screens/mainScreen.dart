@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/presentation_layer/UI/Body/category_item.dart';
-import 'package:gp_east_news/presentation_layer/UI/Screens/tap_item.dart';
+
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -39,46 +38,48 @@ class _main_screenState extends State<main_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const app_bar(),
+      appBar: AppBar(
+        backgroundColor: primary_color,
+        title: const app_bar(),
+      ),
+      body: body.elementAt(_selectedIndex),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.all(4),
+        decoration:  BoxDecoration(
+          border: Border.all(color: primary_color),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          color: Colors.white,
         ),
-        body: body.elementAt(_selectedIndex),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-              border: Border.all(color: primary_color),
-              borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(20), topLeft: Radius.circular(20)),
-              color: Colors.white),
-          child: SalomonBottomBar(
-            backgroundColor: Colors.transparent,
-            items: <SalomonBottomBarItem>[
-              SalomonBottomBarItem(
-                  icon: const Icon(Icons.home),
-                  title: bottom_nav_item(
-                    title: "Home",
-                  )),
-              SalomonBottomBarItem(
-                  icon: const Icon(Icons.save),
-                  title: bottom_nav_item(
-                    title: "Saved",
-                  )),
-              SalomonBottomBarItem(
-                  icon: const Icon(Icons.chat),
-                  title: bottom_nav_item(
-                    title: "Room",
-                  )),
-              SalomonBottomBarItem(
-                  icon: const Icon(Icons.settings),
-                  title: bottom_nav_item(
-                    title: "Settings",
-                  )),
-            ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: primary_color,
-            unselectedItemColor: Colors.black,
-            onTap: _onItemTapped,
-          ),
+        child: SalomonBottomBar(
+          backgroundColor: Colors.transparent,
+          items: <SalomonBottomBarItem>[
+            SalomonBottomBarItem(
+                icon: const Icon(Icons.home),
+                title: bottom_nav_item(
+                  title: "Home",
+                )),
+            SalomonBottomBarItem(
+                icon: const Icon(Icons.save),
+                title: bottom_nav_item(
+                  title: "Saved",
+                )),
+            SalomonBottomBarItem(
+                icon: const Icon(Icons.chat),
+                title: bottom_nav_item(
+                  title: "Room",
+                )),
+            SalomonBottomBarItem(
+                icon: const Icon(Icons.settings),
+                title: bottom_nav_item(
+                  title: "Settings",
+                )),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: primary_color,
+          unselectedItemColor: Colors.black,
+          onTap: _onItemTapped,
         ),
+      ),
     );
   }
 }

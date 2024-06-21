@@ -11,7 +11,7 @@ class tap_item extends StatelessWidget {
     return Text(
       title,
       style: const TextStyle(
-          fontFamily: 'Poppins', fontSize: 16,),
+          fontFamily: 'Poppins', fontSize: 12,),
     );
   }
 }

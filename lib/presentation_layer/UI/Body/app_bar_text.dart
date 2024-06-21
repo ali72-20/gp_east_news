@@ -12,7 +12,7 @@ class app_bar_text extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(fontFamily: font, fontSize: 24, color: primary_color),
+      style: TextStyle(fontFamily: font, fontSize: 24, color: Colors.white),
     );
   }
 }
