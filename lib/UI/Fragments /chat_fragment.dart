@@ -10,7 +10,28 @@ class chat_fragment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body:  Text("chat")
-    );
+        body: Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: primary_color),
+            onPressed: () {},
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(
+            width: 8,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: primary_color,
+            ),
+              onPressed: () {}, child: Icon(Icons.start, color: Colors.white))
+        ],
+      ),
+    ));
   }
 }

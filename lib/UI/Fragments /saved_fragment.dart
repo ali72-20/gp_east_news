@@ -9,8 +9,12 @@ class saved_fragment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text("saved"),
+    return const Scaffold(
+      body:  Center(
+          child: Text(
+        "No items saved",
+        style: TextStyle(fontSize: 32, fontFamily: 'Poppins'),
+      )),
     );
   }
 }
