@@ -12,16 +12,15 @@ class inputComp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 32.0, left: 32.0,top: 24),
-      child: TextFormField(
+      child: TextField(
         style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
-        smartDashesType: SmartDashesType.enabled,
+        // smartDashesType: SmartDashesType.enabled,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           labelText: lableText,
           labelStyle: TextStyle(
             color: gray,
             fontFamily: 'Poppins'
-
           ),
           suffixIcon: Icon(
             sufIcone,
