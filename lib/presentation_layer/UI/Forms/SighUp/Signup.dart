@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/presentation_layer/UI/Forms/Login/LogIn.dart';
 import '../../colors/colors.dart';
 import '../FormComponent /Button.dart';
 import '../FormComponent /TextComp.dart';
@@ -40,17 +42,44 @@ class _SignupState extends State<Signup> {
                 lableText: 'Confirm Password',
                 sufIcone: Icons.confirmation_number),
             Container(
-                margin: const EdgeInsets.only(top: 40),
-                child: Button(
-                  title: 'Sign Up',
-                  backgroundColor: primary_color,
-                  onPress: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const Confirmation()));
-                  },
-                ))
+              margin: const EdgeInsets.only(top: 40),
+              child: Button(
+                title: 'Sign Up',
+                backgroundColor: primary_color,
+                onPress: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (_) => const Confirmation()));
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            RichText(
+              text: TextSpan(
+                text: "You have an account ?",
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Poppins',
+                ),
+                children: [
+                  TextSpan(
+                    text: " Login",
+                    style: TextStyle(
+                      color: primary_color,
+                      fontFamily: 'Poppins',
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()));
+                      },
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
