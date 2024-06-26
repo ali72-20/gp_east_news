@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:like_button/like_button.dart';
 import 'interaction_component.dart';
 
 class intreaction extends StatefulWidget {
@@ -17,8 +18,12 @@ class _intreactionState extends State<intreaction> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          interaction_component(
-           act_icon: Icons.favorite,
+          LikeButton(
+            size: 24,
+            likeBuilder: (isLiked){
+               return isLiked?
+                   const Icon(Icons.favorite, color: Colors.red,): const Icon(Icons.favorite);
+            }
           ),
           interaction_component(act_icon: Icons.comment),
           interaction_component(act_icon: Icons.save),

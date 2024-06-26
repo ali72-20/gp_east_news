@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../Screens/mainScreen.dart';
 import '../../colors/colors.dart';
@@ -34,9 +35,18 @@ class _LoginformState extends State<Loginform> {
             ),
           ),
           const SizedBox(height: 15),
-         Button(title: 'Sign in', backgroundColor: primary_color, onPress: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>  main_screen(current_fragmnet_index: 0,)));
-         },),
+          Button(
+            title: 'Sign in',
+            backgroundColor: primary_color,
+            onPress: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => main_screen(
+                            current_fragmnet_index: 0,
+                          )));
+            },
+          ),
           const SizedBox(height: 16),
           Image.asset('assets/Images/orline.png'),
           const SizedBox(height: 16),
@@ -67,28 +77,26 @@ class _LoginformState extends State<Loginform> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 40.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          const SizedBox(
+            height: 24,
+          ),
+          RichText(
+            text: TextSpan(
+              text: "Don't have an account?",
+              style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
               children: [
-                const Text(
-                  "Don’t have an account?",
-                  style: TextStyle(
-                      color: Colors.black, fontSize: 16, fontFamily: "Poppins"),
-                ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> const Signup()));
-                  },
-                    child: Text(
-                  "Signup",
-                  style: TextStyle(
-                      color: primary_color, fontSize: 16, fontFamily: "Poppins"),
-                ))
+                TextSpan(
+                    text: " Signup",
+                    style:
+                        TextStyle(color: primary_color, fontFamily: 'Poppins'),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => const Signup()));
+                      })
               ],
             ),
-          )
+          ),
         ],
       ),
     );
