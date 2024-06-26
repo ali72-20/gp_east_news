@@ -15,26 +15,28 @@ class Confirmation extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(backgroundColor: primary_color,),
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Top_Bar(),
-            const SizedBox(height: 48,),
-            TextComp(message: "THE CONFIRMATION MAIL HAS BEEN SENT",
-              message_color: Colors.black,
-              size: 13,),
-            const SizedBox(height: 48,),
-            TextComp(message: "Please Enter The 6-digits code",
-                message_color: gray,
-                size: 12),
-            const SizedBox(height: 32,),
-            const ConfirmationCodeInput(),
-            const SizedBox(height: 32),
-            Button(title: "Confirm", backgroundColor: primary_color, onPress: () {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (_) => CategoryList()));
-            },),
-          ],),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              const Top_Bar(),
+              const SizedBox(height: 48,),
+              TextComp(message: "THE CONFIRMATION MAIL HAS BEEN SENT",
+                message_color: Colors.black,
+                size: 13,),
+              const SizedBox(height: 48,),
+              TextComp(message: "Please Enter The 6-digits code",
+                  message_color: gray,
+                  size: 12),
+              const SizedBox(height: 32,),
+              const ConfirmationCodeInput(),
+              const SizedBox(height: 32),
+              Button(title: "Confirm", backgroundColor: primary_color, onPress: () {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => CategoryList()));
+              },),
+            ],),
+        ),
       ),
     );
   }

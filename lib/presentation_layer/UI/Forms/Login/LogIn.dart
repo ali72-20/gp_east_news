@@ -20,17 +20,16 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset : false,
       appBar: AppBar(
         backgroundColor: primary_color,
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             const Top_Bar(),
             TextButton(
               onPressed: () async {
-                final   pref = await SharedPreferences.getInstance();
+                final pref = await SharedPreferences.getInstance();
                 pref.setBool(constKey.onBoaring, false);
               },
               child: Container(
@@ -42,7 +41,6 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-
             Loginform(),
           ],
         ),
