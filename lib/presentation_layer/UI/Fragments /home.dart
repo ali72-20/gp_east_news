@@ -71,7 +71,7 @@ class _homeState extends State<home> {
               CustomScrollView(
                 physics: const BouncingScrollPhysics(),
                 slivers: [
-                  const SliverToBoxAdapter(
+                   SliverToBoxAdapter(
                     child: home_top_bar(),
                   ),
                   news_list(),

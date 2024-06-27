@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
 
 
 import '../Profile/user_profile.dart';
 import '../colors/colors.dart';
 
 class home_top_bar extends StatelessWidget {
-  const home_top_bar({super.key});
-
+  home_top_bar({super.key});
+  userModel user = new userModel(userName: "Ali", Mail: "ali@gmial");
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +26,7 @@ class home_top_bar extends StatelessWidget {
           GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const user_profile()));
+                    MaterialPageRoute(builder: (_) => user_profile(user_model: user)));
               },
               child: Image.asset('assets/Images/user.png')),
           const SizedBox(

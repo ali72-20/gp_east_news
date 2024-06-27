@@ -23,6 +23,11 @@ class _intreactionState extends State<intreaction> {
             likeBuilder: (isLiked){
                return isLiked?
                    const Icon(Icons.favorite, color: Colors.red,): const Icon(Icons.favorite);
+            },
+            countBuilder: (likeCounter, isLiked, text){
+              return Text(text, style: TextStyle(
+                color: isLiked ? Colors.red : Colors.grey,
+              ),);
             }
           ),
           interaction_component(act_icon: Icons.comment),
