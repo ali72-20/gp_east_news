@@ -5,6 +5,7 @@ import 'package:gp_east_news/presentation_layer/UI/Fragments%20/Fragement_body.d
 import '../Body/home_top_bar.dart';
 import '../News/news_list.dart';
 import '../Body/tap_item.dart';
+import '../Profile/userModel.dart';
 import '../colors/colors.dart';
 
 class home extends StatefulWidget {

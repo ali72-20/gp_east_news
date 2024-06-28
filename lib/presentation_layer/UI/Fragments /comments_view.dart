@@ -12,7 +12,7 @@ class commentView extends StatefulWidget {
 
 class _commentViewState extends State<commentView> {
   final comment = TextEditingController();
-
+  List<String>? comment_Text;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -36,7 +36,7 @@ class _commentViewState extends State<commentView> {
             ),
             Positioned(
               top: 16,
-              left: 140,
+              left: 145,
               child: Text(
                 "Comments",
                 style: TextStyle(color: primary_color, fontFamily: 'Poppins'),
@@ -58,7 +58,7 @@ class _commentViewState extends State<commentView> {
                       width: 260,
                       child: TextField(
                         controller: comment,
-                        maxLines: 4,
+                        // maxLines: 4,
                         decoration: const InputDecoration(
                             hintText: 'Add a comment',
                             border: InputBorder.none),

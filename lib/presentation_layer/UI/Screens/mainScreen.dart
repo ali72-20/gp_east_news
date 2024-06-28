@@ -7,7 +7,7 @@ import '../Body/app_bar.dart';
 import '../Fragments /chat_fragment.dart';
 import '../Fragments /home.dart';
 import '../Fragments /saved_fragment.dart';
-import '../Fragments /setting_fragment.dart';
+import '../Fragments /Settings/setting_fragment.dart';
 import '../colors/colors.dart';
 import 'bottom_nav_item.dart';
 
