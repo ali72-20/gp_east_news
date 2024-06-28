@@ -19,6 +19,11 @@ class _password_inputState extends State<password_input> {
     return Padding(
       padding: const EdgeInsets.only(right: 32.0, left: 32.0, top: 24),
       child: TextFormField(
+        validator: (value){
+          if(value == null || value.isEmpty){
+            return "Password is Required";
+          }
+        },
         obscureText: widget.model.is_password,
         style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
         // smartDashesType: SmartDashesType.enabled,

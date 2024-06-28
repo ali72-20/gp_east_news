@@ -20,14 +20,11 @@ class _ButtonState extends State<Button> {
     return  Container(
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 32),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: widget.backgroundColor ,
-          elevation: 12.0,
-        ),
+      child: MaterialButton(
+        color: primary_color,
         onPressed: widget.onPress,
         child:  Padding(
-          padding: EdgeInsets.only(top: 12, bottom: 12),
+          padding: const EdgeInsets.only(top: 12, bottom: 12),
           child: Text(
            widget.title,
             style: const TextStyle(
