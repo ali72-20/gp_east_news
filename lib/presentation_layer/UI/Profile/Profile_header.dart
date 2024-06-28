@@ -30,13 +30,14 @@ class _profile_headerState extends State<profile_header> {
                 : widget.user_model.img!),
           ),
           const SizedBox(
-            height: 16,
+            height: 8,
           ),
-          Text(
-            widget.user_model.userName,
-            style: const TextStyle(
-                color: Colors.white, fontFamily: 'Poppins'),
-          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
+              const Icon(Icons.verified_rounded, color: Colors.blue,)
+          ],),
           Container(
             alignment: Alignment.bottomCenter,
             child: OutlinedButton(
@@ -46,7 +47,7 @@ class _profile_headerState extends State<profile_header> {
                   followIcon == Icons.add ? Icons.check : Icons.add;
                 });
               },
-              style: ButtonStyle(),
+              style: const ButtonStyle(),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

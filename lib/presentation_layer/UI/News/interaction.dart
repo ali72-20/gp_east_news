@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
-import 'interaction_component.dart';
-
 class intreaction extends StatefulWidget {
   const intreaction({super.key});
 
@@ -11,6 +9,7 @@ class intreaction extends StatefulWidget {
 }
 
 class _intreactionState extends State<intreaction> {
+  IconData bookMark = Icons.bookmark_add;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,8 +29,12 @@ class _intreactionState extends State<intreaction> {
               ),);
             }
           ),
-          interaction_component(act_icon: Icons.comment),
-          interaction_component(act_icon: Icons.bookmark),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.add_comment)),
+          IconButton(onPressed: (){
+            setState(() {
+              bookMark = bookMark == Icons.bookmark_add ? Icons.bookmark_added : Icons.bookmark_add;
+            });
+          }, icon:  Icon(bookMark)),
         ],
       ),
     );
