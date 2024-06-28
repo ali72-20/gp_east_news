@@ -31,7 +31,7 @@ class _intreactionState extends State<intreaction> {
             }
           ),
           interaction_component(act_icon: Icons.comment),
-          interaction_component(act_icon: Icons.save),
+          interaction_component(act_icon: Icons.bookmark),
         ],
       ),
     );

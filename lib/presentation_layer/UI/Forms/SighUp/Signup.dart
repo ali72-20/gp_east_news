@@ -4,7 +4,9 @@ import '../../colors/colors.dart';
 import '../FormComponent /Button.dart';
 import '../FormComponent /TextComp.dart';
 import '../FormComponent /Top_Bar.dart';
-import '../FormComponent /inputComp.dart';
+import '../FormComponent /TextInputComp.dart';
+import '../FormComponent /input_compoenet_model.dart';
+import '../FormComponent /password_input.dart';
 import 'Confirmation.dart';
 
 class Signup extends StatefulWidget {
@@ -29,12 +31,20 @@ class _SignupState extends State<Signup> {
               const Top_Bar(),
               const SizedBox(height: 48,),
               TextComp(message: "LET'S CREATE ACCOUNT", message_color: Colors.black,size: 16),
-              inputComp(lableText: 'User Name', sufIcone: Icons.text_fields),
-              inputComp(lableText: 'Email', sufIcone: Icons.mail),
-              inputComp(lableText: 'Password', sufIcone: Icons.password),
-              inputComp(
-                  lableText: 'Confirm Password',
-                  sufIcone: Icons.confirmation_number),
+              TextInputComp(lableText: 'User Name', sufIcone: Icons.text_fields),
+              TextInputComp(lableText: 'Email', sufIcone: Icons.mail),
+              password_input(
+                model: input_componenet_model(
+                    lablText: "password",
+                    suffixIcon: Icons.visibility_off,
+                    is_password: true),
+              ),
+              password_input(
+                model: input_componenet_model(
+                    lablText: "Confirm password",
+                    suffixIcon: Icons.visibility_off,
+                    is_password: true),
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 40),
                   child: Button(title: 'Sign Up', backgroundColor: primary_color, onPress: (){

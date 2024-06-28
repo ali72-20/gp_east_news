@@ -1,9 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/presentation_layer/UI/Forms/FormComponent%20/input_compoenet_model.dart';
+import 'package:gp_east_news/presentation_layer/UI/Forms/FormComponent%20/password_input.dart';
 import '../../Screens/mainScreen.dart';
 import '../../colors/colors.dart';
 import '../FormComponent /Button.dart';
-import '../FormComponent /inputComp.dart';
+import '../FormComponent /TextInputComp.dart';
 import '../SighUp/Signup.dart';
 
 class Loginform extends StatefulWidget {
@@ -20,8 +22,13 @@ class _LoginformState extends State<Loginform> {
       padding: const EdgeInsets.only(top: 8.0),
       child: Column(
         children: [
-          inputComp(lableText: "Email", sufIcone: Icons.mail),
-          inputComp(lableText: "Password", sufIcone: Icons.password),
+          TextInputComp(lableText: "Email", sufIcone: Icons.mail),
+          password_input(
+            model: input_componenet_model(
+                lablText: "password",
+                suffixIcon: Icons.visibility_off,
+                is_password: true),
+          ),
           Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.only(right: 32, top: 4),
@@ -83,7 +90,8 @@ class _LoginformState extends State<Loginform> {
           RichText(
             text: TextSpan(
               text: "Don't have an account?",
-              style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+              style:
+                  const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
               children: [
                 TextSpan(
                     text: " Signup",
@@ -91,8 +99,10 @@ class _LoginformState extends State<Loginform> {
                         TextStyle(color: primary_color, fontFamily: 'Poppins'),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => const Signup()));
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Signup()));
                       })
               ],
             ),
