@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/presentation_layer/UI/News/interaction.dart';
+import 'package:gp_east_news/presentation_layer/UI/News/Interactions/interaction.dart';
 import 'package:gp_east_news/presentation_layer/UI/News/news_image.dart';
 import 'package:gp_east_news/presentation_layer/UI/News/news_model.dart';
 import 'package:gp_east_news/presentation_layer/UI/colors/colors.dart';
 
 class news_details extends StatelessWidget {
-  news_details({super.key, required this.item});
+  news_details({super.key, required this.item, this.is_comment});
 
   news_model item;
-
+  bool? is_comment;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class news_details extends StatelessWidget {
             ),
             pinned: true,
             floating: true,
-            expandedHeight: 160,
+            expandedHeight: 170,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 item.title,
@@ -46,12 +46,12 @@ class news_details extends StatelessWidget {
                 color: primary_color,
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
               ),
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Text('gfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijkl', style: const TextStyle(color: Colors.white),),
+              child: const SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Text('gfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijkl', style: TextStyle(color: Colors.white),),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

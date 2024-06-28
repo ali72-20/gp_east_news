@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/presentation_layer/UI/News/news_details.dart';
 import '../colors/colors.dart';
-import 'interaction.dart';
+import 'Interactions/interaction.dart';
 import 'news_image.dart';
 import 'news_model.dart';
 

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
 
@@ -19,47 +19,48 @@ class _profile_headerState extends State<profile_header> {
       backgroundColor: primary_color,
       elevation: 16,
       expandedHeight: 204,
-      stretch: true,
-      flexibleSpace: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(widget.user_model.img == null
-                ? 'assets/Images/user.png'
-                : widget.user_model.img!),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
-              const Icon(Icons.verified_rounded, color: Colors.blue,)
-            ],),
-          Container(
-            alignment: Alignment.bottomCenter,
-            child: OutlinedButton(
-              onPressed: () {
-                setState(() {
-                  followIcon =
-                  followIcon == Icons.add ? Icons.check : Icons.add;
-                });
-              },
-              style: const ButtonStyle(),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    "Follow",
-                    style: TextStyle(
-                        color: Colors.white, fontFamily: 'Poppins'),
-                  ),
-                  Icon(
-                    followIcon,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
+      flexibleSpace: Container(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(widget.user_model.img == null
+                  ? 'assets/Images/user.png'
+                  : widget.user_model.img!),
             ),
-          )
-        ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
+                const Icon(Icons.verified_rounded, color: Colors.blue,)
+              ],),
+            Container(
+              alignment: Alignment.bottomCenter,
+              child: OutlinedButton(
+                onPressed: () {
+                  setState(() {
+                    followIcon =
+                    followIcon == Icons.add ? Icons.check : Icons.add;
+                  });
+                },
+                style: const ButtonStyle(),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Text(
+                      "Follow",
+                      style: TextStyle(
+                          color: Colors.white, fontFamily: 'Poppins'),
+                    ),
+                    Icon(
+                      followIcon,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

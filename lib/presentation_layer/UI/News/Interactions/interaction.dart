@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gp_east_news/presentation_layer/UI/Fragments%20/saved_fragment.dart';
+import 'package:gp_east_news/presentation_layer/UI/Fragments%20/comments_view.dart';
 import 'package:gp_east_news/presentation_layer/UI/News/news_model.dart';
-import 'package:like_button/like_button.dart';
 
 class intreaction extends StatefulWidget {
   intreaction({super.key, required this.model});
@@ -43,11 +44,30 @@ class _intreactionState extends State<intreaction> {
               )
             ],
           ),
-
           Row(
             children: [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showBottomSheet(
+                    backgroundColor: Colors.transparent,
+                    context: context,
+                    builder: (context) {
+                      return Padding(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom
+                        ),
+                        child: DraggableScrollableSheet(
+                           maxChildSize: .5,
+                          initialChildSize: .5,
+                          minChildSize: .2,
+                          builder: (context, scrollController){
+                             return const commentView();
+                          },
+                        ),
+                      );
+                    },
+                  );
+                },
                 icon: const Icon(Icons.add_comment),
               ),
               Text(widget.model.comments.toString())
@@ -57,7 +77,19 @@ class _intreactionState extends State<intreaction> {
             onPressed: () {
               setState(() {
                 widget.model.isSaved = !widget.model.isSaved;
+                Fluttertoast.showToast(
+                    msg: "Item saved",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    timeInSecForIosWeb: 1,
+                    textColor: Colors.white,
+                    fontSize: 16.0);
               });
+              if (widget.model.isSaved) {
+                GlobalsavedNews?.add(widget.model);
+              } else {
+                GlobalsavedNews?.remove(widget.model);
+              }
             },
             icon: widget.model.isSaved
                 ? const Icon(
