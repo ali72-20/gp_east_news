@@ -19,25 +19,20 @@ class _profile_headerState extends State<profile_header> {
       backgroundColor: primary_color,
       elevation: 16,
       expandedHeight: 204,
-      floating: true,
-      snap: true,
-      flexibleSpace: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      stretch: true,
+      flexibleSpace: Stack(
         children: [
           Positioned.fill(
             child: Image.asset(widget.user_model.img == null
                 ? 'assets/Images/user.png'
                 : widget.user_model.img!),
           ),
-          const SizedBox(
-            height: 8,
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
+              Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
               const Icon(Icons.verified_rounded, color: Colors.blue,)
-          ],),
+            ],),
           Container(
             alignment: Alignment.bottomCenter,
             child: OutlinedButton(
