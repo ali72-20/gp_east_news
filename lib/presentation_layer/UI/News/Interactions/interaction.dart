@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gp_east_news/presentation_layer/UI/Fragments%20/saved_fragment.dart';
 import 'package:gp_east_news/presentation_layer/UI/Fragments%20/comments_view.dart';
 import 'package:gp_east_news/presentation_layer/UI/News/news_model.dart';
+import 'package:gp_east_news/presentation_layer/UI/colors/colors.dart';
 
 class intreaction extends StatefulWidget {
   intreaction({super.key, required this.model});
@@ -49,19 +50,19 @@ class _intreactionState extends State<intreaction> {
               IconButton(
                 onPressed: () {
                   showBottomSheet(
+                    elevation: 16,
                     backgroundColor: Colors.transparent,
                     context: context,
                     builder: (context) {
                       return Padding(
                         padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom
-                        ),
+                            bottom: MediaQuery.of(context).viewInsets.bottom),
                         child: DraggableScrollableSheet(
-                           maxChildSize: .5,
+                          maxChildSize: .5,
                           initialChildSize: .5,
                           minChildSize: .2,
-                          builder: (context, scrollController){
-                             return const commentView();
+                          builder: (context, scrollController) {
+                            return const commentView();
                           },
                         ),
                       );
@@ -77,14 +78,26 @@ class _intreactionState extends State<intreaction> {
             onPressed: () {
               setState(() {
                 widget.model.isSaved = !widget.model.isSaved;
-                Fluttertoast.showToast(
-                    msg: "Item saved",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    timeInSecForIosWeb: 1,
-                    textColor: Colors.white,
-                    fontSize: 16.0);
-              });
+                if (widget.model.isSaved) {
+                  Fluttertoast.showToast(
+                      backgroundColor: primary_color,
+                      msg: "Item saved",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 2,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                }else{
+                  Fluttertoast.showToast(
+                      backgroundColor: primary_color,
+                      msg: "Item Removed",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 2,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                }
+              },);
               if (widget.model.isSaved) {
                 GlobalsavedNews?.add(widget.model);
               } else {
