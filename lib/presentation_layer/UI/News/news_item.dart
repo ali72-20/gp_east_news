@@ -12,37 +12,30 @@ class news_item extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => news_details(item: item),
+    return Container(
+      margin: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: primary_color),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+      ),
+      child: Column(
+        children: [
+          GestureDetector(onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => news_details(item: item),));
+          }, child: news_image(image: item.image)),
+          const SizedBox(
+            height: 12,
           ),
-        );
-      },
-      child: Container(
-        margin: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: primary_color),
-          borderRadius: const BorderRadius.all(Radius.circular(12)),
-        ),
-        child: Column(
-          children: [
-            news_image(image: item.image),
-            const SizedBox(
-              height: 12,
-            ),
-            const Text(
-              "This is the description of the this news",
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-              style: TextStyle(color: Colors.black),
-            ),
-            intreaction(),
-          ],
-        ),
+          const Text(
+            "This is the description of the this news",
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            style: TextStyle(color: Colors.black),
+          ),
+          intreaction(model: item,),
+        ],
       ),
     );
   }

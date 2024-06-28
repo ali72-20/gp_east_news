@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/presentation_layer/UI/Fragments%20/Fragement_body.dart';
 
 import '../Body/home_top_bar.dart';
 import '../News/news_list.dart';
@@ -66,22 +67,14 @@ class _homeState extends State<home> {
               ),
             ),
           ),
-          body: TabBarView(
+          body: const TabBarView(
             children: [
-              CustomScrollView(
-                physics: const BouncingScrollPhysics(),
-                slivers: [
-                   SliverToBoxAdapter(
-                    child: home_top_bar(),
-                  ),
-                  news_list(),
-                ],
-              ),
-              Text("Sports"),
-              Text("Politics"),
-              Text("Busniss"),
-              Text("Science"),
-              Text("Tecnology"),
+             FragementBody(),
+             FragementBody(),
+             FragementBody(),
+             FragementBody(),
+             FragementBody(),
+             FragementBody(),
             ],
           )),
     );

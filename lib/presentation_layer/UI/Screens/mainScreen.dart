@@ -78,6 +78,7 @@ class _main_screenState extends State<main_screen> {
           selectedItemColor: primary_color,
           unselectedItemColor: Colors.black,
           onTap: _onItemTapped,
+          curve: Curves.easeInOutCubicEmphasized,
         ),
       ),
     );
