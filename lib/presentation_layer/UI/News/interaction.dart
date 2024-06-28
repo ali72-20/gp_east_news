@@ -22,19 +22,37 @@ class _intreactionState extends State<intreaction> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          IconButton(
-              onPressed: () {
-                setState(() {
-                  widget.model.isLiked = !widget.model.isLiked;
-                });
-              },
-              icon: widget.model.isLiked
-                  ? const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
-                  : const Icon(Icons.favorite)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.add_comment)),
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    widget.model.isLiked = !widget.model.isLiked;
+                    widget.model.likes += widget.model.isLiked ? 1 : -1;
+                  });
+                },
+                icon: widget.model.isLiked
+                    ? const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      )
+                    : const Icon(Icons.favorite),
+              ),
+              Text(
+                widget.model.likes.toString(),
+              )
+            ],
+          ),
+
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add_comment),
+              ),
+              Text(widget.model.comments.toString())
+            ],
+          ),
           IconButton(
             onPressed: () {
               setState(() {
