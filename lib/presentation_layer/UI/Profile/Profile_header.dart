@@ -1,12 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
 
+import '../Screens/mainScreen.dart';
 import '../colors/colors.dart';
 
 class profile_header extends StatefulWidget {
-   profile_header({super.key, required this.user_model});
-  final userModel user_model;
+   profile_header({super.key});
   @override
   State<profile_header> createState() => _profile_headerState();
 }
@@ -19,49 +20,71 @@ class _profile_headerState extends State<profile_header> {
       backgroundColor: primary_color,
       elevation: 16,
       expandedHeight: 204,
-      flexibleSpace: Container(
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: Image.asset(widget.user_model.img == null
-                  ? 'assets/Images/user.png'
-                  : widget.user_model.img!),
-            ),
-            Row(
+      flexibleSpace: Stack(
+        children: [
+          Positioned.fill(
+            child: Image.asset(user_model.img == null
+                ? 'assets/Images/user.png'
+                : user_model.img!),
+          ),
+          Positioned(
+            top: 150,
+            left: MediaQuery.of(context).size.width / 2 - 64,
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("@${widget.user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
+                Text("@${user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
                 const Icon(Icons.verified_rounded, color: Colors.blue,)
               ],),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: OutlinedButton(
-                onPressed: () {
-                  setState(() {
-                    followIcon =
-                    followIcon == Icons.add ? Icons.check : Icons.add;
-                  });
-                },
-                style: const ButtonStyle(),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Text(
-                      "Follow",
-                      style: TextStyle(
-                          color: Colors.white, fontFamily: 'Poppins'),
-                    ),
-                    Icon(
-                      followIcon,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: OutlinedButton(
+              onPressed: () {
+                setState(() {
+                  followIcon =
+                  followIcon == Icons.add ? Icons.check : Icons.add;
+                });
+                if(followIcon ==Icons.check ){
+                  Fluttertoast.showToast(
+                      backgroundColor: primary_color,
+                      msg: "You now following ${user_model.userName}",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 2,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                }else{
+                  Fluttertoast.showToast(
+                      backgroundColor: primary_color,
+                      msg: "You now not following ${user_model.userName}",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 2,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                }
+              },
+              style: const ButtonStyle(),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    "Follow",
+                    style: TextStyle(
+                        color: Colors.white, fontFamily: 'Poppins'),
+                  ),
+                  Icon(
+                    followIcon,
+                    color: Colors.white,
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          ),
+        ],
       ),
+
     );
   }
 }

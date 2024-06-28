@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/presentation_layer/UI/Screens/mainScreen.dart';
 
 class Profile_body extends StatelessWidget {
-   Profile_body({super.key, required this.user_mail});
-  String user_mail;
+   Profile_body({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +22,7 @@ class Profile_body extends StatelessWidget {
               readOnly: true,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: user_mail,
+                  hintText: user_model.Mail,
                   suffixIcon: const Icon(Icons.mail)
               ),
             ),

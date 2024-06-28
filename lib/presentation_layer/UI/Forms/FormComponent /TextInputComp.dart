@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gp_east_news/presentation_layer/UI/Screens/mainScreen.dart';
 
 import '../../colors/colors.dart';
 
@@ -15,6 +16,10 @@ class TextInputComp extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 32.0, left: 32.0, top: 24),
       child: TextFormField(
+        onFieldSubmitted: (value){
+          user_model.Mail = value;
+          user_model.userName = value;
+        },
         validator: (value) {
           if (value == null || value.isEmpty) {
             return "The $lableText is Required";

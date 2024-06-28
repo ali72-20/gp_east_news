@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import '../Body/home_top_bar.dart';
+
 import '../News/news_list.dart';
 
 class FragementBody extends StatefulWidget {
@@ -13,14 +14,13 @@ class FragementBody extends StatefulWidget {
 class _FragementBodyState extends State<FragementBody> {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverToBoxAdapter(
-          child: home_top_bar(),
-        ),
-        news_list(),
-      ],
+    return Scaffold(
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          news_list(),
+        ],
+      ),
     );
   }
 }

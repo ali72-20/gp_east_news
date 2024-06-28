@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
+import 'package:gp_east_news/presentation_layer/UI/Profile/user_profile.dart';
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
@@ -10,6 +11,8 @@ import '../Fragments /saved_fragment.dart';
 import '../Fragments /Settings/setting_fragment.dart';
 import '../colors/colors.dart';
 import 'bottom_nav_item.dart';
+
+
 
 class main_screen extends StatefulWidget {
   main_screen({super.key, required this.current_fragmnet_index});
@@ -39,13 +42,24 @@ class _main_screenState extends State<main_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => user_profile(),
+                ),
+              );
+            },
+            child: Image.asset('assets/Images/user.png')),
         backgroundColor: primary_color,
         title: const app_bar(),
+        actions: const [Icon(Icons.notifications, color: Colors.white)],
       ),
       body: body.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(4),
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           border: Border.all(color: primary_color),
           borderRadius: const BorderRadius.all(Radius.circular(8)),
           color: Colors.white,
@@ -84,3 +98,5 @@ class _main_screenState extends State<main_screen> {
     );
   }
 }
+
+userModel user_model = userModel(userName: 'userName ', Mail: "Mail");

@@ -7,10 +7,7 @@ import 'Profile_body.dart';
 import 'Profile_header.dart';
 
 class user_profile extends StatelessWidget {
-  user_profile({super.key, required this.user_model});
-
-  userModel user_model;
-
+  user_profile({super.key,});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +16,10 @@ class user_profile extends StatelessWidget {
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return [
               profile_header(
-                user_model: user_model,
               )
             ];
           },
           body: Profile_body(
-            user_mail: user_model.Mail,
           )),
     );
   }
