@@ -1,5 +1,5 @@
 import 'package:flutter/src/material/tabs.dart';
-import 'tap_item.dart';
+import 'widgets/tap_item.dart';
 class TabsList{
   static List<Tab> list = [
     Tab(

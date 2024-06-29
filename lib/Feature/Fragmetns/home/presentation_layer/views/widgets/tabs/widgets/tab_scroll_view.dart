@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../colors/colors.dart';
-import 'Tabs_list.dart';
+import '../../../../../../../../colors/colors.dart';
+import '../Tabs_list.dart';
 
 class tabScrollView extends StatelessWidget {
   const tabScrollView({super.key});

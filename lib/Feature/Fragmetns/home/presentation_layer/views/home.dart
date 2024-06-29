@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/Tabs_list.dart';
-import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/tab_scroll_view.dart';
+import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/tabs/Tabs_list.dart';
+import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/tabs/widgets/tab_scroll_view.dart';
 import 'package:gp_east_news/Feature/Fragmetns/Fragement_body.dart';
 import '../../../../../colors/colors.dart';
-import 'widgets/tap_item.dart';
+import 'widgets/tabs/widgets/tap_item.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -16,7 +16,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 6,
+      length: 7,
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -27,6 +27,7 @@ class _homeState extends State<home> {
           ),
           body: const TabBarView(
             children: [
+              FragementBody(),
               FragementBody(),
               FragementBody(),
               FragementBody(),

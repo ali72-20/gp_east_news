@@ -3,7 +3,7 @@ import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/us
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import '../../../../colors/colors.dart';
-import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar.dart';
+import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar/app_bar.dart';
 import '../../../Fragmetns/home/presentation_layer/views/home.dart';
 import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
