@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/comments_view.dart';
-import 'package:gp_east_news/Feature/News/Domain_layer/news_servieces/news_model.dart';
 
 import '../../../../colors/colors.dart';
+import '../../../News/Data_layer/Api/news_servieces/news_model.dart';
+
 
 class intreaction extends StatefulWidget {
   intreaction({super.key, required this.model});

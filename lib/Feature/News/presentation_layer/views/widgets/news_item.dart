@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/news_details.dart';
 import '../../../../../colors/colors.dart';
 import '../../../../interactions /presentation_layer/views/interaction.dart';
+import '../../../Data_layer/Api/news_servieces/news_model.dart';
 import 'news_image.dart';
-import '../../../Domain_layer/news_servieces/news_model.dart';
 
 class news_item extends StatelessWidget {
   news_item({super.key, required this.item});

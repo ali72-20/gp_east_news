@@ -1,13 +1,9 @@
-import 'dart:ffi';
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_item.dart';
-import 'package:gp_east_news/Feature/News/presentation_layer/views/news_list.dart';
-import 'package:gp_east_news/Feature/category/presentation_layer/views/widgets/item_model.dart';
 
-import '../../../../News/Domain_layer/news_servieces/news_model.dart';
-
+import '../../../../News/Data_layer/Api/news_servieces/news_model.dart';
 List<news_model>?GlobalsavedNews;
 
 class saved_fragment extends StatelessWidget {

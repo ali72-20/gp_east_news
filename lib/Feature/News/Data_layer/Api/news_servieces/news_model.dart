@@ -9,12 +9,4 @@ class news_model {
   news_model(
       {required this.title, required this.image, required this.content,  this.likes, this.comments, this.isLiked,  this.isSaved});
 
-
- factory news_model.fromJason(json){
-    return news_model(
-       title: json['title'],
-       image:json['imageURL'],
-       content: json['content'],
-    );
- }
 }
