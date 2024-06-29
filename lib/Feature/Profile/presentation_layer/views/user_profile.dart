@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:gp_east_news/Feature/Profile/presentation_layer/views/userModel.dart';
 
-import '../../../../presentation_layer/UI/colors/colors.dart';
-import 'Profile_body.dart';
-import 'Profile_header.dart';
+import 'package:flutter/material.dart';
+import '../../../../colors/colors.dart';
+import 'widgets/Profile_body.dart';
+import 'widgets/Profile_header.dart';
 
 class user_profile extends StatelessWidget {
   user_profile({super.key,});

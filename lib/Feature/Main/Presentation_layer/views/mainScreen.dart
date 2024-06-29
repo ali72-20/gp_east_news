@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Feature/Profile/presentation_layer/views/userModel.dart';
+import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/userModel.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
-
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-
-import '../../../../presentation_layer/UI/Body/app_bar.dart';
-import '../../../../presentation_layer/UI/Fragments /chat_fragment.dart';
-import '../../../../presentation_layer/UI/Fragments /home.dart';
-import '../../../../presentation_layer/UI/Fragments /saved_fragment.dart';
-import '../../../../presentation_layer/UI/Fragments /Settings/setting_fragment.dart';
-import '../../../../presentation_layer/UI/colors/colors.dart';
-import 'bottom_nav_item.dart';
-
-
+import '../../../../colors/colors.dart';
+import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar.dart';
+import '../../../Fragmetns/home/presentation_layer/views/home.dart';
+import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
+import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
+import 'widgets/bottom_nav_item.dart';
 
 class main_screen extends StatefulWidget {
   main_screen({super.key, required this.current_fragmnet_index});
@@ -27,7 +22,6 @@ class _main_screenState extends State<main_screen> {
   List<Widget> body = const [
     home(),
     saved_fragment(),
-    chat_fragment(),
     setting_fragment(),
   ];
   int _selectedIndex = 0;
@@ -73,15 +67,11 @@ class _main_screenState extends State<main_screen> {
                   title: "Home",
                 )),
             SalomonBottomBarItem(
-                icon: const Icon(Icons.save),
-                title: bottom_nav_item(
-                  title: "Saved",
-                )),
-            SalomonBottomBarItem(
-                icon: const Icon(Icons.chat),
-                title: bottom_nav_item(
-                  title: "Room",
-                )),
+              icon: const Icon(Icons.save),
+              title: bottom_nav_item(
+                title: "Saved",
+              ),
+            ),
             SalomonBottomBarItem(
                 icon: const Icon(Icons.settings),
                 title: bottom_nav_item(

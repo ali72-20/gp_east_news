@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../../../presentation_layer/UI/Forms/Login/LogIn.dart';
+import '../../../Forms/presentation_layer/SignIn/views/LogIn.dart';
 import '../../../on_boarding/presentation_layer/views/onboarding_view.dart';
 
 class Splashscreen extends StatefulWidget {
