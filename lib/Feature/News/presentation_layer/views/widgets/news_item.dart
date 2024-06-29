@@ -3,7 +3,7 @@ import 'package:gp_east_news/Feature/News/presentation_layer/views/news_details.
 import '../../../../../colors/colors.dart';
 import '../../../../interactions /presentation_layer/views/interaction.dart';
 import 'news_image.dart';
-import 'news_model.dart';
+import '../../../Domain_layer/news_servieces/news_model.dart';
 
 class news_item extends StatelessWidget {
   news_item({super.key, required this.item});
@@ -24,7 +24,7 @@ class news_item extends StatelessWidget {
           GestureDetector(onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => news_details(item: item),));
-          }, child: news_image(image: item.image)),
+          }, child: news_image(image: item.image!)),
           const SizedBox(
             height: 12,
           ),

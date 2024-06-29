@@ -6,7 +6,7 @@ import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_
 import 'package:gp_east_news/Feature/News/presentation_layer/views/news_list.dart';
 import 'package:gp_east_news/Feature/category/presentation_layer/views/widgets/item_model.dart';
 
-import '../../../../News/presentation_layer/views/widgets/news_model.dart';
+import '../../../../News/Domain_layer/news_servieces/news_model.dart';
 
 List<news_model>?GlobalsavedNews;
 

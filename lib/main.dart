@@ -28,8 +28,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-ThemeData them(){
-   if(AppThem == 'Light') return ThemeData.light();
-   else if(AppThem == "Dark") return ThemeData.dark();
-   else return ThemeData.light();
-}

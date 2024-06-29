@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/interaction.dart';
-import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_model.dart';
+import 'package:gp_east_news/Feature/News/Domain_layer/news_servieces/news_model.dart';
 import '../../../../colors/colors.dart';
 
 class news_details extends StatelessWidget {
@@ -29,7 +29,7 @@ class news_details extends StatelessWidget {
                     color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
               ),
               background: Image.asset(
-                item.image,
+                item.image!,
                 fit: BoxFit.cover,
               ),
             ),
