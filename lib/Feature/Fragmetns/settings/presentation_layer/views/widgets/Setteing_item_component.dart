@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:gp_east_news/main.dart';
 import 'package:ionicons/ionicons.dart';
 
 class setteingItemComponent extends StatefulWidget {
@@ -35,16 +37,18 @@ class _State extends State<setteingItemComponent> {
               BoxDecoration(shape: BoxShape.circle, color: widget.color),
           child: Icon(widget.icon, color: Colors.white),
         ),
-       title:  Text(
+        title: Text(
           widget.text,
           style: TextStyle(color: widget.color, fontFamily: 'Poppins'),
         ),
         trailing:  Container(
-          decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12),
-              color: widget.color),
+          decoration:  BoxDecoration(
+            color: widget.color
+          ),
           child: DropdownMenu<String>(
+            menuStyle: MenuStyle(
+              backgroundColor: WidgetStateProperty.all(widget.color)
+            ),
             textStyle:
                 const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
             initialSelection: widget.list.first,
@@ -52,6 +56,7 @@ class _State extends State<setteingItemComponent> {
               // This is called when the user selects an item.
               setState(() {
                 widget.currentValue = value!;
+                AppThem = value;
               });
             },
             dropdownMenuEntries: widget.list.map<DropdownMenuEntry<String>>(

@@ -12,7 +12,7 @@ void main() async{
   runApp(MyApp(onBoarding: onboaring));
 
 }
-
+String AppThem = 'light';
 class MyApp extends StatelessWidget {
   final bool onBoarding;
   MyApp({super.key, required this.onBoarding});
@@ -22,7 +22,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
       home: Splashscreen(onboaring:onBoarding),
     );
   }
+}
+
+ThemeData them(){
+   if(AppThem == 'Light') return ThemeData.light();
+   else if(AppThem == "Dark") return ThemeData.dark();
+   else return ThemeData.light();
 }
