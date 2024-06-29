@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
+import 'package:gp_east_news/Feature/Profile/presentation_layer/views/userModel.dart';
 
-import '../colors/colors.dart';
+import '../../../../presentation_layer/UI/colors/colors.dart';
 import 'Profile_body.dart';
 import 'Profile_header.dart';
 

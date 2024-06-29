@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../ConstantKeies/ConstKey.dart';
+import '../../../../presentation_layer/UI/ConstantKeies/ConstKey.dart';
 
-import '../Forms/Login/LogIn.dart';
-import '../colors/colors.dart';
+import '../../../../presentation_layer/UI/Forms/Login/LogIn.dart';
+import '../../../../presentation_layer/UI/colors/colors.dart';
 import 'onboaring_model.dart';
 
 class onboarding_view extends StatefulWidget {

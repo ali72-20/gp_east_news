@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
-import 'package:gp_east_news/presentation_layer/UI/Profile/user_profile.dart';
+import 'package:gp_east_news/Feature/Profile/presentation_layer/views/userModel.dart';
+import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
 
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-import '../Body/app_bar.dart';
-import '../Fragments /chat_fragment.dart';
-import '../Fragments /home.dart';
-import '../Fragments /saved_fragment.dart';
-import '../Fragments /Settings/setting_fragment.dart';
-import '../colors/colors.dart';
+import '../../../../presentation_layer/UI/Body/app_bar.dart';
+import '../../../../presentation_layer/UI/Fragments /chat_fragment.dart';
+import '../../../../presentation_layer/UI/Fragments /home.dart';
+import '../../../../presentation_layer/UI/Fragments /saved_fragment.dart';
+import '../../../../presentation_layer/UI/Fragments /Settings/setting_fragment.dart';
+import '../../../../presentation_layer/UI/colors/colors.dart';
 import 'bottom_nav_item.dart';
 
 

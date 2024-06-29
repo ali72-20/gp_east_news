@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gp_east_news/presentation_layer/UI/Screens/mainScreen.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 
 import '../../colors/colors.dart';
 

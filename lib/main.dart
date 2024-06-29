@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/presentation_layer/UI/ConstantKeies/ConstKey.dart';
-import 'package:gp_east_news/presentation_layer/UI/Screens/SplashScreen.dart';
+import 'package:gp_east_news/Feature/Splash/presentation_layer/views/SplashScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 

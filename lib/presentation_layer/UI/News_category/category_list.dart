@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../Forms/FormComponent /TextComp.dart';
-import '../Screens/mainScreen.dart';
+import '../../../Feature/Main/Presentation_layer/views/mainScreen.dart';
 import '../colors/colors.dart';
 import 'item_model.dart';
 import 'items_list.dart';

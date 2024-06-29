@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/presentation_layer/UI/Screens/mainScreen.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 
 class Profile_body extends StatelessWidget {
    Profile_body({super.key});

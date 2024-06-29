@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../Forms/Login/LogIn.dart';
-import '../onboarding/onboarding_view.dart';
+import '../../../../presentation_layer/UI/Forms/Login/LogIn.dart';
+import '../../../on_boarding/presentation_layer/views/onboarding_view.dart';
 
 class Splashscreen extends StatefulWidget {
   Splashscreen({super.key, required this.onboaring});

@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:gp_east_news/presentation_layer/UI/Profile/userModel.dart';
+import 'package:gp_east_news/Feature/Profile/presentation_layer/views/userModel.dart';
 
-import '../Screens/mainScreen.dart';
-import '../colors/colors.dart';
+import '../../../Main/Presentation_layer/views/mainScreen.dart';
+import '../../../../presentation_layer/UI/colors/colors.dart';
 
 class profile_header extends StatefulWidget {
    profile_header({super.key});

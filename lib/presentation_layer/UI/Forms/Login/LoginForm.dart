@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/presentation_layer/UI/Forms/FormComponent%20/input_compoenet_model.dart';
 import 'package:gp_east_news/presentation_layer/UI/Forms/FormComponent%20/password_input.dart';
-import '../../Screens/mainScreen.dart';
+import '../../../../Feature/Main/Presentation_layer/views/mainScreen.dart';
 import '../../colors/colors.dart';
 import '../FormComponent /Button.dart';
 import '../FormComponent /TextInputComp.dart';
