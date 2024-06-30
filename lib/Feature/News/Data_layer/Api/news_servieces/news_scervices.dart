@@ -11,22 +11,26 @@ class NewsServieces {
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
       final response = await dio.get(
-              url,
-         queryParameters: {'country': 'eg', 'language': 'en', 'category': categoryName},
+        url,
+        queryParameters: {
+          'country': 'eg',
+          'language': 'en',
+          'category': categoryName
+        },
       );
-      List<dynamic> articals = response.data;
-      List<news_model> news_list = [];
+      List<Map<String, dynamic>> articals = response.data;
+      List<news_model> list = [];
       for (var art in articals) {
-        news_list.add(news_model(
-            image: art["urlToImage"],
+        list.add(news_model(
+            image: art["imageURL"],
             title: art["title"],
-            content: art["description"]));
+            content: art["content"]));
       }
-      log(news_list.length.toString());
-      return news_list;
-    }
-    catch (e){
-      return [];
+      log(list.length.toString());
+      return list;
+    } catch (e) {
+      log('Error fetching mews $e');
+      rethrow;
     }
   }
 }

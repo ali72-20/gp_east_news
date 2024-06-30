@@ -4,27 +4,26 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Core/ConstantKeies/ConstKey.dart';
 
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final pref = await SharedPreferences.getInstance();
-  final onboaring = pref.getBool(constKey.onBoaring)??false;
+  final onboaring = pref.getBool(constKey.onBoaring) ?? false;
   runApp(MyApp(onBoarding: onboaring));
-
 }
+
 String AppThem = 'light';
+
 class MyApp extends StatelessWidget {
   final bool onBoarding;
-  MyApp({super.key, required this.onBoarding});
+  const MyApp({super.key, required this.onBoarding});
   // This widget is the root of your application.
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: Splashscreen(onboaring:onBoarding),
+      home: Splashscreen(onboaring: onBoarding),
     );
   }
 }
-
