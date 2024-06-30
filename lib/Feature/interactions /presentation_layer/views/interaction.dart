@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/comments_view.dart';
 
@@ -81,23 +82,9 @@ class _intreactionState extends State<intreaction> {
               setState(() {
                 widget.model.isSaved = !widget.model.isSaved!;
                 if (widget.model.isSaved!) {
-                  Fluttertoast.showToast(
-                      backgroundColor: primary_color,
-                      msg: "Item saved",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 2,
-                      textColor: Colors.white,
-                      fontSize: 16.0);
+                  ToastMessage().showMessage(message: 'Item added');
                 }else{
-                  Fluttertoast.showToast(
-                      backgroundColor: primary_color,
-                      msg: "Item Removed",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 2,
-                      textColor: Colors.white,
-                      fontSize: 16.0);
+                   ToastMessage().showMessage(message: 'Item Removed');
                 }
               },);
               if (widget.model.isSaved!) {

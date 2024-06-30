@@ -37,5 +37,10 @@ class TabsList{
         title: "Entertainment",
       ),
     ),
+    Tab(
+      child: tap_item(
+        title: "Health",
+      ),
+    ),
   ];
 }

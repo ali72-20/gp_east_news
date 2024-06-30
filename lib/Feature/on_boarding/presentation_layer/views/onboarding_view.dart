@@ -135,7 +135,7 @@ class _onboarding_viewState extends State<onboarding_view> {
         },
         child: AnimatedOpacity(
           opacity: isFinalPage?1.0:0.0,
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
           child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

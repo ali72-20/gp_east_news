@@ -24,7 +24,7 @@ class news_details extends StatelessWidget {
             expandedHeight: 170,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
-                item.title,
+                item.title == null ? 'title' : item.title!,
                 style: const TextStyle(
                     color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
               ),

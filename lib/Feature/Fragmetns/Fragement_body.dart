@@ -1,12 +1,12 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/get_news_response.dart';
 
-
-import '../News/presentation_layer/views/news_list.dart';
 
 class FragementBody extends StatefulWidget {
-  const FragementBody({super.key});
+  FragementBody({super.key, required this.category});
 
+  String category;
   @override
   State<FragementBody> createState() => _FragementBodyState();
 }
@@ -16,9 +16,9 @@ class _FragementBodyState extends State<FragementBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics:  const BouncingScrollPhysics(),
         slivers: [
-          news_list(),
+          getNewsResonse(categoryName: widget.category),
         ],
       ),
     );

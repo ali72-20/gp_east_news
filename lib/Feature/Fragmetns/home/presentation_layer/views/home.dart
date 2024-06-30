@@ -16,7 +16,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 7,
+      length: 8,
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -25,15 +25,16 @@ class _homeState extends State<home> {
               child: tabScrollView(),
             ),
           ),
-          body: const TabBarView(
+          body:  TabBarView(
             children: [
-              FragementBody(),
-              FragementBody(),
-              FragementBody(),
-              FragementBody(),
-              FragementBody(),
-              FragementBody(),
-              FragementBody(),
+              FragementBody(category: 'entertainment',),
+              FragementBody(category: 'sports',),
+              FragementBody(category: 'business',),
+              FragementBody(category: 'business',),
+              FragementBody(category: 'science',),
+              FragementBody(category:'technology' ,),
+              FragementBody(category: 'technology',),
+              FragementBody(category: 'health',),
             ],
           )),
     );

@@ -3,16 +3,8 @@ import '../../Data_layer/Api/news_servieces/news_model.dart';
 import 'widgets/news_item.dart';
 
 class news_list extends StatelessWidget {
-   news_list({super.key});
-  List<news_model> list_news = [
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-     news_model(title: "test title for news", image: 'assets/Images/test_imagepng.png', content: "test descr",likes: 0, comments:  0,isLiked: false, isSaved: false),
-  ];
+  news_list({super.key, required this.list_news});
+  List<news_model> list_news;
   @override
   Widget build(BuildContext context) {
     return SliverList(

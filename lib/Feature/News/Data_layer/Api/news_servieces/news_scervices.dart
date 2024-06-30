@@ -1,23 +1,32 @@
+import 'dart:core';
+import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
-import 'news_model.dart';
-
-class newsServies {
+class NewsServieces {
   final Dio dio;
 
-  newsServies(this.dio);
-
+  NewsServieces(this.dio);
   final url = 'http://localhost:3000/news/getNews';
-
-  Future<List<news_model>> getNews({required String category}) async {
-    Response response = await dio.get(
-      url,
-      data: {'country': 'eg', 'language': 'en', 'category': category},
-    );
-    List<news_model> news_list = [];
-    for(var item in response.data){
-       news_list.add( news_model(title: item['title'], image: item['imageURL'], content: item['content']));
+  Future<List<news_model>> getNews({required String categoryName}) async {
+    try {
+      final response = await dio.get(
+              url,
+         queryParameters: {'country': 'eg', 'language': 'en', 'category': categoryName},
+      );
+      List<dynamic> articals = response.data;
+      List<news_model> news_list = [];
+      for (var art in articals) {
+        news_list.add(news_model(
+            image: art["urlToImage"],
+            title: art["title"],
+            content: art["description"]));
+      }
+      log(news_list.length.toString());
+      return news_list;
     }
-    return news_list;
+    catch (e){
+      return [];
+    }
   }
 }

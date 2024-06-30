@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/news_details.dart';
+import '../../../../../Core/Assets/assets_data.dart';
 import '../../../../../colors/colors.dart';
 import '../../../../interactions /presentation_layer/views/interaction.dart';
 import '../../../Data_layer/Api/news_servieces/news_model.dart';
@@ -24,17 +25,17 @@ class news_item extends StatelessWidget {
           GestureDetector(onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => news_details(item: item),));
-          }, child: news_image(image: item.image!)),
+          }, child: news_image(image: item.image??Assetsdata().defualtImage)),
           const SizedBox(
             height: 12,
           ),
-          const Text(
-            "This is the description of the this news",
+           Text(
+            item.title?? ' ',
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
-          intreaction(model: item,),
+          // intreaction(model: item,),
         ],
       ),
     );
