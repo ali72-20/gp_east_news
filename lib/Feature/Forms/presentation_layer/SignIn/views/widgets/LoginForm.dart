@@ -18,7 +18,7 @@ class Loginform extends StatefulWidget {
 
 class _LoginformState extends State<Loginform> {
   GlobalKey<FormState> globalKey = GlobalKey();
-
+  final TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +27,7 @@ class _LoginformState extends State<Loginform> {
         key: globalKey,
         child: Column(
           children: [
-            TextInputComp(lableText: "Email", sufIcone: Icons.mail),
+            TextInputComp(lableText: "Email", sufIcone: Icons.mail, mailController: controller,),
             password_input(
               model: input_componenet_model(
                   lablText: "password",
@@ -51,6 +51,8 @@ class _LoginformState extends State<Loginform> {
               title: 'Sign in',
               backgroundColor: primary_color,
               onPress: () {
+                user_model.Mail = controller.text;
+                FocusScope.of(context).unfocus();
                 if (globalKey.currentState!.validate()) {
                   Navigator.pushReplacement(
                     context,

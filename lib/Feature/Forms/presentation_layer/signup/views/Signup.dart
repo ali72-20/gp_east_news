@@ -40,8 +40,8 @@ class _SignupState extends State<Signup> {
                     message_color: Colors.black,
                     size: 16),
                 TextInputComp(
-                    lableText: 'User Name', sufIcone: Icons.text_fields),
-                TextInputComp(lableText: 'Email', sufIcone: Icons.mail),
+                    lableText: 'User Name', sufIcone: Icons.text_fields, mailController: TextEditingController(),),
+                TextInputComp(lableText: 'Email', sufIcone: Icons.mail, mailController: TextEditingController(),),
                 password_input(
                   model: input_componenet_model(
                       lablText: "password",

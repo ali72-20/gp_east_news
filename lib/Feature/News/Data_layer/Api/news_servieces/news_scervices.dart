@@ -7,22 +7,23 @@ class NewsServieces {
   final Dio dio;
 
   NewsServieces(this.dio);
-  final url = 'http://localhost:3000/news/getNews';
+
+  final url =
+      'https://newsapi.org/v2/top-headlines?apiKey=98583a75142f49e5ac3d537b61989171&country=us';
+
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
-      final response = await dio.get(
-        url,
-        queryParameters: {
-          'country': 'eg',
-          'language': 'en',
-          'category': categoryName
-        },
-      );
-      List<Map<String, dynamic>> articals = response.data;
+      final response = await dio.get(url, queryParameters: {
+        'country': 'eg',
+        'language': 'en',
+        'category': categoryName,
+      });
+      Map<String, dynamic> res = response.data;
+      List<dynamic> articals = res['articles'];
       List<news_model> list = [];
       for (var art in articals) {
         list.add(news_model(
-            image: art["imageURL"],
+            image: art["urlToImage"],
             title: art["title"],
             content: art["content"]));
       }
