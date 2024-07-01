@@ -29,13 +29,18 @@ class news_item extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-           Text(
-            item.title?? ' ',
-            overflow: TextOverflow.ellipsis,
-            maxLines: 2,
-            style: const TextStyle(color: Colors.black),
-          ),
-          // intreaction(model: item,),
+           Container(
+             alignment: Alignment.center,
+             margin: const EdgeInsets.symmetric(horizontal: 8),
+             child: Text(
+               textAlign: TextAlign.center,
+              item.title?? ' ',
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+              style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+                       ),
+           ),
+          intreaction(model: item,),
         ],
       ),
     );

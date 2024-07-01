@@ -8,28 +8,38 @@ class NewsServieces {
 
   NewsServieces(this.dio);
 
-  final url =
-      'https://newsapi.org/v2/top-headlines?apiKey=98583a75142f49e5ac3d537b61989171&country=us';
+  final String url = 'http://192.168.1.44:2000/news/getNews';
+  final String token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzNWZjOGJiMTkyMGViYTAyMGExNjIiLCJpYXQiOjE3MTk4MzA0NDcsImV4cCI6MTcyMDA4OTY0N30.lxi9Ib-gUxCToiGqAWljNOcsTMvKJu0Zc3kFJugZl80';
 
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
-      final response = await dio.get(url, queryParameters: {
-        'country': 'eg',
-        'language': 'en',
-        'category': categoryName,
-      });
-      Map<String, dynamic> res = response.data;
-      List<dynamic> articals = res['articles'];
-      List<news_model> list = [];
-      for (var art in articals) {
-        list.add(news_model(
-            image: art["urlToImage"],
-            title: art["title"],
-            content: art["content"]));
+      final response = await dio.get(
+        url,
+        data: {
+          'country': 'us',
+          'language': 'en',
+          'category': categoryName,
+        },
+        options: Options(
+          headers: {
+            'Authorization' : token
+          }
+        )
+      );
+      List<dynamic> respo = response.data;
+      List<news_model> articalList = [];
+      for(dynamic it in respo){
+          articalList.add(
+            news_model(title: it['title'], image: it['imageURL'], content: it['content'], likes: 0, comments: 0, isLiked: false, isSaved:  false)
+          );
       }
-      log(list.length.toString());
-      return list;
-    } catch (e) {
+      return articalList;
+    }
+    on DioException catch(e){
+      log('Dio error $e');
+      throw();
+    }
+    catch (e) {
       log('Error fetching mews $e');
       rethrow;
     }

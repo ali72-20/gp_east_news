@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/comments_view.dart';
 
-import '../../../../colors/colors.dart';
 import '../../../News/Data_layer/Api/news_servieces/news_model.dart';
 
 
@@ -32,8 +31,8 @@ class _intreactionState extends State<intreaction> {
               IconButton(
                 onPressed: () {
                   setState(() {
-                    // widget.model.isLiked = !widget.model.isLiked!;
-                    // widget.model.likes += widget.model.isLiked! ? 1 : -1;
+                    widget.model.isLiked = !widget.model.isLiked;
+                    widget.model.likes += widget.model.isLiked ? 1 : -1;
                   });
                 },
                 icon: widget.model.isLiked!
@@ -80,20 +79,20 @@ class _intreactionState extends State<intreaction> {
           IconButton(
             onPressed: () {
               setState(() {
-                widget.model.isSaved = !widget.model.isSaved!;
-                if (widget.model.isSaved!) {
+                widget.model.isSaved = !widget.model.isSaved;
+                if (widget.model.isSaved) {
                   ToastMessage().showMessage(message: 'Item added');
                 }else{
                    ToastMessage().showMessage(message: 'Item Removed');
                 }
               },);
-              if (widget.model.isSaved!) {
+              if (widget.model.isSaved) {
                 GlobalsavedNews?.add(widget.model);
               } else {
                 GlobalsavedNews?.remove(widget.model);
               }
             },
-            icon: widget.model.isSaved!
+            icon: widget.model.isSaved
                 ? const Icon(
                     Icons.bookmark_added,
                   )

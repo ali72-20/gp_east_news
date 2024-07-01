@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/interaction.dart';
+import '../../../../Core/Assets/assets_data.dart';
 import '../../../../colors/colors.dart';
 import '../../Data_layer/Api/news_servieces/news_model.dart';
 
@@ -21,15 +22,15 @@ class news_details extends StatelessWidget {
             ),
             pinned: true,
             floating: true,
-            expandedHeight: 170,
+            expandedHeight: 300,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 item.title == null ? 'title' : item.title!,
                 style: const TextStyle(
                     color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
               ),
-              background: Image.asset(
-                item.image!,
+              background: Image.network(
+                 item.image == null ? Assetsdata().defualtImage : item.image!,
                 fit: BoxFit.cover,
               ),
             ),
@@ -45,9 +46,9 @@ class news_details extends StatelessWidget {
                 color: primary_color,
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
               ),
-              child: const SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Text('gfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijklgfgdhgfhgfhfghfgtguyhijkl', style: TextStyle(color: Colors.white),),
+              child:  SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Text(item.content??'Artrical title', style: const TextStyle(color: Colors.white),),
               ),
             ),
           ),

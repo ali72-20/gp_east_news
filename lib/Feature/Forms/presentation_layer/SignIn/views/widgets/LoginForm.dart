@@ -19,6 +19,7 @@ class Loginform extends StatefulWidget {
 class _LoginformState extends State<Loginform> {
   GlobalKey<FormState> globalKey = GlobalKey();
   final TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +28,11 @@ class _LoginformState extends State<Loginform> {
         key: globalKey,
         child: Column(
           children: [
-            TextInputComp(lableText: "Email", sufIcone: Icons.mail, mailController: controller,),
+            TextInputComp(
+              lableText: "Email",
+              sufIcone: Icons.mail,
+              mailController: controller,
+            ),
             password_input(
               model: input_componenet_model(
                   lablText: "password",
@@ -62,9 +67,7 @@ class _LoginformState extends State<Loginform> {
                       ),
                     ),
                   );
-                } else {
-
-                }
+                } else {}
               },
             ),
             const SizedBox(height: 16),
@@ -107,16 +110,17 @@ class _LoginformState extends State<Loginform> {
                     const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
                 children: [
                   TextSpan(
-                      text: " Signup",
-                      style: TextStyle(
-                          color: primary_color, fontFamily: 'Poppins'),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Signup()));
-                        })
+                    text: " Signup",
+                    style:
+                        TextStyle(color: primary_color, fontFamily: 'Poppins'),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Signup()));
+                      },
+                  )
                 ],
               ),
             ),

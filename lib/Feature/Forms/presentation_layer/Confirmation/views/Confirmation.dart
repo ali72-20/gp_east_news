@@ -32,6 +32,7 @@ class Confirmation extends StatelessWidget {
               const ConfirmationCodeInput(),
               const SizedBox(height: 32),
               Button(title: "Confirm", backgroundColor: primary_color, onPress: () {
+                FocusScope.of(context).unfocus();
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => CategoryList()));
               },),
