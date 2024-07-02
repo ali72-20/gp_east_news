@@ -9,7 +9,7 @@ class NewsServieces {
   NewsServieces(this.dio);
 
   final String url = 'http://192.168.1.46:2000/news/getNews';
-  final String token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjMzNWZjOGJiMTkyMGViYTAyMGExNjIiLCJpYXQiOjE3MTk4MzA0NDcsImV4cCI6MTcyMDA4OTY0N30.lxi9Ib-gUxCToiGqAWljNOcsTMvKJu0Zc3kFJugZl80';
+  final String token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njg0ODI0MTA5NDZjOTk5MGZkMGM3NDUiLCJpYXQiOjE3MTk5NjAxMjksImV4cCI6MTcyMDIxOTMyOX0.Jubixaqj67qtwOcFROA2Zomc0m6og_GC-4QOijEcQ8E';
 
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
