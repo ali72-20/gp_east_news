@@ -62,7 +62,7 @@ class _LoginformState extends State<Loginform> {
                     user_model.Mail = controller.text;
                     NavigateToMainScreen(context);
                   } else {
-                    ToastMessage().showMessage(message: 'This mail not valid');
+                    ToastMessage().showErrorMessage(message: 'This mail not valid');
                   }
                 }
               },
