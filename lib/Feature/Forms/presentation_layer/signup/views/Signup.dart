@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
@@ -20,12 +19,12 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
   GlobalKey<FormState> globalKey = GlobalKey();
-   TextEditingController mailController = TextEditingController();
-   TextEditingController userNameController = TextEditingController();
-   TextEditingController passwordController = TextEditingController();
-   TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
-   @override
+  @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
@@ -33,17 +32,17 @@ class _SignupState extends State<Signup> {
     userNameController.dispose();
     passwordController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: primary_color,
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Form(
-            key: globalKey,
+        child: Form(
+          key: globalKey,
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 const Top_Bar(),
@@ -54,12 +53,16 @@ class _SignupState extends State<Signup> {
                     message: "LET'S CREATE ACCOUNT",
                     message_color: Colors.black,
                     size: 16),
-
                 TextInputComp(
-                    lableText: 'User Name', sufIcone: Icons.text_fields, controller: userNameController,),
-
-                TextInputComp(lableText: 'Email', sufIcone: Icons.mail, controller: mailController,),
-
+                  lableText: 'User Name',
+                  sufIcone: Icons.text_fields,
+                  controller: userNameController,
+                ),
+                TextInputComp(
+                  lableText: 'Email',
+                  sufIcone: Icons.mail,
+                  controller: mailController,
+                ),
                 password_input(
                   model: input_componenet_model(
                       lablText: "password",
@@ -67,7 +70,6 @@ class _SignupState extends State<Signup> {
                       is_password: true),
                   passwordcontroller: passwordController,
                 ),
-
                 password_input(
                   model: input_componenet_model(
                       lablText: "Confirm password",
@@ -75,7 +77,6 @@ class _SignupState extends State<Signup> {
                       is_password: true),
                   passwordcontroller: confirmPasswordController,
                 ),
-
                 Container(
                   margin: const EdgeInsets.only(top: 40),
                   child: Button(
@@ -94,47 +95,42 @@ class _SignupState extends State<Signup> {
     );
   }
 
-
-
   void NavigatToConfirmScreen(BuildContext context) {
-     Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-            builder: (_) => const Confirmation()));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (_) => const Confirmation()));
   }
-
 
   bool ValidateMail({required String mail}) {
     final bool emailValid = RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(mail);
     return emailValid;
   }
 
-
-  bool isSamePassword({required String password, required String confirmPassword}){
-     return password == confirmPassword;
+  bool isSamePassword(
+      {required String password, required String confirmPassword}) {
+    return password == confirmPassword;
   }
 
-
-
-  bool validateFeildes(){
-     if(!globalKey.currentState!.validate()){
-        return false;
-     }
-     if(!ValidateMail(mail: mailController.text)){
-          ToastMessage().showErrorMessage(message: 'This mail is not valid');
-          return false;
-     }
-     if(!isSamePassword(password: passwordController.text, confirmPassword: confirmPasswordController.text)){
-       ToastMessage().showErrorMessage(message: 'The Two password are not the same');
-       return false;
-     }
-     user_model.Mail = mailController.text;
-     user_model.userName = userNameController.text;
-     user_model.password = passwordController.text;
-     NavigatToConfirmScreen(context);
-     return true;
+  bool validateFeildes() {
+    if (!globalKey.currentState!.validate()) {
+      return false;
+    }
+    if (!ValidateMail(mail: mailController.text)) {
+      ToastMessage().showErrorMessage(message: 'This mail is not valid');
+      return false;
+    }
+    if (!isSamePassword(
+        password: passwordController.text,
+        confirmPassword: confirmPasswordController.text)) {
+      ToastMessage()
+          .showErrorMessage(message: 'The Two password are not the same');
+      return false;
+    }
+    user_model.Mail = mailController.text;
+    user_model.userName = userNameController.text;
+    user_model.password = passwordController.text;
+    NavigatToConfirmScreen(context);
+    return true;
   }
-
 }
