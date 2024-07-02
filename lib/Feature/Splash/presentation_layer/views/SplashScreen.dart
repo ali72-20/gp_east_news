@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gp_east_news/Feature/Splash/presentation_layer/views/widgets/logoAnimation.dart';
@@ -53,7 +52,7 @@ class _SplashscreenState extends State<Splashscreen>
 
   void NavigateToMainScreen() {
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(seconds: 3),
       () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (_) =>

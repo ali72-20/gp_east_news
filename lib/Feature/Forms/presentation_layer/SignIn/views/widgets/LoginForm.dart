@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/widgets/login_with_google.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/input_compoenet_model.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/password_input.dart';
@@ -7,7 +9,6 @@ import '../../../../../../colors/colors.dart';
 import '../../../components /Button.dart';
 import '../../../components /TextInputComp.dart';
 import 'dont_have_account.dart';
-
 
 class Loginform extends StatefulWidget {
   const Loginform({super.key});
@@ -19,6 +20,13 @@ class Loginform extends StatefulWidget {
 class _LoginformState extends State<Loginform> {
   GlobalKey<FormState> globalKey = GlobalKey();
   final TextEditingController controller = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +36,10 @@ class _LoginformState extends State<Loginform> {
         key: globalKey,
         child: Column(
           children: [
-
             TextInputComp(
               lableText: "Email",
               sufIcone: Icons.mail,
-              mailController: controller,
+              controller: controller,
             ),
 
             password_input(
@@ -40,8 +47,8 @@ class _LoginformState extends State<Loginform> {
                   lablText: "password",
                   suffixIcon: Icons.visibility_off,
                   is_password: true),
+              passwordcontroller: passwordController,
             ),
-
 
             const SizedBox(height: 15),
 
@@ -49,18 +56,15 @@ class _LoginformState extends State<Loginform> {
               title: 'Sign in',
               backgroundColor: primary_color,
               onPress: () {
-                user_model.Mail = controller.text;
                 FocusScope.of(context).unfocus();
                 if (globalKey.currentState!.validate()) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => main_screen(
-                        current_fragmnet_index: 0,
-                      ),
-                    ),
-                  );
-                } else {}
+                  if (ValidateMail(mail: controller.text)) {
+                    user_model.Mail = controller.text;
+                    NavigateToMainScreen(context);
+                  } else {
+                    ToastMessage().showMessage(message: 'This mail not valid');
+                  }
+                }
               },
             ),
 
@@ -70,7 +74,7 @@ class _LoginformState extends State<Loginform> {
 
             const SizedBox(height: 16),
 
-           const loginWittGoogle(),
+            const loginWittGoogle(),
 
             const SizedBox(
               height: 24,
@@ -81,5 +85,23 @@ class _LoginformState extends State<Loginform> {
         ),
       ),
     );
+  }
+
+  void NavigateToMainScreen(BuildContext context) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (_) => main_screen(
+          current_fragmnet_index: 0,
+        ),
+      ),
+    );
+  }
+
+  bool ValidateMail({required String mail}) {
+    final bool emailValid = RegExp(
+            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+        .hasMatch(mail);
+    return emailValid;
   }
 }

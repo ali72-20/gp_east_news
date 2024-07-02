@@ -5,10 +5,10 @@ import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/inpu
 import '../../../../colors/colors.dart';
 
 class password_input extends StatefulWidget {
-  password_input({super.key, required this.model});
+  password_input({super.key, required this.model, required this.passwordcontroller});
 
   input_componenet_model model;
-
+  final TextEditingController passwordcontroller;
   @override
   State<password_input> createState() => _password_inputState();
 }
@@ -19,21 +19,30 @@ class _password_inputState extends State<password_input> {
     return Padding(
       padding: const EdgeInsets.only(right: 32.0, left: 32.0, top: 24),
       child: TextFormField(
+        controller:  widget.passwordcontroller,
         validator: (value){
           if(value == null || value.isEmpty){
             return "Password is Required";
           }
         },
+
         obscureText: widget.model.is_password,
+
         style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+
         // smartDashesType: SmartDashesType.enabled,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
+
           labelText: widget.model.lablText,
+
           labelStyle: TextStyle(color: gray, fontFamily: 'Poppins'),
+
           suffixIcon: IconButton(
             onPressed: () {
+
               setState(() {
+
                 if (widget.model.is_password) {
                   widget.model.is_password = false;
                   widget.model.suffixIcon = Icons.visibility;
@@ -41,6 +50,7 @@ class _password_inputState extends State<password_input> {
                   widget.model.is_password = true;
                   widget.model.suffixIcon = Icons.visibility_off;
                 }
+
               });
             },
             icon: Icon(
