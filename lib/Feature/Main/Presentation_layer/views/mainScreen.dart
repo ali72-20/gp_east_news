@@ -89,4 +89,4 @@ class _main_screenState extends State<main_screen> {
   }
 }
 
-userModel user_model = userModel(userName: 'userName ', Mail: "Mail");
+userModel user_model = userModel(userName: 'userName ', Mail: "Mail", password: '');
