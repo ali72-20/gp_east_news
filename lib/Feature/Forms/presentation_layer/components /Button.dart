@@ -17,6 +17,7 @@ class Button extends StatefulWidget {
 }
 
 class _ButtonState extends State<Button> {
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return  Container(
