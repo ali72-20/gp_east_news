@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/widgets/dialog.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/userModel.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -58,25 +59,12 @@ class _main_screenState extends State<main_screen> {
             child: IconButton(
               onPressed: () {
                 showDialog(
-                  barrierDismissible:  true,
+                  barrierDismissible: true,
                   context: context,
-                  builder: (_) =>  AlertDialog(
-                    icon: const Icon(Icons.logout),
-                    title: const Text('Logout', style: TextStyle(fontFamily: 'Poppins'),),
-                    content:
-                        const Text('You need to logout', textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Poppins')),
-                    actions: [
-                      TextButton(onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Login()),
-                              (Route<dynamic> route) => false,
-                        );
-                      },child:  Text('Logout', style: TextStyle(fontFamily: 'Poppins', color: primary_color),),),
-                    ],
-                  ),
+                  builder: (_) => const logoutDialog(),
                 );
               },
+
               icon: const Icon(
                 Icons.logout,
                 color: Colors.white,
