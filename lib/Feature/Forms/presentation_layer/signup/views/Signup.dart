@@ -97,6 +97,7 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
                 const SizedBox(height: 32,),
+
                 const HaveAccount()
               ],
             ),

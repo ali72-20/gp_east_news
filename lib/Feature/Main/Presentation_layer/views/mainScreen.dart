@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/userModel.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
@@ -9,8 +10,6 @@ import '../../../Fragmetns/home/presentation_layer/views/home.dart';
 import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
 import 'widgets/bottom_nav_item.dart';
-
-
 
 class main_screen extends StatefulWidget {
   main_screen({super.key, required this.current_fragmnet_index});
@@ -59,20 +58,21 @@ class _main_screenState extends State<main_screen> {
             child: IconButton(
               onPressed: () {
                 showDialog(
+                  barrierDismissible:  true,
                   context: context,
-                  builder: (_) => AlertDialog(
-                    title: const Text('Logout'),
-                    content: const Text('You need to logout'),
+                  builder: (_) =>  AlertDialog(
+                    icon: const Icon(Icons.logout),
+                    title: const Text('Logout', style: TextStyle(fontFamily: 'Poppins'),),
+                    content:
+                        const Text('You need to logout', textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Poppins')),
                     actions: [
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Login()));
-                        },
-                        child: const Text('Logout'),
-                      ),
+                      TextButton(onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Login()),
+                              (Route<dynamic> route) => false,
+                        );
+                      },child:  Text('Logout', style: TextStyle(fontFamily: 'Poppins', color: primary_color),),),
                     ],
                   ),
                 );
@@ -85,7 +85,6 @@ class _main_screenState extends State<main_screen> {
           ),
         ],
       ),
-
       body: body.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(4),
