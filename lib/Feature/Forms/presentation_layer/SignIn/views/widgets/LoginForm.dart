@@ -1,6 +1,11 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Messages/errorsMeassages.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
+import 'package:gp_east_news/Feature/Forms/Data_layer/login_Api.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/widgets/login_with_google.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/input_compoenet_model.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/password_input.dart';
@@ -21,6 +26,7 @@ class _LoginformState extends State<Loginform> {
   GlobalKey<FormState> globalKey = GlobalKey();
   final TextEditingController controller = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -41,7 +47,6 @@ class _LoginformState extends State<Loginform> {
               sufIcone: Icons.mail,
               controller: controller,
             ),
-
             password_input(
               model: input_componenet_model(
                   lablText: "password",
@@ -59,16 +64,17 @@ class _LoginformState extends State<Loginform> {
                 FocusScope.of(context).unfocus();
                 if (globalKey.currentState!.validate()) {
                   if (ValidateMail(mail: controller.text)) {
-                    user_model.Mail = controller.text;
-                    NavigateToMainScreen(context);
+                    validToNavigate(context);
                   } else {
-                    ToastMessage().showErrorMessage(message: 'This mail not valid');
+                    ToastMessage()
+                        .showErrorMessage(message: 'This mail not valid');
                   }
                 }
               },
             ),
 
             const SizedBox(height: 16),
+
 
             Image.asset('assets/Images/orline.png'),
 
@@ -87,6 +93,19 @@ class _LoginformState extends State<Loginform> {
     );
   }
 
+
+
+  void validToNavigate(BuildContext context) async{
+    int code = await checkStatueResponse();
+    log('Code 2 is $code');
+    if (code != 200) {
+      ToastMessage().showErrorMessage(message: loginError);
+    } else {
+      NavigateToMainScreen(context);
+    }
+  }
+
+
   void NavigateToMainScreen(BuildContext context) {
     Navigator.pushReplacement(
       context,
@@ -98,10 +117,20 @@ class _LoginformState extends State<Loginform> {
     );
   }
 
+
   bool ValidateMail({required String mail}) {
     final bool emailValid = RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(mail);
     return emailValid;
+  }
+
+
+  Future<int> checkStatueResponse() async{
+      int code = await Validation(Dio()).isUserFound(
+         mail: controller.text,
+         password: passwordController.text);
+      log('Code is $code');
+      return code;
   }
 }
