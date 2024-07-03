@@ -3,11 +3,14 @@ import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/us
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import '../../../../colors/colors.dart';
+import '../../../Forms/presentation_layer/SignIn/views/LogIn.dart';
 import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar/app_bar.dart';
 import '../../../Fragmetns/home/presentation_layer/views/home.dart';
 import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
 import 'widgets/bottom_nav_item.dart';
+
+
 
 class main_screen extends StatefulWidget {
   main_screen({super.key, required this.current_fragmnet_index});
@@ -45,11 +48,44 @@ class _main_screenState extends State<main_screen> {
                 ),
               );
             },
-            child: Image.asset('assets/Images/user.png')),
+            child: Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: Image.asset('assets/Images/user.png'))),
         backgroundColor: primary_color,
         title: const app_bar(),
-        actions: const [Icon(Icons.notifications, color: Colors.white)],
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: IconButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('Logout'),
+                    content: const Text('You need to logout'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Login()));
+                        },
+                        child: const Text('Logout'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ],
       ),
+
       body: body.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(4),
@@ -89,4 +125,5 @@ class _main_screenState extends State<main_screen> {
   }
 }
 
-userModel user_model = userModel(userName: 'userName ', Mail: "Mail", password: '', id: '');
+userModel user_model = userModel(
+    userName: 'userName ', Mail: "Mail", password: '', id: '', token: '');

@@ -6,5 +6,6 @@ class userModel{
   String Mail;
   String password;
   String? img;
-  userModel({required this.userName,required this.Mail, this.img, required this.password, required this.id});
+  String token;
+  userModel({required this.userName,required this.Mail, this.img, required this.password, required this.id, required this.token});
 }

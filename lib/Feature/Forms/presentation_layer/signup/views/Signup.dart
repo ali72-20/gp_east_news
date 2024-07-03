@@ -1,7 +1,13 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
+import 'package:gp_east_news/Feature/Forms/presentation_layer/signup/views/widgets/have_account.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
+import '../../../../../Core/Messages/errorsMeassages.dart';
 import '../../../../../colors/colors.dart';
+import '../../../Data_layer/signup_Api.dart';
 import '../../components /Button.dart';
 import '../../components /TextComp.dart';
 import '../../components /Top_Bar.dart';
@@ -83,10 +89,15 @@ class _SignupState extends State<Signup> {
                     title: 'Sign Up',
                     backgroundColor: primary_color,
                     onPress: () {
-                      validateFeildes();
+                      FocusScope.of(context).unfocus();
+                      if (validateFeildes()) {
+                        validToNavigate(context);
+                      }
                     },
                   ),
-                )
+                ),
+                const SizedBox(height: 32,),
+                const HaveAccount()
               ],
             ),
           ),
@@ -127,10 +138,31 @@ class _SignupState extends State<Signup> {
           .showErrorMessage(message: 'The Two password are not the same');
       return false;
     }
-    user_model.Mail = mailController.text;
-    user_model.userName = userNameController.text;
-    user_model.password = passwordController.text;
-    NavigatToConfirmScreen(context);
     return true;
+  }
+
+  Future<String> checkStatueResponse() async {
+    String code = await newUser(Dio()).saveNewUser(
+        mail: mailController.text,
+        password: passwordController.text,
+        userName: userNameController.text);
+
+    return code;
+  }
+
+  void validToNavigate(BuildContext context) async {
+    String code = await checkStatueResponse();
+    if (code != 'valid') {
+      showDialog(
+        context: context,
+        builder: (context) =>  AlertDialog(
+          backgroundColor: Colors.red,
+          title: const Text('Error', style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),),
+          content: Text(code.substring(7,code.length - 1), style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),),
+        ),
+      );
+    } else {
+      NavigatToConfirmScreen(context);
+    }
   }
 }

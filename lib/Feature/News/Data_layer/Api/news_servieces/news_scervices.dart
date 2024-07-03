@@ -1,7 +1,9 @@
 import 'dart:core';
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+
 
 class NewsServieces {
   final Dio dio;
@@ -9,7 +11,7 @@ class NewsServieces {
   NewsServieces(this.dio);
 
   final String url = 'http://192.168.1.46:2000/news/getNews';
-  final String token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njg0ODI0MTA5NDZjOTk5MGZkMGM3NDUiLCJpYXQiOjE3MTk5NjAxMjksImV4cCI6MTcyMDIxOTMyOX0.Jubixaqj67qtwOcFROA2Zomc0m6og_GC-4QOijEcQ8E';
+  final String token = 'Bearer ${user_model.token}';
 
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
