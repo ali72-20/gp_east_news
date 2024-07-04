@@ -1,7 +1,5 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Messages/errorsMeassages.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
@@ -9,11 +7,14 @@ import 'package:gp_east_news/Feature/Forms/Data_layer/login_Api.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/widgets/login_with_google.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/input_compoenet_model.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/password_input.dart';
+import '../../../../../../Core/loading_indecactor /data_layer/Dialogs.dart';
 import '../../../../../Main/Presentation_layer/views/mainScreen.dart';
 import '../../../../../../colors/colors.dart';
 import '../../../components /Button.dart';
 import '../../../components /TextInputComp.dart';
 import 'dont_have_account.dart';
+
+
 
 class Loginform extends StatefulWidget {
   const Loginform({super.key});
@@ -101,7 +102,8 @@ class _LoginformState extends State<Loginform> {
     if (code != 200) {
       ToastMessage().showErrorMessage(message: loginError);
     } else {
-      NavigateToMainScreen(context);
+      dialogs().showLodaingDialog(text: 'Login', context: context);
+      Future.delayed(const Duration(seconds: 4), (){NavigateToMainScreen(context);});
     }
   }
 
