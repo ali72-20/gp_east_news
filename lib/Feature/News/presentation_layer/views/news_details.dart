@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/app_rounded_blur.dart';
+import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/menu_component.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/interaction.dart';
+import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/comment_icon_component.dart';
+import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/like_component.dart';
+import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/saved_item_icon_compontent.dart';
 import '../../../../Core/Assets/assets_data.dart';
 import '../../../../colors/colors.dart';
 import '../../../interactions /presentation_layer/views/comments_view.dart';
@@ -53,8 +57,18 @@ class news_details extends StatelessWidget {
               ),
             ),
             SliverToBoxAdapter(
-              child: intreaction(
-                model: item,
+              child: Padding(
+                padding: EdgeInsets.only(top: 16, bottom: 16),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    likeComponent(isLiked: item.isLiked, likes: item.likes),
+                    commentItemComponent(comments: item.comments),
+                    savedItemIcon(isSaved: item.isSaved),
+                    menuComponent()
+                  ],
+                ),
               ),
             ),
             SliverToBoxAdapter(

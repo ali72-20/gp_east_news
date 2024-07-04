@@ -17,15 +17,15 @@ class AppRoundedButtonBlur extends StatelessWidget {
         borderRadius: BorderRadius.circular(56),
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 5,
-            sigmaY: 5,
+            sigmaX: 10,
+            sigmaY: 10,
           ),
           child: InkWell(
             borderRadius: BorderRadius.circular(56),
             onTap: onTap,
             child: SizedBox(
-              width: 56,
-              height: 56,
+              width: 50,
+              height: 50,
               child: icon
             ),
           ),

@@ -26,9 +26,11 @@ class news_item extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => news_details(item: item),));
           }, child: news_image(image: item.image??Assetsdata().defualtImage)),
+
           const SizedBox(
             height: 12,
           ),
+
            Container(
              alignment: Alignment.center,
              margin: const EdgeInsets.symmetric(horizontal: 8),
@@ -40,6 +42,7 @@ class news_item extends StatelessWidget {
               style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
                        ),
            ),
+
           intreaction(model: item,),
         ],
       ),
