@@ -159,6 +159,7 @@ class _SignupState extends State<Signup> {
       dialogs().showLodaingDialog(text: 'Signup', context: context);
 
       Future.delayed(const Duration(seconds: 5),(){
+        Navigator.pop(context);
         NavigatToConfirmScreen(context);
       });
     }

@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-import '../../../../Main/Presentation_layer/views/mainScreen.dart';
+import '../../Main/Presentation_layer/views/mainScreen.dart';
 
 class getSummary {
   final Dio dio;
@@ -14,7 +14,7 @@ class getSummary {
 
   Future<String> summary({required String text}) async {
     try {
-      Response response = await dio.get(url, data: {
+      Response response = await dio.post(url, data: {
         'text': text
       }, options: Options(headers: {'Authorization': token},),);
       String summaryText = response.data['summary'];

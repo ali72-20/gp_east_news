@@ -103,7 +103,9 @@ class _LoginformState extends State<Loginform> {
       ToastMessage().showErrorMessage(message: loginError);
     } else {
       dialogs().showLodaingDialog(text: 'Login', context: context);
-      Future.delayed(const Duration(seconds: 4), (){NavigateToMainScreen(context);});
+      Future.delayed(const Duration(seconds: 4), (){
+        Navigator.pop(context);
+        NavigateToMainScreen(context);});
     }
   }
 
