@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
-
 class NewsServieces {
   final Dio dio;
 
@@ -15,33 +14,32 @@ class NewsServieces {
 
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
-      final response = await dio.get(
-        url,
-        data: {
-          'country': 'us',
-          'language': 'en',
-          'category': categoryName,
-        },
-        options: Options(
-          headers: {
-            'Authorization' : token
-          }
-        )
-      );
+      final response = await dio.get(url,
+          data: {
+            'country': 'us',
+            'language': 'en',
+            'category': categoryName,
+          },
+          options: Options(headers: {'Authorization': token}));
       List<dynamic> respo = response.data;
       List<news_model> articalList = [];
-      for(dynamic it in respo){
-          articalList.add(
-            news_model(title: it['title'], image: it['imageURL'], content: it['content'], likes: 0, comments: 0, isLiked: false, isSaved:  false)
-          );
+      for (dynamic artical in respo) {
+        articalList.add(news_model(
+            title: artical['title'],
+            image: artical['imageURL'],
+            content: artical['content'],
+            likes: 0,
+            comments: 0,
+            isLiked: false,
+            isSaved: false,
+            author: artical['source'],
+            date: artical['publishedAt']));
       }
       return articalList;
-    }
-    on DioException catch(e){
+    } on DioException catch (e) {
       log('Dio error $e');
-      throw();
-    }
-    catch (e) {
+      throw ();
+    } catch (e) {
       log('Error fetching mews $e');
       rethrow;
     }

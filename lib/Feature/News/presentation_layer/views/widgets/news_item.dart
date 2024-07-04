@@ -16,7 +16,7 @@ class news_item extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: primary_color,
         border: Border.all(color: primary_color),
         borderRadius: const BorderRadius.only(bottomRight: Radius.circular(12), bottomLeft: Radius.circular(12)),
       ),
@@ -37,7 +37,7 @@ class news_item extends StatelessWidget {
               item.title?? ' ',
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+              style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
                        ),
            ),
           intreaction(model: item,),
