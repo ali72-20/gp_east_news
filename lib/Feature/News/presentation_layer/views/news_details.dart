@@ -7,8 +7,7 @@ import '../../../../colors/colors.dart';
 import '../../Data_layer/Api/news_servieces/news_model.dart';
 
 class news_details extends StatelessWidget {
-  news_details({super.key, required this.item, this.is_comment, required this.screen});
- int screen;
+  news_details({super.key, required this.item, this.is_comment,});
   news_model item;
   bool? is_comment;
 
@@ -20,7 +19,7 @@ class news_details extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            newsSliverAppBar(item: item, screen: screen,),
+            newsSliverAppBar(item: item,),
 
             newsRowIneractions(item: item),
 

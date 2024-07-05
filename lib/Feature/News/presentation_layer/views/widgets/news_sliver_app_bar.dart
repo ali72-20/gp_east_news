@@ -6,15 +6,11 @@ import '../../../../../colors/colors.dart';
 
 
 class newsSliverAppBar extends StatelessWidget {
-  newsSliverAppBar({super.key, required this.item, required this.screen});
+  newsSliverAppBar({super.key, required this.item,});
   news_model item;
-  int screen;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      leading: IconButton(icon: const Icon(Icons.arrow_back,color: Colors.white,), onPressed: () {
-         Navigator.push(context, MaterialPageRoute(builder: (context)=> main_screen(current_fragmnet_index: screen)));
-      },),
       backgroundColor: primary_color,
       iconTheme: const IconThemeData(
         color: Colors.white,

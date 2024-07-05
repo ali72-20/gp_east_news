@@ -12,7 +12,7 @@ class news_list extends StatelessWidget {
         delegate:  SliverChildBuilderDelegate(
           childCount: list_news.length,
             (context,index){
-               return news_item(item: list_news[index], screen: screen,);
+               return news_item(item: list_news[index],);
             }
         )
     );
