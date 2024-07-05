@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
 
@@ -31,6 +32,49 @@ class SavedNews {
       return e.response?.data;
     } catch (e) {
       return 'Something went wrong';
+    }
+  }
+
+
+  Future<List<news_model>> getSavedNews({required String userId}) async {
+    try {
+      Response response = await dio.get(
+          '$base/getSaved',
+          data: {
+            "userId": userId
+          },
+          options: Options(
+              headers: {
+                "Authorization": token
+              }
+          )
+      );
+      List<dynamic> articles = response.data['articles'];
+      List<news_model> savedNews = [];
+      for (var article in articles) {
+        savedNews.add(news_model(
+          id: article['_id'],
+          likes: 0,
+          comments: 0,
+          isLiked: false,
+          isSaved: true,
+          title: article['title'],
+          content: article['content'],
+          image: article['imageURL'],),);
+      }
+
+      return savedNews;
+    } on DioException catch(e){
+      log('Error status: ${e.response?.statusCode}');
+
+      log('Error message: ${e.response?.statusMessage}');
+
+      log('Error data: ${e.response?.data}');
+      log('$e');
+      rethrow;
+    }catch(e){
+      log('e');
+      rethrow;
     }
   }
 }

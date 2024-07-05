@@ -33,7 +33,7 @@ class _homeState extends State<home> {
               FragementBody(category: 'entertainment',),
               FragementBody(category: 'health',),
             ],
-          )),
+          ),),
     );
   }
 }

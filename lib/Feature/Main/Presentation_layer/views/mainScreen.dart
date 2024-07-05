@@ -5,27 +5,32 @@ import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/us
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import '../../../../colors/colors.dart';
-import '../../../Forms/presentation_layer/SignIn/views/LogIn.dart';
 import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar/app_bar.dart';
 import '../../../Fragmetns/home/presentation_layer/views/home.dart';
 import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
+import '../../../News/Data_layer/Api/news_servieces/news_model.dart';
 import 'widgets/bottom_nav_item.dart';
 
 class main_screen extends StatefulWidget {
   main_screen({super.key, required this.current_fragmnet_index});
 
   int current_fragmnet_index = 0;
-
   @override
   State<main_screen> createState() => _main_screenState();
 }
 
 class _main_screenState extends State<main_screen> {
-  List<Widget> body = const [
-    home(),
+  late List<news_model> savedNewsList;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  List<Widget> body =  [
+    const home(),
     saved_fragment(),
-    setting_fragment(),
+    const setting_fragment(),
   ];
   int _selectedIndex = 0;
 
@@ -73,6 +78,7 @@ class _main_screenState extends State<main_screen> {
           ),
         ],
       ),
+
       body: body.elementAt(_selectedIndex),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(4),

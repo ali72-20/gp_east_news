@@ -7,9 +7,11 @@ import 'package:gp_east_news/Feature/Forms/Data_layer/login_Api.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/widgets/login_with_google.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/input_compoenet_model.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/password_input.dart';
+import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Saved_news.dart';
 import '../../../../../../Core/loading_indecactor /data_layer/Dialogs.dart';
 import '../../../../../Main/Presentation_layer/views/mainScreen.dart';
 import '../../../../../../colors/colors.dart';
+import '../../../../../News/Data_layer/Api/news_servieces/news_model.dart';
 import '../../../components /Button.dart';
 import '../../../components /TextInputComp.dart';
 import 'dont_have_account.dart';
@@ -61,7 +63,7 @@ class _LoginformState extends State<Loginform> {
             Button(
               title: 'Sign in',
               backgroundColor: primary_color,
-              onPress: () {
+              onPress:() async{
                 FocusScope.of(context).unfocus();
                 if (globalKey.currentState!.validate()) {
                   if (ValidateMail(mail: controller.text)) {
@@ -116,6 +118,7 @@ class _LoginformState extends State<Loginform> {
       MaterialPageRoute(
         builder: (_) => main_screen(
           current_fragmnet_index: 0,
+
         ),
       ),
     );
