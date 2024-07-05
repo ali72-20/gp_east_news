@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/app_rounded_blur.dart';
-import '../../../../News/Data_layer/Api/news_servieces/news_model.dart';
+
 
 class likeComponent extends StatefulWidget {
    likeComponent({super.key, required this.isLiked, required this.likes});
