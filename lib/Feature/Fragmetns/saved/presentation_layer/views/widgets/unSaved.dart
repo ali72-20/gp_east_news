@@ -27,11 +27,10 @@ class _unSavedState extends State<unSaved> {
     return  AlertDialog(
       content: const Text("You need to un save this article", style: TextStyle(fontFamily: kPrimaryFont,color: Colors.black), textAlign: TextAlign.center,),
       actions: [
-        TextButton(onPressed: () async{
-          await unSaveArtical(context);
-          Navigator.of(context).pop((true));
-        }, child: Text('un save', style: TextStyle(fontFamily: kPrimaryFont, color: primary_color),)),
-
+         TextButton(onPressed: () async{
+            await unSaveArtical(context);
+            Navigator.of(context).pop((true));
+          }, child: Text('un save', style: TextStyle(fontFamily: kPrimaryFont, color: Colors.white),)),
         TextButton(onPressed: (){
           Navigator.pop(context);
         }, child:  Text('close', style: TextStyle(fontFamily: kPrimaryFont, color: primary_color)))

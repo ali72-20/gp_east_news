@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/widgets/saveItemView.dart';
@@ -48,10 +49,19 @@ class _savedItemViewsState extends State<savedItemViews> {
             ),
             secondaryBackground: Container(
               color: Colors.red,
-              alignment: Alignment.centerRight,
-              child: const Icon(
-                Icons.delete,
-                color: Colors.white,
+              child: Container(
+                margin: const EdgeInsets.only(right: 32),
+                alignment: Alignment.centerRight,
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.delete,
+                      color: Colors.white,
+                    ),
+                    Text('Delete', style: TextStyle(color: Colors.white, fontFamily: kPrimaryFont),)
+                  ],
+                ),
               ),
             ),
             key: ValueKey<news_model>(widget.savedNews[index]),
