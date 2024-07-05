@@ -11,13 +11,12 @@ class savedItemViews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList(
-
           delegate: SliverChildBuilderDelegate(
             childCount: savedNews.length,
             (context, index) {
               return savedNews.isEmpty
                   ? const No_Items_Saved()
-                  : news_item(item: savedNews[index]);
+                  : news_item(item: savedNews[index],screen: 1,);
             },
           ),
     );

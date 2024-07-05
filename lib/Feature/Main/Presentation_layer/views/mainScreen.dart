@@ -25,6 +25,7 @@ class _main_screenState extends State<main_screen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    _selectedIndex = widget.current_fragmnet_index;
   }
   List<Widget> body =  [
     const home(),
@@ -32,6 +33,7 @@ class _main_screenState extends State<main_screen> {
     const setting_fragment(),
   ];
   int _selectedIndex = 0;
+
 
   void _onItemTapped(int index) {
     setState(() {

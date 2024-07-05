@@ -1,16 +1,20 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
-
 import '../../../../../Core/Assets/assets_data.dart';
 import '../../../../../colors/colors.dart';
 
+
 class newsSliverAppBar extends StatelessWidget {
-  newsSliverAppBar({super.key, required this.item});
+  newsSliverAppBar({super.key, required this.item, required this.screen});
   news_model item;
+  int screen;
   @override
   Widget build(BuildContext context) {
-    return  SliverAppBar(
+    return SliverAppBar(
+      leading: IconButton(icon: const Icon(Icons.arrow_back,color: Colors.white,), onPressed: () {
+         Navigator.push(context, MaterialPageRoute(builder: (context)=> main_screen(current_fragmnet_index: screen)));
+      },),
       backgroundColor: primary_color,
       iconTheme: const IconThemeData(
         color: Colors.white,

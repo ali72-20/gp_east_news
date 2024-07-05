@@ -38,7 +38,7 @@ class _getNewsResonseState extends State<getNewsResonse> {
       future: future,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return news_list(list_news: snapshot.data!);
+          return news_list(list_news: snapshot.data!,screen: 0,);
         } else if (snapshot.hasError) {
           return const Text("Error found");
         } else {

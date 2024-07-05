@@ -7,8 +7,8 @@ import '../../../Data_layer/Api/news_servieces/news_model.dart';
 import 'news_image.dart';
 
 class news_item extends StatelessWidget {
-  news_item({super.key, required this.item});
-
+  news_item({super.key, required this.item, required this.screen});
+  int screen;
   news_model item;
 
   @override
@@ -23,8 +23,8 @@ class news_item extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (_) => news_details(item: item),));
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (_) => news_details(item: item,screen: screen,),));
           }, child: news_image(image: item.image??defualtImage)),
 
           const SizedBox(

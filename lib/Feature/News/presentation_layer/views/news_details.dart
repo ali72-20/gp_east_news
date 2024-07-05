@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/home.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/newe_content_view.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_row_interactions.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_sliver_app_bar.dart';
@@ -6,8 +7,8 @@ import '../../../../colors/colors.dart';
 import '../../Data_layer/Api/news_servieces/news_model.dart';
 
 class news_details extends StatelessWidget {
-  news_details({super.key, required this.item, this.is_comment});
-
+  news_details({super.key, required this.item, this.is_comment, required this.screen});
+ int screen;
   news_model item;
   bool? is_comment;
 
@@ -19,7 +20,7 @@ class news_details extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            newsSliverAppBar(item: item),
+            newsSliverAppBar(item: item, screen: screen,),
 
             newsRowIneractions(item: item),
 
