@@ -33,12 +33,9 @@ class _intreactionState extends State<intreaction> {
             isLiked: widget.model.isLiked,
             likes: widget.model.likes,
           ),
-          commentItemComponent(comments: widget.model.comments,),
-
-          savedItemIcon(
-            articalId: widget.model.id,
+          commentItemComponent(
+            comments: widget.model.comments,
           ),
-
         ],
       ),
     );

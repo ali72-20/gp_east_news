@@ -13,7 +13,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 8,
+      length: 7,
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.transparent,
@@ -26,7 +26,6 @@ class _homeState extends State<home> {
             children: [
               FragementBody(category: 'entertainment',),
               FragementBody(category: 'sports',),
-              FragementBody(category: 'politics',),
               FragementBody(category: 'business',),
               FragementBody(category: 'science',),
               FragementBody(category:'technology' ,),

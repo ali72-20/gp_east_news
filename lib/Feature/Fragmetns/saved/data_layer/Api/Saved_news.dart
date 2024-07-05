@@ -1,9 +1,10 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Provider/savedNewsListProvider.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
-import '../../../Main/Presentation_layer/views/mainScreen.dart';
+import '../../../../Main/Presentation_layer/views/mainScreen.dart';
 
 class SavedNews {
   final Dio dio;
@@ -18,6 +19,28 @@ class SavedNews {
     try {
       Response response = await dio.post(
         '$base/save',
+        data: {"userId": userId, "articleId": articalId},
+        options: Options(headers: {'Authorization': token}),
+      );
+
+      return response.data['message'];
+    } on DioException catch (e) {
+      log('Error status: ${e.response?.statusCode}');
+
+      log('Error message: ${e.response?.statusMessage}');
+
+      log('Error data: ${e.response?.data}');
+      return e.response?.data;
+    } catch (e) {
+      return 'Something went wrong';
+    }
+  }
+
+  Future<String> unsave(
+      {required String userId, required String articalId}) async {
+    try {
+      Response response = await dio.post(
+        '$base/unsave',
         data: {"userId": userId, "articleId": articalId},
         options: Options(headers: {'Authorization': token}),
       );
@@ -57,13 +80,11 @@ class SavedNews {
           likes: 0,
           comments: 0,
           isLiked: false,
-          isSaved: true,
           title: article['title'],
           content: article['content'],
           image: article['imageURL'],),);
       }
-
-      return savedNews;
+    return savedNews;
     } on DioException catch(e){
       log('Error status: ${e.response?.statusCode}');
 

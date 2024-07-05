@@ -32,7 +32,6 @@ class NewsServieces {
             likes: 0,
             comments: 0,
             isLiked: false,
-            isSaved: false,
             author: artical['source'],
             date: artical['publishedAt']));
       }

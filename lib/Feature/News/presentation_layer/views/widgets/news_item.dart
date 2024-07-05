@@ -25,7 +25,7 @@ class news_item extends StatelessWidget {
           GestureDetector(onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => news_details(item: item),));
-          }, child: news_image(image: item.image??Assetsdata().defualtImage)),
+          }, child: news_image(image: item.image??defualtImage)),
 
           const SizedBox(
             height: 12,
@@ -39,7 +39,7 @@ class news_item extends StatelessWidget {
               item.title?? ' ',
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+              style:  const TextStyle(color: Colors.white, fontFamily: kPrimaryFont ),
                        ),
            ),
 

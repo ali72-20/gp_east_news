@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/widgets/dialog.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/userModel.dart';
@@ -120,3 +119,4 @@ class _main_screenState extends State<main_screen> {
 
 userModel user_model = userModel(
     userName: 'userName ', Mail: "Mail", password: '', id: '', token: '');
+

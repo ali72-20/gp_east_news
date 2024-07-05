@@ -20,7 +20,7 @@ class newsRowIneractions extends StatelessWidget {
           children: [
             likeComponent(isLiked: item.isLiked, likes: item.likes),
             commentItemComponent(comments: item.comments),
-            savedItemIcon(articalId: item.id),
+            savedItemIcon(model: item,),
             summaryIconComponent(content: item.content??'content'),
           ],
         ),

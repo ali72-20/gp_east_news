@@ -14,11 +14,6 @@ class TabsList{
     ),
     Tab(
       child: tap_item(
-        title: "Politics",
-      ),
-    ),
-    Tab(
-      child: tap_item(
         title: "Business",
       ),
     ),

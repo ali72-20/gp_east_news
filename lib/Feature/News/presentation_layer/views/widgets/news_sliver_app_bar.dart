@@ -23,7 +23,7 @@ class newsSliverAppBar extends StatelessWidget {
           item.title == null ? 'title' : item.title!,
           style: const TextStyle(
             color: Colors.white,
-            fontFamily: 'Poppins',
+            fontFamily: kPrimaryFont,
             fontSize: 8,
           ),
         ),
@@ -35,7 +35,7 @@ class newsSliverAppBar extends StatelessWidget {
           child: Image.network(
             excludeFromSemantics: true,
             item.image == null
-                ? Assetsdata().defualtImage
+                ? defualtImage
                 : item.image!,
             fit: BoxFit.cover,
           ),
