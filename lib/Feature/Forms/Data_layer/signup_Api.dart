@@ -9,7 +9,7 @@ class newUser{
 
   newUser(this.dio);
 
-  final String url = 'http://192.168.1.46:2000/user/signup';
+  final String url = 'http://192.168.1.60:2000/user/signup';
 
 
   Future<String> saveNewUser({required String mail, required String password, required String userName}) async {

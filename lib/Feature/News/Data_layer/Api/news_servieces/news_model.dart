@@ -1,4 +1,5 @@
 class news_model {
+  String id;
   String? title;
   String? image;
   String? content;
@@ -9,6 +10,6 @@ class news_model {
   bool isLiked = false;
   bool isSaved = false;
   news_model(
-      { this.title,  this.image,  this.content, required this.likes, required this.comments, required this.isLiked, required this.isSaved, this.author, this.date});
+      {required this.id, this.title,  this.image,  this.content, required this.likes, required this.comments, required this.isLiked, required this.isSaved, this.author, this.date});
 
 }

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/tabs/Tabs_list.dart';
 import 'package:gp_east_news/Feature/Fragmetns/home/presentation_layer/views/widgets/tabs/widgets/tab_scroll_view.dart';
 import 'package:gp_east_news/Feature/Fragmetns/Fragement_body.dart';
-import '../../../../../colors/colors.dart';
-import 'widgets/tabs/widgets/tap_item.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -29,11 +26,11 @@ class _homeState extends State<home> {
             children: [
               FragementBody(category: 'entertainment',),
               FragementBody(category: 'sports',),
-              FragementBody(category: 'business',),
+              FragementBody(category: 'politics',),
               FragementBody(category: 'business',),
               FragementBody(category: 'science',),
               FragementBody(category:'technology' ,),
-              FragementBody(category: 'technology',),
+              FragementBody(category: 'entertainment',),
               FragementBody(category: 'health',),
             ],
           )),

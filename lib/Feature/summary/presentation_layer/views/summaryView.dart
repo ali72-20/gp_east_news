@@ -10,7 +10,7 @@ class summaryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      content: Text(summaryText, style: const TextStyle(fontFamily: 'Poppins'),),
+      content: SingleChildScrollView(child: Text(summaryText, style: const TextStyle(fontFamily: 'Poppins'),)),
       title: const Text(
         'Summary',
         style: TextStyle(fontFamily: 'Poppins', color: Colors.black),

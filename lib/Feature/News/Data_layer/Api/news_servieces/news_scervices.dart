@@ -9,7 +9,7 @@ class NewsServieces {
 
   NewsServieces(this.dio);
 
-  final String url = 'http://192.168.1.46:2000/news/getNews';
+  final String url = 'http://192.168.1.60:2000/news/getNews';
   final String token = 'Bearer ${user_model.token}';
 
   Future<List<news_model>> getNews({required String categoryName}) async {
@@ -25,6 +25,7 @@ class NewsServieces {
       List<news_model> articalList = [];
       for (dynamic artical in respo) {
         articalList.add(news_model(
+          id:  artical['_id'],
             title: artical['title'],
             image: artical['imageURL'],
             content: artical['content'],

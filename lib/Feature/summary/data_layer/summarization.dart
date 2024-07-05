@@ -9,7 +9,7 @@ class getSummary {
 
   getSummary(this.dio);
 
-  final String url = 'http://192.168.1.46:2000/news/summarize';
+  final String url = 'http://192.168.1.60:2000/news/summarize';
   final String token = 'Bearer ${user_model.token}';
 
   Future<String> summary({required String text}) async {

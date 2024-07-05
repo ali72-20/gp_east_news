@@ -7,7 +7,7 @@ class Validation {
 
   Validation(this.dio);
 
-  final String url = 'http://192.168.1.46:2000/user/login';
+  final String url = 'http://192.168.1.60:2000/user/login';
 
   Future<int> isUserFound(
       {required String mail, required String password}) async {
@@ -41,5 +41,7 @@ class Validation {
     user_model.Mail = userData['user']['email'];
     user_model.id = userData['user']['_id'];
     user_model.token = userData['token'];
+    log("user id: ${user_model.id}");
+    log("user token: ${user_model.token}");
   }
 }
