@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -35,7 +36,7 @@ class _LoginState extends State<Login> {
               child: Container(
                 margin: const EdgeInsets.only(top: 32),
                 child: TextComp(
-                  message: "WELCOME TO EAST NEWS!",
+                  message: "welcome to east news".tr,
                   message_color: Colors.black,
                   size: 16,
                 ),

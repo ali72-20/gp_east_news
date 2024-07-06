@@ -11,13 +11,14 @@ class NewsServieces {
 
   final String url = 'http://192.168.1.60:2000/news/getNews';
   final String token = 'Bearer ${user_model.token}';
-
+  final String country = selectedLang == 'en' ? 'us' :'eg';
+  final String lang = selectedLang == 'en' ? 'en' :'ar';
   Future<List<news_model>> getNews({required String categoryName}) async {
     try {
       final response = await dio.get(url,
           data: {
-            'country': 'us',
-            'language': 'en',
+            'country': country,
+            'language': lang,
             'category': categoryName,
           },
           options: Options(headers: {'Authorization': token}));
@@ -29,6 +30,7 @@ class NewsServieces {
             title: artical['title'],
             image: artical['imageURL'],
             content: artical['content'],
+            url:  artical['url'],
             likes: 0,
             comments: 0,
             isLiked: false,

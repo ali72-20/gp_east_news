@@ -31,13 +31,6 @@ class setting_fragment extends StatelessWidget {
               list:  ["english".tr, "arabic".tr],
               currentValue: 'English',
             ),
-            setteingItemComponent(
-              text: 'Them',
-              icon: Ionicons.moon_outline,
-              color: Colors.blueAccent,
-              list: const ['Light', 'Dark'],
-              currentValue: 'Light',
-            ),
           ],
         ),
       ),

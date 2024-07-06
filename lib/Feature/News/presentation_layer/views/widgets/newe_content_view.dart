@@ -25,7 +25,7 @@ class newsContentView extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.all(12),
             child: Text(
-              item.content ?? 'Artrical title',
+              item.content ?? item.url!,
               style: const TextStyle(
                   color: Colors.black, fontFamily: kPrimaryFont),
             ),

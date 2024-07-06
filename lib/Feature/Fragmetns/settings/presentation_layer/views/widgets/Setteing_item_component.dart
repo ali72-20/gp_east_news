@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/main.dart';
 import 'package:ionicons/ionicons.dart';
-String _selectedLang = 'English';
+
+import '../../../../../Main/Presentation_layer/views/mainScreen.dart';
+
 
 class setteingItemComponent extends StatefulWidget {
   setteingItemComponent(
@@ -53,15 +55,14 @@ class _State extends State<setteingItemComponent> {
             ),
             textStyle:
                 const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),
-            initialSelection: _selectedLang  =='Arabic' ? widget.list[1] : widget.list[0],
+            initialSelection: selectedLang  == 'ar' ? widget.list[1] : widget.list[0],
             onSelected: (String? value) {
               // This is called when the user selects an item.
               setState(() {
-                _selectedLang = value!;
+                selectedLang = value == 'arabic'.tr ? 'ar' : 'en';
                 widget.currentValue = value == 'arabic'.tr ? 'ar' : 'en';
-                AppThem = value;
               });
-              Get.updateLocale(Locale(widget.currentValue));
+              Get.updateLocale(Locale(selectedLang));
             },
             dropdownMenuEntries: widget.list.map<DropdownMenuEntry<String>>(
               (String value) {

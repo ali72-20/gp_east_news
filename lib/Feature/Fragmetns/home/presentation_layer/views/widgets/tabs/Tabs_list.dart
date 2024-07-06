@@ -10,7 +10,7 @@ class TabsList{
     ),
     Tab(
       child: tap_item(
-        title: 'sports',
+        title: "sports",
       ),
     ),
     Tab(
@@ -30,7 +30,7 @@ class TabsList{
     ),
     Tab(
       child: tap_item(
-        title: "Entertainment",
+        title: "entertainment",
       ),
     ),
     Tab(

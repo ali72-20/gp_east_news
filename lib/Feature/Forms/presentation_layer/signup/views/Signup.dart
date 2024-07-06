@@ -55,7 +55,7 @@ class _SignupState extends State<Signup> {
                   height: 48,
                 ),
                 TextComp(
-                    message: "LET'S CREATE ACCOUNT",
+                    message: "let's create account".tr,
                     message_color: Colors.black,
                     size: 16),
                 TextInputComp(

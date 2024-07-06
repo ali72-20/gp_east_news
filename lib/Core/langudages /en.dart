@@ -9,7 +9,7 @@ const Map<String, String> en = {
   "userName": "User Name",
   'confirm password': "Confirm password",
   'all': "All",
-  'sport': 'Sports',
+  'sports': 'Sports',
   'entertainment' : 'Entertainment',
   'business': 'Business',
   'science': 'Science',
