@@ -30,8 +30,7 @@ class _intreactionState extends State<intreaction> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           likeComponent(
-            isLiked: widget.model.isLiked,
-            likes: widget.model.likes,
+            model: widget.model
           ),
           commentItemComponent(
             model: widget.model,

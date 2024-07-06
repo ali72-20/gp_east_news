@@ -20,7 +20,7 @@ class newsRowIneractions extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            likeComponent(isLiked: item.isLiked, likes: item.likes),
+            likeComponent(model: item,),
             commentItemComponent(model: item,),
             savedItemIcon(model: item,),
             selectedLang == 'en' ? summaryIconComponent(content: item.content??'content'):const Text(''),

@@ -5,6 +5,9 @@ import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.da
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 import 'package:gp_east_news/Feature/comments%20/data_layer/Api/commets.dart';
 import 'package:gp_east_news/Feature/comments%20/data_layer/model/commentModel.dart';
+import 'package:gp_east_news/Feature/interactions%20/data_layer/Api/likesModel.dart';
+
+import '../../../../interactions /data_layer/Api/liked.dart';
 
 class NewsServieces {
   final Dio dio;
@@ -44,8 +47,15 @@ class NewsServieces {
       for(var item in articalList){
         List<commentModel> list = await Comments(Dio()).getComment(articleId: item.id);
         item.comments = list.length;
+        likesModel model = await Likes(Dio()).getLiks(articleId: item.id);
+        item.likes = model.likes;
+        for(var go in model.authoerID){
+          if(go == user_model.id){
+            item.isLiked = true;
+            break;
+          }
+        }
       }
-
       return articalList;
     } on DioException catch (e) {
       log('Dio error $e');
