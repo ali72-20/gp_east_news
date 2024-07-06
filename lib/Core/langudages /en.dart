@@ -3,6 +3,7 @@ const Map<String, String> en = {
   'signup': 'Signup',
   'email': 'Email',
   'password': 'Password',
+  'textReader' : 'Listen to article',
   'welcome to east news': 'WELCOME TO EAST NEWS',
   "Don'tHaveAnAccount": "Don't have an account",
   "let's create account": "LET's CREATE ACCOUNT",

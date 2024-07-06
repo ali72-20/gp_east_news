@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/atricle_reader/presentation_layer/view/audoi.dart';
 
 import '../../../../interactions /presentation_layer/views/widgets/comment_icon_component.dart';
 import '../../../../interactions /presentation_layer/views/widgets/like_component.dart';
@@ -21,7 +23,8 @@ class newsRowIneractions extends StatelessWidget {
             likeComponent(isLiked: item.isLiked, likes: item.likes),
             commentItemComponent(comments: item.comments),
             savedItemIcon(model: item,),
-            summaryIconComponent(content: item.content??'content'),
+            selectedLang == 'en' ? summaryIconComponent(content: item.content??'content'):const Text(''),
+            selectedLang == 'en' ? const AudoiIcon():const Text(''),
           ],
         ),
       ),

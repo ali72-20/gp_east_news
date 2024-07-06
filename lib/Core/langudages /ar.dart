@@ -11,6 +11,7 @@ const Map<String, String> ar = {
   'all': "الكل",
   'sports': 'الرياضة',
   'entertainment': 'الترفيه',
+  'textReader' : 'الاستماع الي الخبر',
   'business': 'الأعمال',
   'science': 'العلوم',
   'health': 'الصحة',
