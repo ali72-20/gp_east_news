@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/colors/colors.dart';
 
 class summaryView extends StatelessWidget {
@@ -14,12 +15,12 @@ class summaryView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Text(
           summaryText,
-          style: const TextStyle(fontFamily: 'Poppins'),
+          style: const TextStyle(fontFamily: kPrimaryFont),
         ),
       ),
       title: const Text(
         'Summary',
-        style: TextStyle(fontFamily: 'Poppins', color: Colors.black),
+        style: TextStyle(fontFamily: kPrimaryFont, color: Colors.black),
       ),
       actions: [
         TextButton(
@@ -28,7 +29,7 @@ class summaryView extends StatelessWidget {
           },
           child: const Text(
             'Close',
-            style: TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+            style: TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
           ),
         ),
       ],

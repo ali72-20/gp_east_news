@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
 class newsContentView extends StatelessWidget {
@@ -26,7 +27,7 @@ class newsContentView extends StatelessWidget {
             child: Text(
               item.content ?? 'Artrical title',
               style: const TextStyle(
-                  color: Colors.black, fontFamily: 'Poppins'),
+                  color: Colors.black, fontFamily: kPrimaryFont),
             ),
           ),
         ),

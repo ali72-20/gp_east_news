@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 class TextComp extends StatelessWidget {
   TextComp({super.key, required this.message, required this.message_color, required this.size});
@@ -14,7 +15,7 @@ class TextComp extends StatelessWidget {
         style: TextStyle(
             color: message_color,
             fontSize: size,
-            fontFamily: 'Poppins'
+            fontFamily: kPrimaryFont
         ),
     );
   }

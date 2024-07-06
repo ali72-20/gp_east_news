@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 import '../../../../../Core/app_rounded_blur.dart';
 
@@ -33,7 +34,7 @@ class _likeComponentState extends State<likeComponent> {
       const SizedBox(width: 8,),
       Text(
         widget.likes.toString(),
-        style: const TextStyle(color:Colors.white, fontFamily: 'Poppins'),
+        style: const TextStyle(color:Colors.white, fontFamily: kPrimaryFont),
       ),
     ],);
   }

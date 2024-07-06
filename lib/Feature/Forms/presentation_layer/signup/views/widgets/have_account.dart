@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/LogIn.dart';
 
 import '../../../../../../colors/colors.dart';
@@ -14,11 +15,11 @@ class HaveAccount extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: "Have an account?",
-        style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+        style: const TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
         children: [
           TextSpan(
             text: " Login",
-            style: TextStyle(color: primary_color, fontFamily: 'Poppins'),
+            style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
                 Navigator.pushReplacement(context,

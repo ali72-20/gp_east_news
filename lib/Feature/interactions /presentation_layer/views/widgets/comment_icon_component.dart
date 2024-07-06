@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/app_rounded_blur.dart';
 
 import '../comments_view.dart';
@@ -41,7 +42,7 @@ class _commentItemComponentState extends State<commentItemComponent> {
           },
         ),
         const SizedBox(width: 8,),
-        Text(widget.comments.toString(), style: const TextStyle(color: Colors.white, fontFamily: 'Poppins'),),
+        Text(widget.comments.toString(), style: const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),),
       ],
     );
   }

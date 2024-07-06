@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 import '../../../../colors/colors.dart';
 class commentView extends StatefulWidget {
@@ -38,7 +39,7 @@ class _commentViewState extends State<commentView> {
               left: 145,
               child: Text(
                 "Comments",
-                style: TextStyle(color: primary_color, fontFamily: 'Poppins'),
+                style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
               ),
             ),
             Positioned(

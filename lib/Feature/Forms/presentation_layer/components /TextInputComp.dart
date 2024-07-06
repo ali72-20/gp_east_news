@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 
 import '../../../../colors/colors.dart';
@@ -28,14 +29,14 @@ class TextInputComp extends StatelessWidget {
             return "The $lableText is Required";
           }
         },
-        style: const TextStyle(color: Colors.black, fontFamily: 'Poppins'),
+        style: const TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
         // smartDashesType: SmartDashesType.enabled,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),
           labelText: lableText,
           labelStyle: TextStyle(
               color: gray,
-              fontFamily: 'Poppins'
+              fontFamily: kPrimaryFont
           ),
           suffixIcon: Icon(
             sufIcone,

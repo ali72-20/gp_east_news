@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../Core/ConstantKeies/ConstKey.dart';
@@ -60,7 +61,7 @@ class _onboarding_viewState extends State<onboarding_view> {
                         style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
-                            fontFamily: 'Poppins'),
+                            fontFamily: kPrimaryFont),
                       ),
                       const SizedBox(height: 48),
                     ],
@@ -83,7 +84,7 @@ class _onboarding_viewState extends State<onboarding_view> {
                           child: const Text(
                             'Skip',
                             style: TextStyle(
-                                color: Colors.white, fontFamily: 'Poppins'),
+                                color: Colors.white, fontFamily: kPrimaryFont),
                           ),
                         ),
                         SmoothPageIndicator(
@@ -106,7 +107,7 @@ class _onboarding_viewState extends State<onboarding_view> {
                           child: const Text(
                             'next',
                             style: TextStyle(
-                                color: Colors.white, fontFamily: 'Poppins'),
+                                color: Colors.white, fontFamily: kPrimaryFont),
                           ),
                         ),
                       ],

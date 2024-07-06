@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/signup/views/widgets/have_account.dart';
+import 'package:gp_east_news/Feature/category/presentation_layer/views/category_list.dart';
 import '../../../../../Core/loading_indecactor /data_layer/Dialogs.dart';
 import '../../../../../colors/colors.dart';
 import '../../../Data_layer/signup_Api.dart';
@@ -11,7 +12,7 @@ import '../../components /Top_Bar.dart';
 import '../../components /TextInputComp.dart';
 import '../../components /input_compoenet_model.dart';
 import '../../components /password_input.dart';
-import '../../Confirmation/views/Confirmation.dart';
+
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -106,7 +107,7 @@ class _SignupState extends State<Signup> {
 
   void NavigatToConfirmScreen(BuildContext context) {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (_) => const Confirmation()));
+        context, MaterialPageRoute(builder: (_) =>  CategoryList()));
   }
 
   bool ValidateMail({required String mail}) {

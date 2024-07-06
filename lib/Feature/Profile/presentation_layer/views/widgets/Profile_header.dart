@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import '../../../../../colors/colors.dart';
 import '../../../../Main/Presentation_layer/views/mainScreen.dart';
 
@@ -31,54 +32,9 @@ class _profile_headerState extends State<profile_header> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("@${user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: 'Poppins', fontSize: 16),),
+                Text("@${user_model.userName} ", style: const TextStyle(color: Colors.white, fontFamily: kPrimaryFont, fontSize: 16),),
                 const Icon(Icons.verified_rounded, color: Colors.blue,)
               ],),
-          ),
-          Container(
-            alignment: Alignment.bottomCenter,
-            child: OutlinedButton(
-              onPressed: () {
-                setState(() {
-                  followIcon =
-                  followIcon == Icons.add ? Icons.check : Icons.add;
-                });
-                if(followIcon ==Icons.check ){
-                  Fluttertoast.showToast(
-                      backgroundColor: primary_color,
-                      msg: "You now following ${user_model.userName}",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 2,
-                      textColor: Colors.white,
-                      fontSize: 16.0);
-                }else{
-                  Fluttertoast.showToast(
-                      backgroundColor: primary_color,
-                      msg: "You now not following ${user_model.userName}",
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 2,
-                      textColor: Colors.white,
-                      fontSize: 16.0);
-                }
-              },
-              style: const ButtonStyle(),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text(
-                    "Follow",
-                    style: TextStyle(
-                        color: Colors.white, fontFamily: 'Poppins'),
-                  ),
-                  Icon(
-                    followIcon,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            ),
           ),
         ],
       ),

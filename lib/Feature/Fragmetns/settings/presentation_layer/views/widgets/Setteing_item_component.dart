@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/main.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -39,7 +40,7 @@ class _State extends State<setteingItemComponent> {
         ),
         title: Text(
           widget.text,
-          style: TextStyle(color: widget.color, fontFamily: 'Poppins'),
+          style: TextStyle(color: widget.color, fontFamily: kPrimaryFont, fontSize: 12),
         ),
         trailing:  Container(
           decoration:  BoxDecoration(
@@ -50,7 +51,7 @@ class _State extends State<setteingItemComponent> {
               backgroundColor: WidgetStateProperty.all(widget.color)
             ),
             textStyle:
-                const TextStyle(color: Colors.white, fontFamily: 'Poppins'),
+                const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),
             initialSelection: widget.list.first,
             onSelected: (String? value) {
               // This is called when the user selects an item.

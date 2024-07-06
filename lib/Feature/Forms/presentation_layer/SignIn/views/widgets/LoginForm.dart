@@ -83,8 +83,6 @@ class _LoginformState extends State<Loginform> {
 
             const SizedBox(height: 16),
 
-            const loginWittGoogle(),
-
             const SizedBox(
               height: 24,
             ),

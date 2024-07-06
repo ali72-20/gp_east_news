@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 class loginWittGoogle extends StatelessWidget {
   const loginWittGoogle({super.key});
@@ -25,7 +26,7 @@ class loginWittGoogle extends StatelessWidget {
                 'Sing up with google',
                 style: TextStyle(
                     color: Colors.black,
-                    fontFamily: 'Poppins',
+                    fontFamily: kPrimaryFont,
                     fontSize: 16),
               )
             ],

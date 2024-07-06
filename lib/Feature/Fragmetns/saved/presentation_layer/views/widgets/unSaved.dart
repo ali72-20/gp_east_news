@@ -30,7 +30,7 @@ class _unSavedState extends State<unSaved> {
          TextButton(onPressed: () async{
             await unSaveArtical(context);
             Navigator.of(context).pop((true));
-          }, child: Text('un save', style: TextStyle(fontFamily: kPrimaryFont, color: Colors.white),)),
+          }, child: Text('un save', style: TextStyle(fontFamily: kPrimaryFont, color: primary_color),)),
         TextButton(onPressed: (){
           Navigator.pop(context);
         }, child:  Text('close', style: TextStyle(fontFamily: kPrimaryFont, color: primary_color)))

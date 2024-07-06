@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 import '../../../../colors/colors.dart';
 
@@ -31,7 +32,7 @@ class _ButtonState extends State<Button> {
           child: Text(
            widget.title,
             style: const TextStyle(
-                color: Colors.white, fontFamily: 'Poppins', fontSize: 16),
+                color: Colors.white, fontFamily: kPrimaryFont, fontSize: 16),
           ),
         ),
       ),
