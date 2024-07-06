@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
@@ -51,15 +52,15 @@ class _savedItemViewsState extends State<savedItemViews> {
               color: Colors.red,
               child: Container(
                 margin: const EdgeInsets.only(right: 32),
-                alignment: Alignment.centerRight,
-                child: const Column(
+                // alignment: Alignment.center,
+                child:  Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.delete,
                       color: Colors.white,
                     ),
-                    Text('Delete', style: TextStyle(color: Colors.white, fontFamily: kPrimaryFont),)
+                    Text('delete'.tr, style: const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),)
                   ],
                 ),
               ),

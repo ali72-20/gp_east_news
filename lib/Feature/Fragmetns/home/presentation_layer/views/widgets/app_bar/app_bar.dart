@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 import 'widgets/app_bar_text.dart';
 
 class app_bar extends StatelessWidget {
@@ -9,8 +10,8 @@ class app_bar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        app_bar_text(text: 'E', font: 'FasterOne'),
-        app_bar_text(text: 'AST NEWS', font: 'Alatsi'),
+        app_bar_text(text: 'E'.tr, font: 'FasterOne'),
+        app_bar_text(text: 'AST NEWS'.tr, font: 'Alatsi'),
         const SizedBox(
           width: 4,
         ),

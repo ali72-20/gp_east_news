@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Messages/errorsMeassages.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Forms/Data_layer/login_Api.dart';
@@ -46,13 +47,13 @@ class _LoginformState extends State<Loginform> {
         child: Column(
           children: [
             TextInputComp(
-              lableText: "Email",
+              lableText: "email".tr,
               sufIcone: Icons.mail,
               controller: controller,
             ),
             password_input(
               model: input_componenet_model(
-                  lablText: "password",
+                  lablText: "password".tr,
                   suffixIcon: Icons.visibility_off,
                   is_password: true),
               passwordcontroller: passwordController,
@@ -61,7 +62,7 @@ class _LoginformState extends State<Loginform> {
             const SizedBox(height: 15),
 
             Button(
-              title: 'Sign in',
+              title: 'login'.tr,
               backgroundColor: primary_color,
               onPress:() async{
                 FocusScope.of(context).unfocus();
@@ -102,7 +103,7 @@ class _LoginformState extends State<Loginform> {
     if (code != 200) {
       ToastMessage().showErrorMessage(message: loginError);
     } else {
-      dialogs().showLodaingDialog(text: 'Login', context: context);
+      dialogs().showLodaingDialog(text: 'login'.tr, context: context);
       Future.delayed(const Duration(seconds: 5), (){
         Navigator.pop(context);
         NavigateToMainScreen(context);});

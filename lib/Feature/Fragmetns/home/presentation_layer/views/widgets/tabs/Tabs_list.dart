@@ -1,30 +1,31 @@
 import 'package:flutter/src/material/tabs.dart';
 import 'widgets/tap_item.dart';
+
 class TabsList{
   static List<Tab> list = [
     Tab(
       child: tap_item(
-        title: "All",
+        title: "all",
       ),
     ),
     Tab(
       child: tap_item(
-        title: "Sports",
+        title: 'sports',
       ),
     ),
     Tab(
       child: tap_item(
-        title: "Business",
+        title: "business",
       ),
     ),
     Tab(
       child: tap_item(
-        title: "Science",
+        title: "science",
       ),
     ),
     Tab(
       child: tap_item(
-        title: "Technology",
+        title: "technology",
       ),
     ),
     Tab(
@@ -34,7 +35,7 @@ class TabsList{
     ),
     Tab(
       child: tap_item(
-        title: "Health",
+        title: "health",
       ),
     ),
   ];

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 class tap_item extends StatelessWidget {
   tap_item({super.key, required this.title});
@@ -9,9 +11,9 @@ class tap_item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      title,
+      title.tr,
       style: const TextStyle(
-          fontFamily: 'Poppins', fontSize: 12,),
+          fontFamily: kPrimaryFont, fontSize: 12,),
     );
   }
 }

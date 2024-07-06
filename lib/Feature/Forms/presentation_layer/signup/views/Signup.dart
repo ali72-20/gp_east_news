@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/signup/views/widgets/have_account.dart';
 import 'package:gp_east_news/Feature/category/presentation_layer/views/category_list.dart';
@@ -58,25 +59,25 @@ class _SignupState extends State<Signup> {
                     message_color: Colors.black,
                     size: 16),
                 TextInputComp(
-                  lableText: 'User Name',
+                  lableText: 'userName'.tr,
                   sufIcone: Icons.text_fields,
                   controller: userNameController,
                 ),
                 TextInputComp(
-                  lableText: 'Email',
+                  lableText: 'email'.tr,
                   sufIcone: Icons.mail,
                   controller: mailController,
                 ),
                 password_input(
                   model: input_componenet_model(
-                      lablText: "password",
+                      lablText: "password".tr,
                       suffixIcon: Icons.visibility_off,
                       is_password: true),
                   passwordcontroller: passwordController,
                 ),
                 password_input(
                   model: input_componenet_model(
-                      lablText: "Confirm password",
+                      lablText: "confirm password".tr,
                       suffixIcon: Icons.visibility_off,
                       is_password: true),
                   passwordcontroller: confirmPasswordController,
@@ -84,7 +85,7 @@ class _SignupState extends State<Signup> {
                 Container(
                   margin: const EdgeInsets.only(top: 40),
                   child: Button(
-                    title: 'Sign Up',
+                    title: 'signup'.tr,
                     backgroundColor: primary_color,
                     onPress: () {
                       FocusScope.of(context).unfocus();

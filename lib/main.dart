@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Provider/savedNewsListProvider.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:provider/provider.dart';
 import 'Core/ConstantKeies/ConstKey.dart';
+import 'Core/langudages /Translation/translation.dart';
 import 'Feature/Splash/presentation_layer/views/SplashScreen.dart';
 
 void main() async {
@@ -21,10 +21,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.light(),
         home: Splashscreen(onboaring: onBoarding),
+         translations: Translation(),
+         locale:  const Locale('en'),
+         fallbackLocale: const Locale('en'),
     );
   }
 }

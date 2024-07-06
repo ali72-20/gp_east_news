@@ -1,9 +1,10 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/main.dart';
 import 'package:ionicons/ionicons.dart';
+String _selectedLang = 'English';
 
 class setteingItemComponent extends StatefulWidget {
   setteingItemComponent(
@@ -52,13 +53,15 @@ class _State extends State<setteingItemComponent> {
             ),
             textStyle:
                 const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),
-            initialSelection: widget.list.first,
+            initialSelection: _selectedLang  =='Arabic' ? widget.list[1] : widget.list[0],
             onSelected: (String? value) {
               // This is called when the user selects an item.
               setState(() {
-                widget.currentValue = value!;
+                _selectedLang = value!;
+                widget.currentValue = value == 'arabic'.tr ? 'ar' : 'en';
                 AppThem = value;
               });
+              Get.updateLocale(Locale(widget.currentValue));
             },
             dropdownMenuEntries: widget.list.map<DropdownMenuEntry<String>>(
               (String value) {

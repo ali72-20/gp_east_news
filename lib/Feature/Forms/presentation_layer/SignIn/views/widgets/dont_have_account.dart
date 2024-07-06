@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 import '../../../../../../colors/colors.dart';
@@ -13,11 +14,11 @@ class dontHaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "Don't have an account?",
+        text: "Don't have an account?".tr,
         style: const TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
         children: [
           TextSpan(
-            text: " Signup",
+            text: "signup".tr,
             style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
             recognizer: TapGestureRecognizer()
               ..onTap = () {

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/SignIn/views/LogIn.dart';
 
 import '../../../../../../colors/colors.dart';
-import '../../../signup/views/Signup.dart';
+
 
 class HaveAccount extends StatelessWidget {
   const HaveAccount({super.key});
@@ -14,11 +15,11 @@ class HaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "Have an account?",
+        text: "HaveAnAccount?".tr,
         style: const TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
         children: [
           TextSpan(
-            text: " Login",
+            text: "login".tr,
             style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
             recognizer: TapGestureRecognizer()
               ..onTap = () {

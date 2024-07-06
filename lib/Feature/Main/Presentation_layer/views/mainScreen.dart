@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/widgets/dialog.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/widgets/userModel.dart';
 import 'package:gp_east_news/Feature/Profile/presentation_layer/views/user_profile.dart';
@@ -94,18 +95,18 @@ class _main_screenState extends State<main_screen> {
             SalomonBottomBarItem(
                 icon: const Icon(Icons.home),
                 title: bottom_nav_item(
-                  title: "Home",
+                  title: 'home'.tr,
                 )),
             SalomonBottomBarItem(
               icon: const Icon(Icons.save),
               title: bottom_nav_item(
-                title: "Saved",
+                title: 'save'.tr,
               ),
             ),
             SalomonBottomBarItem(
                 icon: const Icon(Icons.settings),
                 title: bottom_nav_item(
-                  title: "Settings",
+                  title: "settings".tr,
                 )),
           ],
           currentIndex: _selectedIndex,

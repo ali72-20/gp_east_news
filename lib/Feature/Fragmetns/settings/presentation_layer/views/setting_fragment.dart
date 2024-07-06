@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/Fragmetns/settings/presentation_layer/views/widgets/Setteing_item_component.dart';
 import 'package:ionicons/ionicons.dart';
 
@@ -17,16 +19,16 @@ class setting_fragment extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'Settings',
+              'settings'.tr,
               style: TextStyle(
-                  color: primary_color, fontFamily: 'Poppins', fontSize: 32),
+                  color: primary_color, fontFamily: kPrimaryFont, fontSize: 32),
             ),
             const SizedBox(height: 20),
             setteingItemComponent(
-              text: 'Language',
+              text: 'language'.tr,
               icon: Ionicons.earth_outline,
               color: Colors.redAccent,
-              list: const ['English', 'Arabic'],
+              list:  ["english".tr, "arabic".tr],
               currentValue: 'English',
             ),
             setteingItemComponent(

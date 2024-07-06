@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 class getHeadingText extends StatelessWidget {
   const getHeadingText({super.key});
@@ -13,7 +14,7 @@ class getHeadingText extends StatelessWidget {
           style: TextStyle(
               color: Colors.white,
               fontSize: 16,
-            fontFamily: 'Poppins'
+            fontFamily: kPrimaryFont
           ),
           textAlign: TextAlign.center,
         )
