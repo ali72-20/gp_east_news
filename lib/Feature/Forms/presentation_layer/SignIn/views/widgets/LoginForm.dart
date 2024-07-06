@@ -100,6 +100,7 @@ class _LoginformState extends State<Loginform> {
   void validToNavigate(BuildContext context) async{
     int code = await checkStatueResponse();
     log('Code 2 is $code');
+    log('user password: ${user_model.password}');
     if (code != 200) {
       ToastMessage().showErrorMessage(message: loginError);
     } else {

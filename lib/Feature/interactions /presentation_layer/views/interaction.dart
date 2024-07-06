@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Core/app_rounded_blur.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
-import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/comments_view.dart';
-import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/comment_icon_component.dart';
+import 'package:gp_east_news/Feature/comments%20/presentatio_layer/view/comments_view.dart';
+import 'package:gp_east_news/Feature/comments%20/presentatio_layer/view/widgets/comment_icon_component.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/like_component.dart';
 import 'package:gp_east_news/Feature/interactions%20/presentation_layer/views/widgets/saved_item_icon_compontent.dart';
 
@@ -34,7 +34,7 @@ class _intreactionState extends State<intreaction> {
             likes: widget.model.likes,
           ),
           commentItemComponent(
-            comments: widget.model.comments,
+            model: widget.model,
           ),
         ],
       ),

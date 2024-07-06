@@ -3,7 +3,7 @@ import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.da
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 import 'package:gp_east_news/Feature/atricle_reader/presentation_layer/view/audoi.dart';
 
-import '../../../../interactions /presentation_layer/views/widgets/comment_icon_component.dart';
+import '../../../../comments /presentatio_layer/view/widgets/comment_icon_component.dart';
 import '../../../../interactions /presentation_layer/views/widgets/like_component.dart';
 import '../../../../interactions /presentation_layer/views/widgets/saved_item_icon_compontent.dart';
 import '../../../../summary/presentation_layer/views/widgets/summary_icon_component.dart';
@@ -21,7 +21,7 @@ class newsRowIneractions extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             likeComponent(isLiked: item.isLiked, likes: item.likes),
-            commentItemComponent(comments: item.comments),
+            commentItemComponent(model: item,),
             savedItemIcon(model: item,),
             selectedLang == 'en' ? summaryIconComponent(content: item.content??'content'):const Text(''),
             selectedLang == 'en' ? const AudoiIcon():const Text(''),

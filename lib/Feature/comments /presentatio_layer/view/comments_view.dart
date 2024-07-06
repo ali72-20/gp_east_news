@@ -1,18 +1,23 @@
 
+
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
+import 'package:gp_east_news/Feature/comments%20/presentatio_layer/view/widgets/commentsListView.dart';
+
+
 
 import '../../../../colors/colors.dart';
+import '../../data_layer/model/commentModel.dart';
 class commentView extends StatefulWidget {
-  const commentView({super.key});
-
+  commentView({super.key, required this.commentsList});
+  List<commentModel> commentsList;
   @override
   State<commentView> createState() => _commentViewState();
 }
 
 class _commentViewState extends State<commentView> {
   final comment = TextEditingController();
-  List<String>? comment_Text;
+  late List<commentModel> list;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -42,6 +47,7 @@ class _commentViewState extends State<commentView> {
                 style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
               ),
             ),
+            commentListView(list: widget.commentsList,),
             Positioned(
               left: 0,
               bottom: 0,

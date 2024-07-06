@@ -1,25 +1,33 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:developer';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/app_rounded_blur.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/comments%20/data_layer/model/commentModel.dart';
 
+import '../../../data_layer/Api/commets.dart';
 import '../comments_view.dart';
 
 class commentItemComponent extends StatefulWidget {
-   commentItemComponent({super.key, required this.comments});
-  int comments;
+   commentItemComponent({super.key, required this.model});
+   news_model model;
   @override
   State<commentItemComponent> createState() => _commentItemComponentState();
 }
 
 class _commentItemComponentState extends State<commentItemComponent> {
+
+  late List<commentModel> commentList;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         AppRoundedButtonBlur(
           icon: const Icon(Icons.add_comment, color: Colors.white,),
-          onTap: () {
+          onTap: () async{
+            commentList = await Comments(Dio()).getComment(articleId:  widget.model.id);
+            log("list comment Size: ${commentList.length}");
             showBottomSheet(
               elevation: 16,
               backgroundColor: Colors.transparent,
@@ -33,7 +41,7 @@ class _commentItemComponentState extends State<commentItemComponent> {
                     initialChildSize: .5,
                     minChildSize: .2,
                     builder: (context, scrollController) {
-                      return const commentView();
+                      return commentView(commentsList: commentList,);
                     },
                   ),
                 );
@@ -42,7 +50,7 @@ class _commentItemComponentState extends State<commentItemComponent> {
           },
         ),
         const SizedBox(width: 8,),
-        Text(widget.comments.toString(), style: const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),),
+        Text(widget.model.comments.toString(), style: const TextStyle(color: Colors.white, fontFamily: kPrimaryFont),),
       ],
     );
   }

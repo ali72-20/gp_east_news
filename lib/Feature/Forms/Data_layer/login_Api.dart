@@ -38,6 +38,7 @@ class Validation {
   void SaveUserData(Response<dynamic> response) {
     Map<String, dynamic> userData = response.data;
     user_model.userName = userData['user']['userName'];
+    user_model.password = userData['user']['password'];
     user_model.Mail = userData['user']['email'];
     user_model.id = userData['user']['_id'];
     user_model.token = userData['token'];
