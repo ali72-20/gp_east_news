@@ -19,6 +19,7 @@ class commentItemComponent extends StatefulWidget {
 class _commentItemComponentState extends State<commentItemComponent> {
 
   late List<commentModel> commentList;
+  late int commentsNumber;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,6 +29,9 @@ class _commentItemComponentState extends State<commentItemComponent> {
           onTap: () async{
             commentList = await Comments(Dio()).getComment(articleId:  widget.model.id);
             log("list comment Size: ${commentList.length}");
+            setState(() {
+              widget.model.comments = commentList.length;
+            });
             showBottomSheet(
               elevation: 16,
               backgroundColor: Colors.transparent,
@@ -41,7 +45,7 @@ class _commentItemComponentState extends State<commentItemComponent> {
                     initialChildSize: .5,
                     minChildSize: .2,
                     builder: (context, scrollController) {
-                      return commentView(commentsList: commentList,);
+                      return commentView(commentsList: commentList,model: widget.model,);
                     },
                   ),
                 );

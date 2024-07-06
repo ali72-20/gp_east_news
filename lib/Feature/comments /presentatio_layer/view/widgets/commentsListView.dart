@@ -17,7 +17,7 @@ class _commentListViewState extends State<commentListView> {
     return ListView.builder(
       itemCount: widget.list.length,
       itemBuilder: (context,index){
-         return commentItemView(model: widget.list[index],);
+         return SingleChildScrollView(child: commentItemView(model: widget.list[index],));
       },
     );
   }

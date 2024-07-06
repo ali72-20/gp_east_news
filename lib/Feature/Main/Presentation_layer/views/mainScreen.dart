@@ -124,3 +124,5 @@ userModel user_model = userModel(
     userName: 'userName ', Mail: "Mail", password: '', id: '', token: '');
 
 String selectedLang = 'en';
+
+int numberofComments = 0;
