@@ -4,14 +4,14 @@ import 'package:dio/dio.dart';
 
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
 
-class DeleteComment{
+class EditComment{
   final Dio dio;
-  DeleteComment(this.dio);
-  final String url = 'http://192.168.1.60:2000/comment/deletecomment';
+  EditComment(this.dio);
+  final String url = 'http://192.168.1.60:2000/comment/editcomment';
   final String token = 'Bearer ${user_model.token}';
   Future<bool> edit({required String text, required String commentId})async{
     try{
-      Response response = await dio.delete(
+      Response response = await dio.put(
           url,
           data: {
             "text" : text,
