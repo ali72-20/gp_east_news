@@ -1,16 +1,16 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/comments%20/presentatio_layer/view/widgets/commentsListView.dart';
 
-
-
 import '../../../../colors/colors.dart';
 import '../../data_layer/model/commentModel.dart';
+
 class commentView extends StatefulWidget {
   commentView({super.key, required this.commentsList});
+
   List<commentModel> commentsList;
+
   @override
   State<commentView> createState() => _commentViewState();
 }
@@ -18,6 +18,7 @@ class commentView extends StatefulWidget {
 class _commentViewState extends State<commentView> {
   final comment = TextEditingController();
   late List<commentModel> list;
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -31,23 +32,10 @@ class _commentViewState extends State<commentView> {
         child: Stack(
           children: [
             Positioned(
-              top: 48,
-              left: 140,
-              child: Container(
-                width: 100,
-                height: 3,
-                color: primary_color,
+              child: commentListView(
+                list: widget.commentsList,
               ),
             ),
-            Positioned(
-              top: 16,
-              left: 145,
-              child: Text(
-                "Comments",
-                style: TextStyle(color: primary_color, fontFamily: kPrimaryFont),
-              ),
-            ),
-            commentListView(list: widget.commentsList,),
             Positioned(
               left: 0,
               bottom: 0,
@@ -65,14 +53,16 @@ class _commentViewState extends State<commentView> {
                       child: TextField(
                         controller: comment,
                         // maxLines: 4,
-                        decoration: const InputDecoration(
-                            hintText: 'Add a comment',
+                        decoration:  InputDecoration(
+                            hintText: 'Add a comment'.tr,
                             border: InputBorder.none),
                       ),
                     ),
-                    IconButton(onPressed: () {
-                      Navigator.pop(context);
-                    }, icon: const Icon(Icons.send))
+                    IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.send))
                   ],
                 ),
               ),
