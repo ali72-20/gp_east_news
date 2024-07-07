@@ -53,7 +53,7 @@ class _commentListViewState extends State<commentListView> {
             children: [
               SlidableAction(
                 icon: Icons.delete,
-                label: 'Delete',
+                label: 'delete'.tr,
                 backgroundColor: Colors.red,
                 onPressed: (context) async {
                   bool result = await delete(context, widget.list[index].id,

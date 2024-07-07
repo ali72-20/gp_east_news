@@ -20,6 +20,7 @@ const Map<String, String> en = {
   'settings': 'Settings',
   'logout': "Logout",
   'delete': 'Delete',
+  'Edit':'Edit',
   'summary': "Summary",
   'technology': 'Technology',
   'english': 'English',

@@ -20,6 +20,7 @@ const Map<String, String> ar = {
   'settings': 'الإعدادات',
   'logout': "تسجيل الخروج",
   'delete': 'حذف',
+  'Edit' : 'تعديل',
   'summary': "الملخص",
   'technology': 'التكنولوجيا',
   'english': 'الإنجليزية',
