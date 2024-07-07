@@ -20,7 +20,7 @@ class _AudoiIconState extends State<AudoiIcon> {
   Widget build(BuildContext context) {
     return AppRoundedButtonBlur(
       onTap: () async{
-        await reader(Dio()).getAudio(text: '');
+        await reader(Dio()).getAudio(text: widget.model.content!);
         showDialog(
           barrierDismissible: false,
           context: context,
