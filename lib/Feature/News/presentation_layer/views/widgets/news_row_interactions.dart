@@ -24,7 +24,7 @@ class newsRowIneractions extends StatelessWidget {
             commentItemComponent(model: item,),
             savedItemIcon(model: item,),
             selectedLang == 'en' ? summaryIconComponent(content: item.content??'content'):const Text(''),
-            selectedLang == 'en' ? const AudoiIcon():const Text(''),
+            selectedLang == 'en' ?  AudoiIcon(model: item):const Text(''),
           ],
         ),
       ),

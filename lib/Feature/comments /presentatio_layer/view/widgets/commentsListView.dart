@@ -92,8 +92,8 @@ class _commentListViewState extends State<commentListView> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('Edit comment',
-              style: TextStyle(fontFamily: kPrimaryFont),),
+            title:  Text('Edit comment'.tr,
+              style: const TextStyle(fontFamily: kPrimaryFont),),
             actions: [
               Row(
                 children: [
@@ -117,7 +117,7 @@ class _commentListViewState extends State<commentListView> {
                           setState(() {
                             widget.list[index].text = newCommentController.text;
                           });
-                          ToastMessage().showMessage(message: 'Comment Edit');
+                          ToastMessage().showMessage(message: 'Comment Edit'.tr);
                         }
                       }
                     },

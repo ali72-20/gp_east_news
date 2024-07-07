@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/colors/colors.dart';
 
@@ -18,18 +19,18 @@ class summaryView extends StatelessWidget {
           style: const TextStyle(fontFamily: kPrimaryFont),
         ),
       ),
-      title: const Text(
-        'Summary',
-        style: TextStyle(fontFamily: kPrimaryFont, color: Colors.black),
+      title:  Text(
+        'summary'.tr,
+        style: const TextStyle(fontFamily: kPrimaryFont, color: Colors.black),
       ),
       actions: [
         TextButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Text(
-            'Close',
-            style: TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
+          child:  Text(
+            'close'.tr,
+            style: const TextStyle(color: Colors.black, fontFamily: kPrimaryFont),
           ),
         ),
       ],

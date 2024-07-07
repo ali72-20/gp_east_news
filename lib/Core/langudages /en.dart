@@ -32,5 +32,13 @@ const Map<String, String> en = {
   'ASTNEWS': 'AST NEWS',
   'HaveAnAccount?': 'Have an account?',
   'Comments': 'Comments',
-  'Add a comment':'Add a comment'
+  'Add a comment': 'Add a comment',
+  'Summarize': 'Summarize',
+  'Skip': 'Skip',
+  'next': 'next',
+  'Please wait': 'Please wait …',
+  'SHARE WITH US YOUR INTEREST': 'SHARE WITH US YOUR INTEREST',
+  'Edit comment': 'Edit comment',
+  'Comment Edit' : 'Comment Edit',
+  'Password is Required' : 'Password is Required'
 };

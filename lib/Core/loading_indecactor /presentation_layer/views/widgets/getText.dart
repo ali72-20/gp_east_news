@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gp_east_news/Core/Assets/assets_data.dart';
 
 class getText extends StatelessWidget {
    getText({super.key,  required this.text});
@@ -11,7 +12,7 @@ class getText extends StatelessWidget {
         style: const TextStyle(
         color: Colors.white,
         fontSize: 14,
-          fontFamily: 'Poppins'
+          fontFamily: kPrimaryFont
     ),
     textAlign: TextAlign.center
     );

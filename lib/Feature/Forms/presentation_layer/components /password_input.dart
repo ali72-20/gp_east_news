@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Feature/Forms/presentation_layer/components%20/input_compoenet_model.dart';
 
@@ -23,7 +24,7 @@ class _password_inputState extends State<password_input> {
         controller:  widget.passwordcontroller,
         validator: (value){
           if(value == null || value.isEmpty){
-            return "Password is Required";
+            return "Password is Required".tr;
           }
         },
 

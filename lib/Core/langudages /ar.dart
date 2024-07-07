@@ -32,5 +32,13 @@ const Map<String, String> ar = {
   'ASTNEWS': 'نيوز',
   'HaveAnAccount?': 'هل لديك حساب؟',
   'Comments': 'التعليقات',
-  'Add a comment': 'اضف تعليق'
+  'Add a comment': 'اضف تعليق',
+  'Summarize' : 'تلخيص',
+  'Skip' : 'تخطي',
+  'next': 'التالي',
+  'Please wait' :'من فضلك انتظر',
+  'SHARE WITH US YOUR INTEREST' : 'شاركنا اهتمامتك',
+  'Edit comment' : 'تعديل التعليق',
+  'Comment Edit' : 'تم التعديل',
+  'Password is Required'  : 'كلمة السر مطلوبة'
 };

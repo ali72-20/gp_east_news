@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../Forms/presentation_layer/components /TextComp.dart';
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
@@ -30,27 +31,27 @@ class CategoryList extends StatelessWidget {
             items_list(
               item: item_model(
                   Category_image: 'assets/Images/sports.png',
-                  Category_name: 'Sports'),
+                  Category_name: 'sports'.tr),
             ),
             items_list(
               item: item_model(
                   Category_image: 'assets/Images/Politics.png',
-                  Category_name: 'Politics'),
+                  Category_name: 'entertainment'.tr),
             ),
             items_list(
               item: item_model(
                   Category_image: 'assets/Images/Science.png',
-                  Category_name: 'Science'),
+                  Category_name: 'science'.tr),
             ),
             items_list(
               item: item_model(
                   Category_image: 'assets/Images/technology.png',
-                  Category_name: 'Technology'),
+                  Category_name: 'technology'.tr),
             ),
             items_list(
               item: item_model(
                   Category_image: 'assets/Images/Business.png',
-                  Category_name: 'Business'),
+                  Category_name: 'business'.tr),
             ),
             const SizedBox(height: 24,),
             GestureDetector(

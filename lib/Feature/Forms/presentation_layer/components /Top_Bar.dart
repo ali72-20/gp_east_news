@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Top_Bar extends StatelessWidget {
   const Top_Bar({super.key});
@@ -11,26 +12,26 @@ class Top_Bar extends StatelessWidget {
         borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)),
       ),
-      child: const Row(
+      child:  Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'E',
-            style: TextStyle(
+            'E'.tr,
+            style: const TextStyle(
                 color: Colors.white,
                 fontFamily: 'FasterOne',
                 fontWeight: FontWeight.normal,
                 fontSize: 40),
           ),
           Text(
-            'AST NEWS',
-            style: TextStyle(
+            'AST NEWS'.tr,
+            style: const TextStyle(
                 color: Colors.white,
                 fontFamily: 'Alatsi',
                 fontWeight: FontWeight.normal,
                 fontSize: 40),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(bottom: 16),
             child: Image(
               image: AssetImage('assets/logo/logo64.png'),

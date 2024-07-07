@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -81,9 +82,9 @@ class _onboarding_viewState extends State<onboarding_view> {
                         TextButton(
                           onPressed: () => pageController
                               .jumpToPage(controller.items.length - 1),
-                          child: const Text(
-                            'Skip',
-                            style: TextStyle(
+                          child:  Text(
+                            'Skip'.tr,
+                            style: const TextStyle(
                                 color: Colors.white, fontFamily: kPrimaryFont),
                           ),
                         ),
