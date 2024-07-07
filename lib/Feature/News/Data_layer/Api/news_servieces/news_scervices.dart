@@ -1,6 +1,7 @@
 import 'dart:core';
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 import 'package:gp_east_news/Feature/comments%20/data_layer/Api/commets.dart';
@@ -14,7 +15,7 @@ class NewsServieces {
 
   NewsServieces(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/news/getNews';
+  final String url = 'http://${constKey.ip}:2000/news/getNews';
   final String token = 'Bearer ${user_model.token}';
   final String country = selectedLang == 'en' ? 'us' :'eg';
   final String lang = selectedLang == 'en' ? 'en' :'ar';

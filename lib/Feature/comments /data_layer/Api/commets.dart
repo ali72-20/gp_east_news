@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
 import '../model/commentModel.dart';
@@ -10,7 +11,7 @@ import '../model/commentModel.dart';
 
   Comments(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/comment/getcomment';
+  final String url = 'http://${constKey.ip}:2000/comment/getcomment';
   final String token = 'Bearer ${user_model.token}';
 
   Future getComment({required String articleId}) async {

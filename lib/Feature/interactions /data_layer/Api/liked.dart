@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Core/langudages%20/ar.dart';
 import 'package:gp_east_news/Feature/interactions%20/data_layer/Api/likesModel.dart';
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
@@ -10,8 +11,8 @@ class Likes {
 
   Likes(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/like/getlikes';
-  final String urlPost = 'http://192.168.1.60:2000/like/like';
+  final String url = 'http://${constKey.ip}:2000/like/getlikes';
+  final String urlPost = 'http://${constKey.ip}:2000/like/like';
   final String token = 'Bearer ${user_model.token}';
 
   Future<likesModel> getLiks({required String articleId}) async {

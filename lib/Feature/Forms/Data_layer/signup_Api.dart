@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 
 
@@ -9,7 +10,7 @@ class newUser{
 
   newUser(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/user/signup';
+  final String url = 'http://${constKey.ip}:2000/user/signup';
 
 
   Future<String> saveNewUser({required String mail, required String password, required String userName}) async {

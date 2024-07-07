@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 
 import '../../Main/Presentation_layer/views/mainScreen.dart';
 
@@ -9,7 +10,7 @@ class getSummary {
 
   getSummary(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/news/summarize';
+  final String url = 'http://${constKey.ip}:2000/news/summarize';
   final String token = 'Bearer ${user_model.token}';
 
   Future<String> summary({required String text}) async {

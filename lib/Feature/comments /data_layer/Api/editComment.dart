@@ -1,13 +1,14 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
 
 class EditComment{
   final Dio dio;
   EditComment(this.dio);
-  final String url = 'http://192.168.1.60:2000/comment/editcomment';
+  final String url = 'http://${constKey.ip}:2000/comment/editcomment';
   final String token = 'Bearer ${user_model.token}';
   Future<bool> edit({required String text, required String commentId})async{
     try{

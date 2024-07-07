@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 
 class Validation {
@@ -7,7 +8,7 @@ class Validation {
 
   Validation(this.dio);
 
-  final String url = 'http://192.168.1.60:2000/user/login';
+  final String url = 'http://${constKey.ip}:2000/user/login';
 
   Future<int> isUserFound(
       {required String mail, required String password}) async {

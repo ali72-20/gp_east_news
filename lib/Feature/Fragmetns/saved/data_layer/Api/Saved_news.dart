@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Provider/savedNewsListProvider.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
 
@@ -11,7 +12,7 @@ class SavedNews {
 
   SavedNews(this.dio);
 
-  final String base = 'http://192.168.1.60:2000/news';
+  final String base = 'http://${constKey.ip}:2000/news';
   final String token = 'Bearer ${user_model.token}';
 
   Future<String> save(

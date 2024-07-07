@@ -1,13 +1,14 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 
 import '../../../Main/Presentation_layer/views/mainScreen.dart';
 
 class DeleteComment{
   final Dio dio;
   DeleteComment(this.dio);
-  final String url = 'http://192.168.1.60:2000/comment/deletecomment';
+  final String url = 'http://${constKey.ip}:2000/comment/deletecomment';
   final String token = 'Bearer ${user_model.token}';
   Future<bool> delete({required String authorId, required String commentId})async{
     try{
