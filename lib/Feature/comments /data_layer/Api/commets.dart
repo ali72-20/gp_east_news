@@ -11,7 +11,7 @@ import '../model/commentModel.dart';
 
   Comments(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/comment/getcomment';
+  final String url = 'http://${constKey.ip}:${constKey.port}/comment/getcomment';
   final String token = 'Bearer ${user_model.token}';
 
   Future getComment({required String articleId}) async {

@@ -11,8 +11,8 @@ class Likes {
 
   Likes(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/like/getlikes';
-  final String urlPost = 'http://${constKey.ip}:2000/like/like';
+  final String url = 'http://${constKey.ip}:${constKey.port}/like/getlikes';
+  final String urlPost = 'http://${constKey.ip}:${constKey.port}/like/like';
   final String token = 'Bearer ${user_model.token}';
 
   Future<likesModel> getLiks({required String articleId}) async {

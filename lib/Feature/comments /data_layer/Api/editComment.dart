@@ -8,7 +8,7 @@ import '../../../Main/Presentation_layer/views/mainScreen.dart';
 class EditComment{
   final Dio dio;
   EditComment(this.dio);
-  final String url = 'http://${constKey.ip}:2000/comment/editcomment';
+  final String url = 'http://${constKey.ip}:${constKey.port}/comment/editcomment';
   final String token = 'Bearer ${user_model.token}';
   Future<bool> edit({required String text, required String commentId})async{
     try{

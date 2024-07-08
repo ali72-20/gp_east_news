@@ -2,21 +2,16 @@ import 'dart:core';
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
-import 'package:gp_east_news/Core/langudages%20/ar.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
-import 'package:gp_east_news/Feature/comments%20/data_layer/Api/commets.dart';
-import 'package:gp_east_news/Feature/comments%20/data_layer/model/commentModel.dart';
-import 'package:gp_east_news/Feature/interactions%20/data_layer/Api/likesModel.dart';
 
-import '../../../../interactions /data_layer/Api/liked.dart';
 
 class NewsServieces {
   final Dio dio;
 
   NewsServieces(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/news/getNews';
+  final String url = 'http://${constKey.ip}:${constKey.port}/news/getNews';
   final String token = 'Bearer ${user_model.token}';
   final String country = selectedLang == 'en' ? 'us' :'eg';
   final String lang = selectedLang == 'en' ? 'en' :'ar';

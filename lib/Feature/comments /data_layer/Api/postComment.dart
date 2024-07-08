@@ -12,7 +12,7 @@ class postComment {
 
   postComment(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/comment/addcomment';
+  final String url = 'http://${constKey.ip}:${constKey.port}/comment/addcomment';
   final String token = 'Bearer ${user_model.token}';
 
   Future<commentModel> post(

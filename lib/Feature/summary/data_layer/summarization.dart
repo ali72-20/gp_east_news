@@ -10,7 +10,7 @@ class getSummary {
 
   getSummary(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/news/summarize';
+  final String url = 'http://${constKey.ip}:${constKey.port}/news/summarize';
   final String token = 'Bearer ${user_model.token}';
 
   Future<String> summary({required String text}) async {

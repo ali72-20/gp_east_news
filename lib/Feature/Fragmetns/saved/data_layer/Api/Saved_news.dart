@@ -12,7 +12,7 @@ class SavedNews {
 
   SavedNews(this.dio);
 
-  final String base = 'http://${constKey.ip}:2000/news';
+  final String base = 'http://${constKey.ip}:${constKey.port}/news';
   final String token = 'Bearer ${user_model.token}';
 
   Future<String> save(

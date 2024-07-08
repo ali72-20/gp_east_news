@@ -10,7 +10,7 @@ class newUser{
 
   newUser(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/user/signup';
+  final String url = 'http://${constKey.ip}:${constKey.port}/user/signup';
 
 
   Future<String> saveNewUser({required String mail, required String password, required String userName}) async {

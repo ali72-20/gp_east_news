@@ -8,7 +8,7 @@ class Validation {
 
   Validation(this.dio);
 
-  final String url = 'http://${constKey.ip}:2000/user/login';
+  final String url = 'http://${constKey.ip}:${constKey.port}/user/login';
 
   Future<int> isUserFound(
       {required String mail, required String password}) async {
