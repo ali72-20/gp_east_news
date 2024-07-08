@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
-import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 import 'package:gp_east_news/Feature/atricle_reader/presentation_layer/view/audoi.dart';
 
 import '../../../../comments /presentatio_layer/view/widgets/comment_icon_component.dart';

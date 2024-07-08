@@ -4,7 +4,7 @@ import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/newe_
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_row_interactions.dart';
 import 'package:gp_east_news/Feature/News/presentation_layer/views/widgets/news_sliver_app_bar.dart';
 import '../../../../colors/colors.dart';
-import '../../Data_layer/Api/news_servieces/news_model.dart';
+import '../../Data_layer/Models/news_model.dart';
 
 class news_details extends StatelessWidget {
   news_details({super.key, required this.item, this.is_comment,});

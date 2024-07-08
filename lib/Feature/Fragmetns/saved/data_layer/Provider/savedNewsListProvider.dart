@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../News/Data_layer/Api/news_servieces/news_model.dart';
+import '../../../../News/Data_layer/Models/news_model.dart';
 
 class savedNewsListProvider extends ChangeNotifier{
   List<news_model> savedNewsProvider = [];

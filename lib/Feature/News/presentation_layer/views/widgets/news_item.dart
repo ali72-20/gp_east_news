@@ -3,7 +3,7 @@ import 'package:gp_east_news/Feature/News/presentation_layer/views/news_details.
 import '../../../../../Core/Assets/assets_data.dart';
 import '../../../../../colors/colors.dart';
 import '../../../../interactions /presentation_layer/views/interaction.dart';
-import '../../../Data_layer/Api/news_servieces/news_model.dart';
+import '../../../Data_layer/Models/news_model.dart';
 import 'news_image.dart';
 
 class news_item extends StatelessWidget {

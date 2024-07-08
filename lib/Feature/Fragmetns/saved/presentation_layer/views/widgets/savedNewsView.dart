@@ -6,7 +6,7 @@ import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/widgets/saveItemView.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/presentation_layer/views/widgets/unSaved.dart';
-import '../../../../../News/Data_layer/Api/news_servieces/news_model.dart';
+import '../../../../../News/Data_layer/Models/news_model.dart';
 import '../../../../../News/presentation_layer/views/widgets/news_item.dart';
 import 'no_item_saved.dart';
 

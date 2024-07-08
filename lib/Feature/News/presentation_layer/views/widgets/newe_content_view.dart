@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/Messages/toast_message.dart';
-import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class newsContentView extends StatelessWidget {

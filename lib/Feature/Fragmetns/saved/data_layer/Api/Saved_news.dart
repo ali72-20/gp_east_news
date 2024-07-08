@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:gp_east_news/Core/ConstantKeies/ConstKey.dart';
 import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Provider/savedNewsListProvider.dart';
-import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 
 import '../../../../Main/Presentation_layer/views/mainScreen.dart';
 

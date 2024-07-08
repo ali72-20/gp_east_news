@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
 import 'package:gp_east_news/Core/app_rounded_blur.dart';
-import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 import 'package:gp_east_news/Feature/comments%20/data_layer/model/commentModel.dart';
 
 import '../../../data_layer/Api/commets.dart';

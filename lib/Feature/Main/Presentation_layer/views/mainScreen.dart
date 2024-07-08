@@ -9,7 +9,7 @@ import '../../../Fragmetns/home/presentation_layer/views/widgets/app_bar/app_bar
 import '../../../Fragmetns/home/presentation_layer/views/home.dart';
 import '../../../Fragmetns/saved/presentation_layer/views/saved_fragment.dart';
 import '../../../Fragmetns/settings/presentation_layer/views/setting_fragment.dart';
-import '../../../News/Data_layer/Api/news_servieces/news_model.dart';
+import '../../../News/Data_layer/Models/news_model.dart';
 import 'widgets/bottom_nav_item.dart';
 
 class main_screen extends StatefulWidget {

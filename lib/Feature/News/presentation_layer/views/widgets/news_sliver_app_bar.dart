@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
-import 'package:gp_east_news/Feature/News/Data_layer/Api/news_servieces/news_model.dart';
+import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 import '../../../../../Core/Assets/assets_data.dart';
 import '../../../../../colors/colors.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import '../../Data_layer/Api/news_servieces/news_model.dart';
+import '../../Data_layer/Models/news_model.dart';
 import 'widgets/news_item.dart';
 
 class news_list extends StatelessWidget {

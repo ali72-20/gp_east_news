@@ -12,7 +12,7 @@ import 'package:gp_east_news/Feature/Fragmetns/saved/data_layer/Api/Saved_news.d
 import '../../../../../../Core/loading_indecactor /data_layer/Dialogs.dart';
 import '../../../../../Main/Presentation_layer/views/mainScreen.dart';
 import '../../../../../../colors/colors.dart';
-import '../../../../../News/Data_layer/Api/news_servieces/news_model.dart';
+import '../../../../../News/Data_layer/Models/news_model.dart';
 import '../../../components /Button.dart';
 import '../../../components /TextInputComp.dart';
 import 'dont_have_account.dart';

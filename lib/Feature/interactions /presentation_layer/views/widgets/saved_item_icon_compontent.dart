@@ -8,7 +8,7 @@ import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.da
 
 
 import '../../../../../Core/Messages/toast_message.dart';
-import '../../../../News/Data_layer/Api/news_servieces/news_model.dart';
+import '../../../../News/Data_layer/Models/news_model.dart';
 
 class savedItemIcon extends StatefulWidget {
   savedItemIcon({super.key, required this.model});
