@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gp_east_news/Core/Assets/assets_data.dart';
+import 'package:gp_east_news/Core/Messages/toast_message.dart';
 import 'package:gp_east_news/Feature/Main/Presentation_layer/views/mainScreen.dart';
 import 'package:gp_east_news/Feature/News/Data_layer/Models/news_model.dart';
 import 'package:gp_east_news/Feature/comments%20/data_layer/Api/postComment.dart';
@@ -63,13 +64,21 @@ class _CommentViewState extends State<commentView> {
                   IconButton(
                     onPressed: () async {
                       if (comment.text.isNotEmpty) {
-                        commentModel newComment = await postComment(Dio())
-                            .post(text: comment.text, articleId: widget.model.id);
-                        comment.clear();
-                        setState(() {
-                          widget.commentsList.add(newComment);
-                          widget.model.comments++;
-                        });
+                        if(comment.text.contains('nigger') || comment.text.contains('shit')){
+                           Future.delayed(const Duration(seconds:  2),(){
+                             ToastMessage().showErrorMessage(message: "This is offensive comment");
+                             comment.clear();
+                             Focus.of(context).unfocus();
+                           });
+                        }else{
+                          commentModel newComment = await postComment(Dio())
+                              .post(text: comment.text, articleId: widget.model.id);
+                          comment.clear();
+                          setState(() {
+                            widget.commentsList.add(newComment);
+                            widget.model.comments++;
+                          });
+                        }
                       }
                       Focus.of(context).unfocus();
                     },
